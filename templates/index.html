@@ -7,6 +7,7 @@
 	
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/navbar.css') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,7 +18,33 @@
     />
   </head>
   <body>
-    <div style="height: 50vh ; width: 100%;"></div>
+	<header>
+        <div class="header_up">
+                <h1>Name of Website</h1>
+        </div >
+        <div class="header_down">
+            <div class="navbar_logo">
+                <a href="" ><img src="/Images/batman-batman-logo-batman-arkham-origins-grunge-wallpaper-preview.jpg" alt=""></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT US</a></li>
+                    <li><a href="">CONTACT US</a></li>
+                    <li><a href="">SERVICES</a></li>
+                    <!-- <li><a href=""></a></li> -->
+                </ul>
+            </div>
+            <div class="navbar_login_signup">
+                <ul>
+                    <li><a href="">LOGIN</a></li>
+                    <li><a href="">SIGN UP</a></li>
+                </ul>
+            </div>
+        
+        </div>
+    </header>
+	<div style="height: 50vh ; width: 100%;"></div>
     <div style="height: 50vh ; width: 100%;"></div>
     <div></div>
     <footer>

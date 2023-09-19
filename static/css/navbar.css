@@ -1,0 +1,110 @@
+@font-face {
+    font-family: Manjari;
+    src: url('Manjari-Regular.ttf');
+	
+
+    font-family: Signika;
+    src:url('Signika-VariableFont_GRAD.ttf')
+}
+
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+body
+{
+    background-color: #518d65;
+}
+/* header div 
+{
+    border: 2px solid red;
+} */
+.header_up
+{
+    text-align: center;
+    font-size: 26px;
+    font-family: Signika;
+    background-color: rgba(0, 0, 0, 0.898);
+    color:rgba(255, 253, 253, 0.592);
+    margin-bottom: 3px;
+}
+
+.header_down
+{
+    display: flex;
+    font-size: 20px;
+    font-family: Signika ;
+    justify-content: space-between;
+    align-items:center;
+    /* overflow: auto; */
+    background-color: #3c6e4dc2;
+}
+/* .header_down div
+{
+    border: 2px solid black;
+} */
+
+.navbar_logo
+{
+    width: 7%;
+    height: 38px;
+}
+.navbar_logo img
+{
+    width: 100%;
+    height:100%;
+    
+}
+.navbar ul , .navbar_login_signup ul
+{
+    list-style-type: none;
+    margin:5px 5px;
+    padding:5px 5px;
+    /* overflow:auto; */
+}
+
+.navbar ul li  
+{
+    display: inline-block;
+    margin: 2px 5px; 
+}
+.navbar_login_signup ul li
+{
+    display: inline-block;
+    margin: 2px 2px; 
+}
+
+.navbar ul li a  
+{
+    text-decoration: none;
+    padding: 11px 21px;
+    border-radius: 7px;
+    /* background-color: ; */
+    color: white;
+}
+.navbar ul li a:hover  
+{
+    background-color: rgba(255, 253, 253, 0.592);
+    color: black;
+    padding: 7px 21px;
+    border-radius: 7px;
+}
+
+.navbar_login_signup ul li a
+{
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 7px;
+    /* background-color: ; */
+    color: white;
+}
+.navbar_login_signup ul li a:hover
+{
+    background-color: rgba(255, 253, 253, 0.592);
+    color: black;
+    padding: 8px 10px;
+    border-radius: 7px;
+}
+
