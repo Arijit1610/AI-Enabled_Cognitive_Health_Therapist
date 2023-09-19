@@ -1,0 +1,2 @@
+# AI-Enabled_Cognitive_Health_Therapist
+# The AI-Enabled Cognitive Health Therapist is an advanced digital platform that leverages artificial intelligence and machine learning algorithms to provide personalized cognitive health support. It offers a range of tools and resources to help users assess their cognitive health, access therapy sessions, and track their progress over time. And also going to make a chatbot which which will provide mental helth support
