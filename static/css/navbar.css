@@ -1,7 +1,6 @@
 @font-face {
     font-family: Manjari;
     src: url('Manjari-Regular.ttf');
-	
 
     font-family: Signika;
     src:url('Signika-VariableFont_GRAD.ttf')
@@ -15,72 +14,101 @@
 }
 body
 {
-    background-color: #518d65;
+    background-color: #fbfbfb;
 }
-/* header div 
+
+
+
+
+
+header  
 {
-    border: 2px solid red;
-} */
-.header_up
+    position: fixed;    
+    width: 100%;
+}
+
+/* .header_up
 {
-    text-align: center;
-    font-size: 26px;
+	display:flex;
+    justify-content: space-between;
     font-family: Signika;
-    background-color: rgba(0, 0, 0, 0.898);
+	background-color: #234e31a7; 
     color:rgba(255, 253, 253, 0.592);
     margin-bottom: 3px;
-}
+} */
+
 
 .header_down
 {
-    display: flex;
-    font-size: 20px;
-    font-family: Signika ;
-    justify-content: space-between;
-    align-items:center;
-    /* overflow: auto; */
-    background-color: #3c6e4dc2;
-}
-/* .header_down div
-{
-    border: 2px solid black;
-} */
+	display: flex;
+	font-size: 18px;
+	font-family: Signika ;
+	justify-content: space-between;
+	align-items:center;
 
-.navbar_logo
-{
-    width: 7%;
-    height: 38px;
+	/* overflow: auto; */
+	background-color: #3c6e4dc2;
 }
-.navbar_logo img
+.website_name
 {
-    width: 100%;
-    height:100%;
-    
+	font-size: 25px;
+    width: 25%;
+    flex-basis:100px;
 }
-.navbar ul , .navbar_login_signup ul
+.header_down h1
+{
+	color: white;
+	width: 164%;
+    text-align: center;
+}
+
+
+.login_signup ul li
+{
+    display: inline-block;
+    margin: 2px 2px; 
+}
+.login_signup ul li a
+{
+    text-decoration: none;
+    padding: 9px 21px;
+    border-radius: 30px;
+    background-color:#023f16 ;
+    color: white;
+}
+.login_signup ul li a:hover
+{
+    background-color: rgba(255, 253, 253, 0.592);
+    color: black;
+    padding: 9px 21px;
+    border-radius: 30px;
+}
+
+
+
+
+
+.navbar
+{
+	font-size: 18px;
+}
+.navbar ul , .login_signup ul
 {
     list-style-type: none;
     margin:5px 5px;
     padding:5px 5px;
     /* overflow:auto; */
 }
-
 .navbar ul li  
 {
     display: inline-block;
-    margin: 2px 5px; 
+    margin: 11px 5px; 
 }
-.navbar_login_signup ul li
-{
-    display: inline-block;
-    margin: 2px 2px; 
-}
-
 .navbar ul li a  
 {
     text-decoration: none;
     padding: 11px 21px;
-    border-radius: 7px;
+    border-radius: 30px;
     /* background-color: ; */
     color: white;
 }
@@ -88,23 +116,44 @@ body
 {
     background-color: rgba(255, 253, 253, 0.592);
     color: black;
-    padding: 7px 21px;
+    padding: 11px 21px;
+    border-radius: 30px;
+}
+.dropdown
+{
+    position: relative;
+    display: inline-block;
+    /* padding: 5px 5px; */
+}
+div.dropdown-content
+{
+    display: none;
+    position: absolute;
+    color: unset;
+}
+.dropdown:hover  .dropdown-content
+{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: rgb(255, 253, 253);
+    color: black ;
+    border-radius: 7px;
+}
+.dropdown:hover .dropdown-content a
+{
+    padding: 11px 21px;
+    border-radius: 7px;
+    color: black;
+}
+.dropdown:hover .dropdown-content a:hover
+{
+    background-color: #3c6e4dc2;
+    color:white;
+    padding: 11px 21px;
     border-radius: 7px;
 }
 
-.navbar_login_signup ul li a
-{
-    text-decoration: none;
-    padding: 8px 10px;
-    border-radius: 7px;
-    /* background-color: ; */
-    color: white;
-}
-.navbar_login_signup ul li a:hover
-{
-    background-color: rgba(255, 253, 253, 0.592);
-    color: black;
-    padding: 8px 10px;
-    border-radius: 7px;
-}
+
+
 

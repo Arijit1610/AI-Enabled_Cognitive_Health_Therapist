@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>
+		{% block title %}
+
+		{% endblock %}
+	</title>
 	
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
@@ -16,47 +20,66 @@
       rel="stylesheet"
       href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
     />
+	{% block head %}
+
+	{% endblock %}
   </head>
   <body>
 	<header>
-        <div class="header_up">
-                <h1>Name of Website</h1>
-        </div >
-        <div class="header_down">
-            <div class="navbar_logo">
-                <a href="" ><img src="/Images/batman-batman-logo-batman-arkham-origins-grunge-wallpaper-preview.jpg" alt=""></a>
-            </div>
+		
+		<div class="header_down">
+				<div class="website-name">
+					<h1>Health</h1>
+				</div>
+					
+			
             <div class="navbar">
-                <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">CONTACT US</a></li>
-                    <li><a href="">SERVICES</a></li>
+				<ul>
+					<li><a href="/home">HOME</a></li>
+                    <li><a href="/about">ABOUT US</a></li>
+                    <li><a href="/contact">CONTACT US</a></li>
+					<li class="dropdown"><a href="#">SERVICES <i class="fa-solid fa-caret-down"></i></a>
+						
+                        <div class="dropdown-content">
+							<a href="">Appointment</a>
+                            <a href="">AI Chatbot</a>
+                            <a href="">Order Medicine</a>
+                        </div>
+                    </li>
+                    <!-- <li><a href="">TESTIMONIALS</a></li> -->
+                    
+					
                     <!-- <li><a href=""></a></li> -->
                 </ul>
             </div>
-            <div class="navbar_login_signup">
-                <ul>
-                    <li><a href="">LOGIN</a></li>
-                    <li><a href="">SIGN UP</a></li>
-                </ul>
-            </div>
+
+			<div class="login_signup">
+				<ul>
+					<li><a href="">LOGIN</a></li>
+					<li><a href="">SIGN UP</a></li>
+				</ul>
+			</div>
+            
+            
         
         </div>
     </header>
-	<div style="height: 50vh ; width: 100%;"></div>
+	<!-- <div style="height: 50vh ; width: 100%;"></div>
     <div style="height: 50vh ; width: 100%;"></div>
-    <div></div>
+    <div></div> -->
+	{% block content %}
+
+	{% endblock %}
     <footer>
       <section class="footer-section">
         <div class="footer-left">
           <h3><span>H</span>ealth</h3>
           <p>
-            <a href="#" id="link1">Home</a>
+            <a href="/home" id="link1">Home</a>
             <a href="#">Services</a>
-            <a href="#">About</a>
+            <a href="/about">About</a>
             <a href="#">More</a>
-            <a href="#">Contact</a>
+            <a href="/contact">Contact</a>
           </p>
         </div>
         <div class="footer-mid">
