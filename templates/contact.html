@@ -4,7 +4,7 @@ CONTACT
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static',filename='css/aboutus_newproj.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static',filename='css/contact_aihealth.css') }}" />
 {% endblock %}
 
 {% block content %}
@@ -12,173 +12,65 @@ CONTACT
 <div style="height: 50vh ; width: 100%;"></div>
 <div></div> -->
 <section class="home">
-    <img class="image" src="{{ url_for('static',filename='img/ai-health.jpg') }}" alt="image" />
-    <div class="content">
-      <h1>About<span>&ensp;Us</span></h1>
-    </div>
+	<img src="{{ url_for('static',filename='img/ai-health_cont3.jpg') }}" alt="image" />
+	<div class="content">
+		<h1>Contact<span>&ensp;Us</span></h1>
+	</div>
+</section>
 
-    <div class="form_container">
-      <i class="fa-solid fa-xmark form_close"></i>
+<div class="que-con">
+	<div class="r">
+		<h1>ASK YOUR QUERIES</h1>
+		<p>Please fill up our contact form so that our travel executive can call you back in next 24 hours time. You can
+			also check out our home page for more information about us.</p>
+		<form method="POST" action="sql4.php">
+			<div class="center">
+				<form>
+					<div class="name"><input name="name" type="text" class="feedback-input"
+							placeholder="Enter Your Name" /> </div>
+					<div class="input-box"><input name="email" type="text" class="feedback-input"
+							placeholder="Enter Your Email" />
+						<input style="float:right" name="phone" type="tel" class="feedback-input"
+							placeholder="Enter Your Phone No" />
+					</div>
+					<div class="name"> <textarea name="message" class="feedback-input" id="add"
+							placeholder="Enter Your Message"></textarea></div>
+					<button type="submit">Submit Message</button>
+			</div>
 
-      <!--login-->
-      <div class="form login_form">
-        <form action="#">
-          <h2>Login</h2>
-
-          <div class="input-box">
-            <input type="email" placeholder="Enter your email" pattern="email" required>
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-
-          <div class="input-box">
-            <input type="password" placeholder="Enter your password" pattern="password" required>
-            <i class="fa-solid fa-lock"></i>
-            <i class="fa-sharp fa-solid fa-eye-slash"></i>
-          </div>
-
-          <div class="option_field">
-            <span class="checkbox">
-              <input type="checkbox" id="check">
-              <label for="check">Remember me</label>
-            </span>
-            <a href="#" class="forgot_pw">Forgot password?</a>
-          </div>
-
-          <button class="button">Login</button>
-
-          <div class="login_signup">
-            Don’t have an account? <a href="#" id="signin">Signin</a>
-          </div>
-        </form>
-      </div>
+	</div>
+	</form>
 
 
-      <!--signin-->
-      <div class="form signin_form">
-        <form action="#">
-          <h2>Signin</h2>
+	<div class="contact">
+		<h1>CONTACT INFO</h1>
 
-          <div class="input-box">
-            <input type="email" placeholder="Enter your email" pattern="email" required>
-            <i class="fa-solid fa-envelope"></i>
-          </div>
+		<h3><i class="fa-sharp fa-solid fa-location-dot"></i></h3>
+		<h2>Address</h2>
+		<p style="text-align: center;">Kolkata,West Bengal</p>
 
-          <div class="input-box">
-            <input type="password" placeholder="Create your password" pattern="password" required>
-            <i class="fa-solid fa-lock"></i>
-            <i class="fa-sharp fa-solid fa-eye-slash"></i>
-          </div>
-
-          <div class="input-box">
-            <input type="password" placeholder="Confirm your password" pattern="password" required>
-            <i class="fa-solid fa-lock"></i>
-            <i class="fa-sharp fa-solid fa-eye-slash"></i>
-          </div>
+		<h3><i class="fa-solid fa-envelope"></i></h3>
+		<h2>Email Us</h2>
+		<p style="text-align:center;">dipayan.kumar03@gmail.com/abhranil@gmail.com</p>
 
 
+		<h3><i class="fa-solid fa-phone"></i></h3>
+		<h2>Call Us</h2>
+		<p style="text-align:center;">+91-8420361281/+91-8240250774</p>
 
-          <button class="button">Signin</button>
+		<div class="icon">
 
-          <div class="login_signup">
-            Already have an account? <a href="#" id="login">Login</a>
-          </div>
-        </form>
-      </div>
-    </div>
-    </div>
-    </div>
-  </section>
+			<a href="#" style="background-color: white;"><i class="fa-brands fa-facebook-f"
+					style="color:#4267B2"></i></a>
+			<a href="#"
+				style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ;"><i
+					class="fa-brands fa-instagram"></i></a>
+			<a href="#" style="background-color: white;"><i class="fa-brands fa-twitter" style="color:#1DA1F2"></i></a>
+			<a href="#" style="background-color: green;"><i class="fa-brands fa-whatsapp"></i></a>
 
 
-  <main>
-    <section>
-      <div class="first-content">
-      <div class="sep2">
-         <h2><span>ABOUT</span> AI-HEALTH</h2>
-        
-        
-          <p style="text-align: center;" >The AI-Enabled Cognitive Health Therapist project is a research initiative that aims to develop an AI-powered chatbot that can provide cognitive behavioural therapy (CBT) to people with mental health conditions. One of its main advantages is its capacity to create customized CBT exercises and interventions, tailoring its recommendations to each user's unique needs and problems. The chatbot is being developed utilizing a range of methods, such as machine learning and natural language processing. Additionally, the chatbot continuously tracks users' progress over time and offers data-driven insights into their experience with mental health. Users and their healthcare professionals gain from this feedback loop, which helps them make wise choices on their way to better mental health</p>
-        </div>
-  
-        <div class="abt_pic">
-          <img class="image" src="" alt="image" />
-        </div>
-      </div>
-    </section>
-   
-  <section>
-    <div class="middle">
-      
-      <div class="caption"> 
-        <p>
-            KNOW THE PILLARS BEHIND THE AI-HEALTH
-        </p>
-      </div>
-     
-    
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Abranil Kundu <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
+		</div>
 
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Dishani Sarkar <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
-
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Arijit Nandy <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
-
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Akhil Kumar Gope <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
-
-        <div class="card2">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>
-          Dipayan Sarkar<br><i>Developer of Frontend and Backend</i>
-        </p>
-        </div>
-      </div>
-        
-    </div>
-  </section>
-
-  <section>
-    <div class="back-content">
-    <div class="sep2">
-        <h2><span>WHY</span> AI-HEALTH</h2>
-      
-      
-        <p style="text-align: center;" >A critical step toward democratizing mental health care is being taken with the "AI-Enabled Cognitive Health Therapist" initiative. This ground-breaking approach delivers individualized and accessible therapy by utilizing artificial intelligence. It not only empowers consumers but also aligns with changing healthcare demands thanks to its easy user interface, ongoing customisation, and strict data privacy measures. It has the potential to alter mental health, lighten the load on conventional healthcare systems, and eventually improve quality of life for countless people around the world as it develops and adapts.</p>
-      </div>
-
-      <div class="abt_pic" >
-        <img src="{{ url_for('static',filename='img/ai-health2.jpg') }}" alt="image">
-      </div>
-    </div>
-  </section>
-</main>
+	</div>
+</div>
 {% endblock %}

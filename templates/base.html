@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>
 		{% block title %}
 
 		{% endblock %}
 	</title>
-	
+
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/navbar.css') }}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-    />
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/navbar.css') }}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
 	{% block head %}
 
 	{% endblock %}
-  </head>
-  <body>
+</head>
+
+<body>
 	<header>
-		
+
 		<div class="header_down">
-				<div class="website-name">
-					<h1>Health</h1>
-				</div>
-					
-			
-            <div class="navbar">
+			<div class="website-name">
+				<h1>Health</h1>
+			</div>
+
+
+			<div class="navbar">
 				<ul>
 					<li><a href="/home">HOME</a></li>
-                    <li><a href="/about">ABOUT US</a></li>
-                    <li><a href="/contact">CONTACT US</a></li>
+					<li><a href="/about">ABOUT US</a></li>
+					<li><a href="/contact">CONTACT US</a></li>
 					<li class="dropdown"><a href="#">SERVICES <i class="fa-solid fa-caret-down"></i></a>
-						
-                        <div class="dropdown-content">
+
+						<div class="dropdown-content">
 							<a href="">Appointment</a>
-                            <a href="">AI Chatbot</a>
-                            <a href="">Order Medicine</a>
-                        </div>
-                    </li>
-                    <!-- <li><a href="">TESTIMONIALS</a></li> -->
-                    
-					
-                    <!-- <li><a href=""></a></li> -->
-                </ul>
-            </div>
+							<a href="">AI Chatbot</a>
+							<a href="">Order Medicine</a>
+						</div>
+					</li>
+					<!-- <li><a href="">TESTIMONIALS</a></li> -->
+
+
+					<!-- <li><a href=""></a></li> -->
+				</ul>
+			</div>
 
 			<div class="login_signup">
 				<ul>
@@ -59,54 +55,57 @@
 					<li><a href="">SIGN UP</a></li>
 				</ul>
 			</div>
-            
-            
-        
-        </div>
-    </header>
+
+
+
+		</div>
+	</header>
 	<!-- <div style="height: 50vh ; width: 100%;"></div>
     <div style="height: 50vh ; width: 100%;"></div>
     <div></div> -->
 	{% block content %}
 
 	{% endblock %}
-    <footer>
-      <section class="footer-section">
-        <div class="footer-left">
-          <h3><span>H</span>ealth</h3>
-          <p>
-            <a href="/home" id="link1">Home</a>
-            <a href="#">Services</a>
-            <a href="/about">About</a>
-            <a href="#">More</a>
-            <a href="/contact">Contact</a>
-          </p>
-        </div>
-        <div class="footer-mid">
-          <ul>
-            <li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
-            <li><i class="fa fa-phone"></i>6291640218</li>
-            <li>
-              <i class="fa fa-envelope"></i
-              ><a href="mailto:health@company.com">health@company.com</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-right">
-          <h4>About The Company</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque modi
-            quaerat enim provident similique praesentium. Quod quidem iure quae
-            architecto.
-          </p>
-          <p class="sicons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-          </p>
-        </div>
-      </section>
-    </footer>
-  </body>
+	<footer>
+		<section class="footer-section">
+			<div class="footer-left">
+				<h3><span>H</span>ealth</h3>
+				<p>
+					<a href="/home" id="link1">Home</a>
+					<a href="#">Services</a>
+					<a href="/about">About</a>
+					<a href="#">More</a>
+					<a href="/contact">Contact</a>
+				</p>
+			</div>
+			<div class="footer-mid">
+				<ul>
+					<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
+					<li><i class="fa fa-phone"></i>6291640218</li>
+					<li>
+						<i class="fa fa-envelope"></i><a href="mailto:health@company.com">health@company.com</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-right">
+				<h4>About The Company</h4>
+				<p>
+					The AI-Enabled Cognitive Health Therapist project is a research initiative that aims to develop an
+					AI-powered chatbot that can provide cognitive behavioural therapy (CBT) to people with mental health
+					conditions
+				</p>
+				<p class="sicons">
+					<a href="#" style="background-color: white;"><i class="fa-brands fa-facebook-f"
+							style="color:#4267B2"></i></a>
+					<a href="#"
+						style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ;"><i
+							class="fa-brands fa-instagram"></i></a>
+					<a href="#" style="background-color: #0072b1 ;"><i class="fa fa-linkedin"></i></a>
+					<a href="#" style="background-color: white;"><i class="fa-brands fa-twitter" style="color:#1DA1F2"></i></a>
+				</p>
+			</div>
+		</section>
+	</footer>
+</body>
+
 </html>
