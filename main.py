@@ -12,7 +12,4 @@ def contact():
 @app.route('/about')
 def about():
 	return render_template('about.html')
-@app.route('/service')
-def service():
-	return render_template("Services.html")
-app.run(debug=True)
+app.run(debug=True) 
