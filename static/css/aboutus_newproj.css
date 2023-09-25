@@ -8,7 +8,7 @@
 }
 
 /* Navbar */
-header {
+/* header {
   z-index: 999;
   position: absolute;
   top: 0;
@@ -79,7 +79,7 @@ header .navigation .navigation-items .active:before {
   bottom: 0;
   left: 0;
   transition: 0.3s ease;
-}
+} */
 
 /* Content */
 .home {
@@ -305,7 +305,7 @@ i.fa-lock {
  }
 .sep2 p {
   font-size: 18px;
-  font-weight: bold;
+  
   padding: 40px 30px 5px 30px;
   text-align: left;
 }

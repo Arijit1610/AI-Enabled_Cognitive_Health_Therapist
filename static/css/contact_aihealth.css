@@ -8,7 +8,7 @@
 }
 
 /* Navbar */
-header {
+/* header {
   z-index: 999;
   position: absolute;
   top: 0;
@@ -87,7 +87,7 @@ header .navigation  .active:before {
   bottom:-5px;
   left: 0;
   transition: 0.3s ease;
-}
+} */
 /* Content */
 .home {
   padding: 100px 200px;
