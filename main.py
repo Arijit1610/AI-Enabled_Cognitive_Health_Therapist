@@ -12,3 +12,4 @@ def contact():
 def about():
 	return render_template('about.html')
 app.run(debug=True) 
+#hi
