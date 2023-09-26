@@ -1,5 +1,5 @@
+from project import app
 from flask import Flask, render_template
-app = Flask(__name__)
 #route for home page
 @app.route('/')
 @app.route('/home')
@@ -12,4 +12,3 @@ def contact():
 @app.route('/about')
 def about():
 	return render_template('about.html')
-app.run(debug=True) 

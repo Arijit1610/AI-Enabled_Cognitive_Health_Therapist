@@ -1,0 +1,156 @@
+{
+	"intents": [
+		{
+			"tag": "greeting",
+			"patterns": [
+				"Hi",
+				"Hey",
+				"Is anyone there?",
+				"Hi there",
+				"Hello",
+				"Hey there",
+				"Howdy",
+				"Hola",
+				"Bonjour",
+				"Hay",
+				"Sasa",
+				"Good Evening",
+				"Good afternoon"
+			],
+			"responses": [
+				"Hello there.",
+				"Hi there",
+				"Great to see you."
+			]
+		},
+		{
+			"tag": "morning",
+			"patterns": [
+				"Good morning"
+			],
+			"responses": [
+				"Good morning. "
+			]
+		},
+		{
+			"tag": "afternoon",
+			"patterns": [
+				"Good afternoon"
+			],
+			"responses": [
+				"Good afternoon."
+			]
+		},
+		{
+			"tag": "evening",
+			"patterns": [
+				"Good evening"
+			],
+			"responses": [
+				"Good evening."
+			]
+		},
+		{
+			"tag": "night",
+			"patterns": [
+				"Good night"
+			],
+			"responses": [
+				"Good night. ",
+				"Good night."
+			]
+		},
+		{
+			"tag": "goodbye",
+			"patterns": [
+				"Bye",
+				"See you later",
+				"Goodbye",
+				"Au revoir",
+				"Sayonara",
+				"ok bye",
+				"Bye then",
+				"Fare thee well"
+			],
+			"responses": [
+				"See you later.",
+				"Have a nice day.",
+				"Bye! Come back again.",
+				"I'll see you soon."
+			]
+		},
+		{
+			"tag": "thanks",
+			"patterns": [
+				"Thanks",
+				"Thank you",
+				"That's helpful",
+				"Thanks for the help",
+				"Than you very much"
+			],
+			"responses": [
+				"Happy to help!",
+				"Any time!",
+				"My pleasure",
+				"You're most welcome!"
+			]
+		},
+		{
+			"tag": "no-response",
+			"patterns": [
+				""
+			],
+			"responses": [
+				"Sorry, I didn't understand you.",
+				"Please go on.",
+				"Not sure I understand that.",
+				"Please don't hesitate to talk to me."
+			]
+		},
+		{
+			"tag": "neutral-response",
+			"patterns": [
+				"nothing much",
+				"nothing really",
+				"nothing"
+			],
+			"responses": [
+				"Oh I see. Do you want to talk about something?"
+			]
+		},
+		{
+			"tag": "about",
+			"patterns": [
+				"Who are you?",
+				"What are you?",
+				"Who you are?",
+				"Tell me more about yourself.",
+				"What is your name?",
+				"What should I call you?",
+				"What's your name?",
+				"Tell me about yourself"
+			],
+			"responses": [
+				""
+			]
+		},
+		{
+			"tag": "what is depression?",
+			"patterns": [
+				"what is depression?"
+			],
+			"responses": [
+				"Depression is a common and serious medical illness that negatively affects how you feel, the way you think and how you act.fortunately,it is also treatable.depression causes feelings of sadness and/or a loss of interest in activities you once enjoyed. it can lead to a variety of emotional and physical problems and can decrease your ability to function at work and at home."
+			]
+		},
+		{
+			"tag": "skill",
+			"patterns": [
+				"What can you do?"
+			],
+			"responses": [
+				"I can provide general advice regarding anxiety and depression, answer questions related to mental health and make daily conversations. Do not consider me as a subsitute for an actual mental healthcare worker. Please seek help if you don't feel satisfied with me."
+			]
+		}
+	]
+}
