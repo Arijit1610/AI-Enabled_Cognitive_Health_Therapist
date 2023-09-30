@@ -151,6 +151,15 @@
 			"responses": [
 				"I can provide general advice regarding anxiety and depression, answer questions related to mental health and make daily conversations. Do not consider me as a subsitute for an actual mental healthcare worker. Please seek help if you don't feel satisfied with me."
 			]
+		},
+		{
+			"tag":"unwell",
+			"patterns":[
+				""
+			],
+			"responses":[
+				"I can"
+			]
 		}
 	]
 }
