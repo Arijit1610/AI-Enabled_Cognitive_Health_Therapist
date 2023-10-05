@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, String, Integer,UniqueConstraint
+from sqlalchemy import create_engine, Column, String, Integer,UniqueConstraint,Date
 from flask_login import UserMixin
 from sqlalchemy.orm import declarative_base, Session
 
@@ -19,6 +19,19 @@ class UserAccount(Base, UserMixin):
 
 	def __repr__(self):
 		return f"<UserAccount username={self.username}>"
+
+class Contacts(Base):
+    __tablename__ = 'contacts'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50), nullable=False)
+    phonenumber = Column(String(10), nullable=False)
+    email = Column(String(255), nullable=False)
+    dateofbirth = Column(Date(), nullable=False)
+    message = Column(String(1000), nullable=False)
+
+    def __repr__(self):
+        return f"<Contact name={self.name}>"
+
 
 # Create the table in the database.
 Base.metadata.create_all(bind=engine)

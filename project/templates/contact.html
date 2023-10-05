@@ -53,31 +53,31 @@ CONTACT
 				</div>
 				<div class="contact-right">
 					<h3>Sent You Message</h3>
-					<form action="">
+					<form action="/contact" method = "POST">
 						<div class="input-row">
 							<div class="input-group">
 								<label>Name</label>
-								<input type="text" placeholder="">
+								<input type="text" name ="name" placeholder="Type Your Name ">
 							</div>
 							<div class="input-group">
 								<label>Phone</label>
-								<input type="tel" placeholder="">
+								<input type="tel" name="phonenumber" placeholder="Type Your Phone Number">
 							</div>
 						</div>
 
 						<div class="input-row">
 							<div class="input-group">
 								<label>Email</label>
-								<input type="email" placeholder="">
+								<input type="email" name = "email" placeholder="Type Your Email ">
 							</div>
 							<div class="input-group">
 								<label>Date Of Birth</label>
-								<input type="date" placeholder="">
+								<input type="date" name = "dob" placeholder="Enter Your DOB">
 							</div>
 						</div>
 
 						<label>Message</label>
-						<textarea rows="5" placeholder=""></textarea>
+						<textarea rows="5" name = "msg" placeholder="Type Your Query"></textarea>
 						<button type="submit">Send</button>
 					</form>
 				</div>
