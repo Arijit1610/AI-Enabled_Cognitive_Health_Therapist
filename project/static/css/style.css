@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Andada+Pro:wght@500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Andada+Pro:wght@500&display=swap"); */
 
 * {
 	padding: 0;
@@ -7,30 +7,32 @@
 	text-decoration: none;
 	list-style: none;
 }
-
+/* footer */
 footer {
-	margin-top: 30px;
+	
 	background-color: #2d2a30;
 	color: white;
-	/* display:flex;
-    flex-direction: column;*/
-	font-family: "Caprasimo", cursive;
+ 
 }
 
 .footer-section {
 	display: flex;
-	text-align: left;
+	text-align: left; 
+  
+
 }
 
 .footer-section .footer-left {
 	flex-grow: 1;
 	flex-basis: 100%;
+  
 }
 
 .footer-left h3 {
 	color: #ffffff;
 	font-size: 30px;
 	margin: 40px 20px 20px 30px;
+    
 }
 
 .footer-left h3 span {
@@ -97,7 +99,7 @@ footer {
 	margin: 20px 45px 20px 20px;
 }
 
-.footer-right .sicons {
+ .footer-right.sicons {
 	margin-top: 25px;
 	margin-bottom: 28px;
 }
@@ -113,5 +115,5 @@ footer {
 	color: #ffffff;
 	text-align: center;
 	line-height: 35px;
-	margin-right: 3px;
+	margin-right: 3px;
 }

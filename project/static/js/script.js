@@ -13,3 +13,36 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
   form.action = "/user-panel/signin";
 });
+
+const inputs = [
+	"input1",
+	"input2",
+	"input3",
+	"input4",
+	"input5",
+	"input6",
+  ];
+  
+  inputs.map((id) => {
+	const input = document.getElementById(id);
+	addListener(input);
+  });
+  
+  function addListener(input) {
+	input.addEventListener("keyup", () => {
+	  const code = parseInt(input.value);
+	  if (code >= 0 && code <= 9) {
+		const n = input.nextElementSibling;
+		if (n) n.focus();
+	  } else {
+		input.value = "";
+	  }
+  
+	  const key = event.key;
+	  if (key === "Backspace" || key === "Delete") {
+		const prev = input.previousElementSibling;
+		if (prev) prev.focus();
+	  }
+	});
+  }
+  

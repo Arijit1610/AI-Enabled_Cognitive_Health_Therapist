@@ -11,66 +11,78 @@ CONTACT
 <!-- <div style="height: 50vh ; width: 100%;"></div>
 <div style="height: 50vh ; width: 100%;"></div>
 <div></div> -->
-<section class="home">
-	<img src="{{ url_for('static',filename='img/ai-health_cont3.jpg') }}" alt="image" />
-	<div class="content">
-		<h1>Contact<span>&ensp;Us</span></h1>
-	</div>
-</section>
 
-<div class="que-con">
-	<div class="r">
-		<h1>ASK YOUR QUERIES</h1>
-		<p>Please fill up our contact form so that our travel executive can call you back in next 24 hours time. You can
-			also check out our home page for more information about us.</p>
-		<form method="POST" action="sql4.php">
-			<div class="center">
-				<form>
-					<div class="name"><input name="name" type="text" class="feedback-input"
-							placeholder="Enter Your Name" /> </div>
-					<div class="input-box"><input name="email" type="text" class="feedback-input"
-							placeholder="Enter Your Email" />
-						<input style="float:right" name="phone" type="tel" class="feedback-input"
-							placeholder="Enter Your Phone No" />
-					</div>
-					<div class="name"> <textarea name="message" class="feedback-input" id="add"
-							placeholder="Enter Your Message"></textarea></div>
-					<button type="submit">Submit Message</button>
-			</div>
+<div class="main">
 
-	</div>
-	</form>
-
-
-	<div class="contact">
-		<h1>CONTACT INFO</h1>
-
-		<h3><i class="fa-sharp fa-solid fa-location-dot"></i></h3>
-		<h2>Address</h2>
-		<p style="text-align: center;">Kolkata,West Bengal</p>
-
-		<h3><i class="fa-solid fa-envelope"></i></h3>
-		<h2>Email Us</h2>
-		<p style="text-align:center;">dipayan.kumar03@gmail.com/abhranil@gmail.com</p>
-
-
-		<h3><i class="fa-solid fa-phone"></i></h3>
-		<h2>Call Us</h2>
-		<p style="text-align:center;">+91-8420361281/+91-8240250774</p>
-
-		<div class="icon">
-
-			<a href="#" style="background-color: white;"><i class="fa-brands fa-facebook-f"
-					style="color:#4267B2"></i></a>
-			<a href="#"
-				style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ;"><i
-					class="fa-brands fa-instagram"></i></a>
-			<a href="#" style="background-color: white;"><i class="fa-brands fa-twitter" style="color:#1DA1F2"></i></a>
-			<a href="#" style="background-color: green;"><i class="fa-brands fa-whatsapp"></i></a>
-
-
+	<section class="cover-content">
+		<div class="content">
+			<h4>Contact Us</h4>
 		</div>
+		<div class="image"><img src="{{ url_for('static',filename='img/20945352.jpg') }}" alt="">
+		</div>
+	</section>
 
-	</div>
+	<section class="query-cover">
+		<div class="container">
+			<h1>Connect With Us</h1>
+			<div class="contact-box">
+				<div class="contact-left">
+					<h3>Reach Us</h3>
+					<div class="list">
+						<ul>
+							<li>
+								<i class="fa fa-envelope"></i><a href="mailto:health@company.com">health@company.com</a>
+							</li>
+							<li><i class="fa fa-phone"></i>6291640218</li>
+							<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
+						</ul>
+					</div>
+
+					<h3 class="follow">Follow Us</h3>
+					<div class="icons">
+
+						<a href="#" style="background-color: white;"><i class="fa-brands fa-facebook-f"
+								style="color:#4267B2"></i></a>
+						<a href="#"
+							style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ;"><i
+								class="fa-brands fa-instagram"></i></a>
+						<a href="#" style="background-color: #0072b1 ;"><i class="fa fa-linkedin"></i></a>
+						<a href="#" style="background-color: white;"><i class="fa-brands fa-twitter"
+								style="color:#1DA1F2"></i></a>
+					</div>
+				</div>
+				<div class="contact-right">
+					<h3>Sent You Message</h3>
+					<form action="">
+						<div class="input-row">
+							<div class="input-group">
+								<label>Name</label>
+								<input type="text" placeholder="">
+							</div>
+							<div class="input-group">
+								<label>Phone</label>
+								<input type="tel" placeholder="">
+							</div>
+						</div>
+
+						<div class="input-row">
+							<div class="input-group">
+								<label>Email</label>
+								<input type="email" placeholder="">
+							</div>
+							<div class="input-group">
+								<label>Date Of Birth</label>
+								<input type="date" placeholder="">
+							</div>
+						</div>
+
+						<label>Message</label>
+						<textarea rows="5" placeholder=""></textarea>
+						<button type="submit">Send</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
 {% endblock %}
