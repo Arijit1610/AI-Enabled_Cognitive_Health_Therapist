@@ -37,7 +37,6 @@ def contact():
 				subject="Regards",
 				recipients = [email],
 				body = f"Thank you {name},\nWe sincerely appreciate your interest in our services. Your inquiry is important to us, and we want to assure you that our dedicated team is actively working on addressing your query. Rest assured, we are committed to providing you with the information and assistance you need promptly. Please stay tuned, as one of our team members will be reaching out to you very soon. Your satisfaction is our top priority, and we look forward to assisting you with any questions or concerns you may have. If you need immediate assistance, please don't hesitate to contact our customer support team. Thank you again for choosing us, and we value the opportunity to serve you.",
-				html = "<h6>--It is an auto generated mail do not reply to to this mail--</h6>"
 			)
 			mail.send(email_msg)
 		
