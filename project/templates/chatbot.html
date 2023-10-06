@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Chat</title>
+</head>
+<body>
+    <h1>Chat Interface</h1>
+    <div id="chat">
+        <div id="message-container"></div>
+        <input type="text" id="message-input" placeholder="Enter your message">
+        <button id="send-button">Send</button>
+    </div>
+
+   <script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
+</body>
+</html>

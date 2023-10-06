@@ -47,15 +47,19 @@ def get_response(intents_list, intents_json):
             break
     return result
   
-print("GO! Bot is running")
-while True:
-	message = input("User: ")
-	ints = predict_class(message)
-	res = get_response(ints, intents)
-	if res == '':
-		res = "Sorry I cannot say that!! "
-	print(f"bot: {res}")
-	if message in ["Bye", "See you later", "Goodbye", "", "Sayonara", "ok bye", "Bye then", "Fare thee well"]:
-		break
+# print("GO! Bot is running")
+# while True:
+# 	message = input("User: ")
+# 	ints = predict_class(message)
+# 	res = get_response(ints, intents)
+# 	if res == '':
+# 		res = "Sorry I cannot say that!! "
+# 	print(f"bot: {res}")
+# 	if message in ["Bye", "See you later", "Goodbye", "", "Sayonara", "ok bye", "Bye then", "Fare thee well"]:
+# 		break
+def chatbot_response(msg):
+    ints = predict_class(msg)
+    res = get_response(ints, intents)
+    return res
 
 

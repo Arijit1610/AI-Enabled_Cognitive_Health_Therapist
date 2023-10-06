@@ -1,8 +1,9 @@
-from flask import render_template, request, flash, redirect, url_for,Blueprint
+from flask import render_template, request, flash, redirect, url_for,Blueprint ,jsonify
 from project.model import UserAccount, db_session,Contacts
 from flask_login import login_required, current_user
 from flask_mail import Message
 from . import mail 
+from .runchatbot import chatbot_response
 # from project.forms import SignupForm
 route = Blueprint('route',__name__)
 # Route for the home page
@@ -46,3 +47,19 @@ def contact():
 @route.route('/about')
 def about():
     return render_template('about.html',user = current_user)
+@route.route('/chatbot')
+def chat():
+    return render_template('chatbot.html')
+
+@route.route('/send', methods=['POST'])
+def send_message():
+    data = request.get_json()
+    user_message = data['message']
+
+    # Replace this with your bot's logic to generate a response
+    bot_response = chatbot_response(user_message)
+
+    return jsonify({'message': bot_response})
+
+if __name__ == '__main__':
+    app.run(debug=True)
