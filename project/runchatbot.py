@@ -4,9 +4,8 @@ import pickle
 import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
-
+nltk.download('popular')
 from tensorflow.keras.models import load_model
-
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('project/train_chatbot.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
