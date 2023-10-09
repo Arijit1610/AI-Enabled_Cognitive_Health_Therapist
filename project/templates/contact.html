@@ -5,23 +5,35 @@ CONTACT
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/contact_aihealth.css') }}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
+	rel="stylesheet" />
+{% endblock %}
+
+{% block navbar %}
+<ul>
+	<li><a href="/home">HOME</a></li>
+	<li><a href="/about">ABOUT US</a></li>
+	<li><a href="/contact" class="active-nav">CONTACT US</a></li>
+	<li><a href="/service">ORDER MEDICHINE</a></li>
+</ul>
 {% endblock %}
 
 {% block content %}
 <!-- <div style="height: 50vh ; width: 100%;"></div>
 <div style="height: 50vh ; width: 100%;"></div>
 <div></div> -->
+<section class="home">
+	<img src="{{ url_for('static',filename='img/ai-1110x740.jpg') }}" alt="image" />
 
+	<div class="content">
+		<h1>CONTACT US</h1>
+	</div>
+</section>
 <div class="main">
-
-	<section class="cover-content">
-		<div class="content">
-			<h4>Contact Us</h4>
-		</div>
-		<div class="image"><img src="{{ url_for('static',filename='img/20945352.jpg') }}" alt="">
-		</div>
-	</section>
-
 	<section class="query-cover">
 		<div class="container">
 			<h1>Connect With Us</h1>
@@ -31,33 +43,32 @@ CONTACT
 					<div class="list">
 						<ul>
 							<li>
-								<i class="fa fa-envelope"></i><a href="mailto:health@company.com">health@company.com</a>
+								<i class="fa fa-envelope"></i><a
+									href="mailto:health@company.com">health@company.com</a>
 							</li>
 							<li><i class="fa fa-phone"></i>6291640218</li>
-							<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
+							<li>
+								<i class="fa-solid fa-location-dot"></i>Kolkata,West
+								Bengal
+							</li>
 						</ul>
 					</div>
 
 					<h3 class="follow">Follow Us</h3>
 					<div class="icons">
-
-						<a href="#" style="background-color: white;"><i class="fa-brands fa-facebook-f"
-								style="color:#4267B2"></i></a>
-						<a href="#"
-							style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ;"><i
-								class="fa-brands fa-instagram"></i></a>
-						<a href="#" style="background-color: #0072b1 ;"><i class="fa fa-linkedin"></i></a>
-						<a href="#" style="background-color: white;"><i class="fa-brands fa-twitter"
-								style="color:#1DA1F2"></i></a>
+						<a href="#" id="facebook"><i class="fa-brands fa-facebook-f" ></i></a>
+						<a href="#" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#" id="linkedin"><i class="fa fa-linkedin"></i></a>
+						<a href="#" id="twitter"><i class="fa-brands fa-twitter"></i></a>
 					</div>
 				</div>
 				<div class="contact-right">
 					<h3>Sent You Message</h3>
-					<form action="/contact" method = "POST">
+					<form action="/contact" method="POST">
 						<div class="input-row">
 							<div class="input-group">
 								<label>Name</label>
-								<input type="text" name ="name" placeholder="Type Your Name ">
+								<input type="text" name="name" placeholder="Type Your Name ">
 							</div>
 							<div class="input-group">
 								<label>Phone</label>
@@ -68,16 +79,16 @@ CONTACT
 						<div class="input-row">
 							<div class="input-group">
 								<label>Email</label>
-								<input type="email" name = "email" placeholder="Type Your Email ">
+								<input type="email" name="email" placeholder="Type Your Email ">
 							</div>
 							<div class="input-group">
 								<label>Date Of Birth</label>
-								<input type="date" name = "dob" placeholder="Enter Your DOB">
+								<input type="date" name="dob" placeholder="Enter Your DOB">
 							</div>
 						</div>
 
 						<label>Message</label>
-						<textarea rows="5" name = "msg" placeholder="Type Your Query"></textarea>
+						<textarea rows="5" name="msg" placeholder="Type Your Query"></textarea>
 						<button type="submit">Send</button>
 					</form>
 				</div>

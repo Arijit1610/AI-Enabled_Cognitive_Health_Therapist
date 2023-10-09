@@ -5,36 +5,150 @@ HOME
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 {% endblock %}
 
+{% block navbar %}
+<ul>
+	<li><a href="/home" class="active-nav">HOME</a></li>
+	<li><a href="/about">ABOUT US</a></li>
+	<li><a href="/contact">CONTACT US</a></li>
+	<li><a href="/service">ORDER MEDICHINE</a></li>
+</ul>
+{% endblock %}
 {% block content %}
+<section class="home">
+	<img class="image-slide active-sli" src="{{ url_for('static',filename='img/ai-health13.jpg') }}" alt="image" />
+	<img class="image-slide" src="{{ url_for('static',filename='img/ai-health14.jpg') }}" alt="image" />
+	<img class="image-slide" src="{{ url_for('static',filename='img/ai-health6_1696604608104.jpg') }}" alt="image" />
+	<img class="image-slide" src="{{ url_for('static',filename='img/ai.jpg') }}"" alt=" image" />
 
-<div style="height: 50vh ; width: 100%;">
-</div>
-<center>
-	<h1>This page is under development</h1>
-	{% with messages = get_flashed_messages() %}
-	{% if messages %}
-	{% for message in messages %}
-	{% if 'info' in message %}
-	<!-- <div class="alert alert-info alert-dismissible"> -->
-	{% elif 'error' in message %}
-	<!-- <div class="alert alert-danger alert-dismissible"> -->
-	{% else %}
-	<!-- <div class="alert alert-secondary alert-dismissible"> -->
-	{% endif %}
-	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	<!-- <h1> -->
-		{{ message }}
-	<!-- </h1> -->
+	<div class="content">
+		<h1>Welcome To<br /><span>Health</span></h1>
 	</div>
-	{% endfor %}
-	{% endif %}
-	{% endwith %}
-</center>
-<div style="height: 50vh ; width: 100%;"></div>
-<div></div>
+	<div class="slider-navigation">
+		<div class="nav-btn active-sli"></div>
+		<div class="nav-btn"></div>
+		<div class="nav-btn"></div>
+		<div class="nav-btn"></div>
+	</div>
+</section>
+<!-- doclist> -->
+<section class="doc_list">
+	<div class="swiper mySwiper container">
+		<div class="swiper-wrapper content">
+			<div class="swiper-slide card">
+				<div class="card-content">
+					<div class="image">
+						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+					</div>
+					<div class="description">
+						<h4>Jason Cummings</h4>
+						<p class="para">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+							dignissimos, itaque sunt sapiente facilis nisi illum
+							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
+							tempora, architecto error at cum et quod.
+						</p>
+						<div class="appointment">
+							<a href="#">Book Appointment</a>
+						</div>
+						<p class="sicons">
+							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide card">
+				<div class="card-content">
+					<div class="image">
+						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+					</div>
+					<div class="description">
+						<h4>Jason Cummings</h4>
+						<p class="para">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+							dignissimos, itaque sunt sapiente facilis nisi illum
+							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
+							tempora, architecto error at cum et quod.
+						</p>
+						<div class="appointment">
+							<a href="#">Book Appointment</a>
+						</div>
+						<p class="sicons">
+							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide card">
+				<div class="card-content">
+					<div class="image">
+						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+					</div>
+					<div class="description">
+						<h4>Jason Cummings</h4>
+						<p class="para">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+							dignissimos, itaque sunt sapiente facilis nisi illum
+							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
+							tempora, architecto error at cum et quod.
+						</p>
+						<div class="appointment">
+							<a href="#">Book Appointment</a>
+						</div>
+						<p class="sicons">
+							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide card">
+				<div class="card-content">
+					<div class="image">
+						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+					</div>
+					<div class="description">
+						<h4>Jason Cummings</h4>
+						<p class="para">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+							dignissimos, itaque sunt sapiente facilis nisi illum
+							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
+							tempora, architecto error at cum et quod.
+						</p>
+						<div class="appointment">
+							<a href="#">Book Appointment</a>
+						</div>
+						<p class="sicons">
+							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</section>
+<script type="text/javascript" src="{{ url_for('static',filename='js/slider.js') }}"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/index.js') }}"></script>
 {% endblock %}

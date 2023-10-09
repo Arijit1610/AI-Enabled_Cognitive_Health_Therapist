@@ -1,0 +1,96 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    background-color: rgb(50, 52, 136);
+}
+.container
+{
+    width: 60vw;
+    margin: auto;
+    border-radius: 7px;
+    padding: 3vw;
+    position: relative;
+    top: 70px;
+    background-color: #86b2ea;
+    box-sizing: border-box;
+    /* margin-top: 10vh; */
+}
+
+.container form
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.heading
+{
+    justify-content: space-around;
+    /* display: block; */
+    /* text-align: center; */
+}
+.container form>div
+{
+    width: 90%; 
+    /* margin: auto; */
+    margin: 10px auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.container form .label
+{
+    font-size: 22px;
+    width: 43%;
+}
+.container form .fields
+{
+    font-size: 22px;
+    width:57%;
+    /* text-align: center; */
+}
+
+.appointment_slot span
+{
+    display: block;
+    margin: 10px 0px;
+}
+
+input[type=text] , input[type=email], input[type=tel]
+{
+    font-size: 25px;
+    width: 100%;
+    /* font-size:; */
+    border-style: none;
+    border-radius: 3px;
+} 
+textarea
+{
+    width: 100%;
+}
+
+.submission 
+{
+    justify-content: space-between;
+}
+.submission button
+{
+    padding: 10px 31px;
+    margin: 5px 5px;
+    /* border: 2px solid white; */
+    border-style: none;
+    border-radius: 8px;
+}
+.submission button:hover
+{
+    background-color: rgb(50, 52, 136);
+    color: white;
+}

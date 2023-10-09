@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
-nltk.download('popular')
+# nltk.download('popular')
 from tensorflow.keras.models import load_model
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('project/train_chatbot.json').read())
@@ -60,5 +60,3 @@ def chatbot_response(msg):
     ints = predict_class(msg)
     res = get_response(ints, intents)
     return res
-
-

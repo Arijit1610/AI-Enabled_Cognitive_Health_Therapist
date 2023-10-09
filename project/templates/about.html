@@ -8,108 +8,131 @@ ABOUT US
 <link rel="stylesheet" href="{{ url_for('static',filename='css/aboutus_newproj.css') }}" />
 {% endblock %}
 
+{% block navbar %}
+<ul>
+	<li><a href="/home">HOME</a></li>
+	<li><a href="/about" class="active-nav">ABOUT US</a></li>
+	<li><a href="/contact">CONTACT US</a></li>
+	<li><a href="/service">ORDER MEDICHINE</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
 <!-- <div style="height: 50vh ; width: 100%;"></div>
 <div style="height: 50vh ; width: 100%;"></div>
 <div></div> -->
 <section class="home">
-    <img class="image" src="{{ url_for('static',filename='img/ai-health.jpg') }}" alt="image" />
-    <div class="content">
-      <h1>About<span>&ensp;Us</span></h1>
-    </div>
+	<img class="image-slide" src="{{ url_for('static',filename='img/ai-health10.jpg') }}" alt="image" />
 
-  </section>
+	<div class="content">
+		<h1>ABOUT US</h1>
+	</div>
+
+</section>
+<main>
+	<section>
+		<div class="first-content">
+			<div class="info">
+				<h2><span>ABOUT</span> AI-HEALTH</h2>
+				<p>AI-powered chatbot furnishes cognitive behavioral therapy (CBT) to people with mental health issues.
+					This software elucidates AI-enabled cognitive Health Therapists to provide pristine frontiers to
+					people who need human touch the most. A vital benefit of the proposed technology is its ability to
+					create personalized CBT exercises and interventions that address each user's specific needs and
+					issues. To date, various techniques, including natural language processing and machine learning, are
+					effective in designing the chatbot. The chatbot also gives data-driven insights into users'
+					experiences with mental health and continuously tracks their development over time. This feedback
+					loop assists users and healthcare providers in making informed decisions to enhance mental health.
+				</p>
+			</div>
+
+			<div class="abt_pic">
+				<img src="{{ url_for('static',filename='img/ai-health2.jpg') }}" alt="image" />
+			</div>
+		</div>
 
 
-  <main>
-    <section>
-      <div class="first-content">
-      <div class="sep2">
-         <h2><span>ABOUT</span> AI-HEALTH</h2>
-        
-        
-          <p style="text-align: justify;" >An AI-powered chatbot furnishes cognitive behavioral therapy (CBT) to people with mental health issues. This software elucidates AI-enabled cognitive Health Therapists to provide pristine frontiers to people who need human touch the most. A vital benefit of the proposed technology is its ability to create personalized CBT exercises and interventions that address each user's specific needs and issues. To date, various techniques, including natural language processing and machine learning, are effective in designing the chatbot. The chatbot also gives data-driven insights into users' experiences with mental health and continuously tracks their development over time. This feedback loop assists users and healthcare providers in making informed decisions to enhance mental health.</p>
-        </div>
-  
-        <div class="abt_pic">
-          <img class="image" src="{{ url_for('static',filename='img/ai-health2.jpg') }}" alt="image" />
-        </div>
-      </div>
-    </section>
-   
-  <section>
-    <div class="middle">
-      
-      <div class="caption"> 
-        <p>
-            KNOW THE PILLARS BEHIND THE AI-HEALTH
-        </p>
-      </div>
-     
-    
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Abranil Kundu <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
+	</section>
 
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Dishani Sarkar <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
+	<section>
+		<div class="parallax">
 
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Arijit Nandy <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
+			<div class="middle">
+				<div class="caption">
+					<p>
+						KNOW ABOUT US
+					</p>
+				</div>
 
-      <div class="card">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>Akhil Kumar Gope <br><i>Developer of Frontend and Backend</i></p>
-        </div>
-      </div>
 
-        <div class="card2">
-          <div class="profile">
-            <img  src="" alt="image" />
-          </div>
-        <div class="hd">
-          <p>
-          Dipayan Sarkar<br><i>Developer of Frontend and Backend</i>
-        </p>
-        </div>
-      </div>
-        
-    </div>
-  </section>
+				<div class="card">
+					<div class="profile">
+						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+					</div>
+					<div class="hd">
+						<p><b>ABRANIL KUNDU</b><br>Developer of Frontend </p>
+					</div>
+				</div>
 
-  <section>
-    <div class="back-content">
-    <div class="sep2">
-        <h2><span>WHY</span> AI-HEALTH ?</h2>
-      
-      
-        <p style="text-align: justify;" >A critical step toward democratizing mental health care is being taken with the "AI-Enabled Cognitive Health Therapist" initiative. This ground-breaking approach delivers individualized and accessible therapy by utilizing artificial intelligence. It not only empowers consumers but also aligns with changing healthcare demands thanks to its easy user interface, ongoing customisation, and strict data privacy measures. It has the potential to alter mental health, lighten the load on conventional healthcare systems, and eventually improve quality of life for countless people around the world as it develops and adapts.</p>
-      </div>
+				<div class="card">
+					<div class="profile">
+						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+					</div>
+					<div class="hd">
+						<p><b>DISHANI SARKAR</b><br>AI Chatbot Developer</p>
+					</div>
+				</div>
 
-      <div class="abt_pic" >
-        <img src="{{ url_for('static',filename='img/ai-health2.jpg') }}" alt="image">
-      </div>
-    </div>
-  </section>
+				<div class="card">
+					<div class="profile">
+						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+					</div>
+					<div class="hd">
+						<p><b>ARIJIT NANDY</b><br>AI Chatbot and Backend Developer</p>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="profile">
+						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+					</div>
+					<div class="hd">
+						<p><b>AKHIL KUMAR GOPE</b><br>Developer of Frontend</p>
+					</div>
+				</div>
+
+				<div class="card2">
+					<div class="profile">
+						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+					</div>
+					<div class="hd">
+						<p><b>DIPAYAN KUMAR SARKAR</b><br>Developer of Frontend</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="back-content">
+
+
+			<div class="abt_pic">
+				<img src="{{ url_for('static',filename='img/ai-health13.jpg') }}" alt="image">
+			</div>
+
+			<div class="info">
+				<h2><span>WHY</span> US ?</h2>
+				<p>A critical step toward democratizing mental health care is being taken with the "AI-Enabled Cognitive
+					Health Therapist" initiative. This ground-breaking approach delivers individualized and accessible
+					therapy by utilizing artificial intelligence. It not only empowers consumers but also aligns with
+					changing healthcare demands thanks to its easy user interface, ongoing customisation, and strict
+					data privacy measures. It has the potential to alter mental health, lighten the load on conventional
+					healthcare systems, and eventually improve quality of life for countless people around the world as
+					it develops and adapts.</p>
+			</div>
+		</div>
+	</section>
 </main>
+
 {% endblock %}

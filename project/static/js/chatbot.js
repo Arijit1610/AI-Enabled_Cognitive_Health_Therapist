@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const messageInput = document.getElementById("message-input");
     const sendButton = document.getElementById("send-button");
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 // Display the bot's response
-                displayMessage("Bot: " + data.message, "bot");
+                displayMessage("Bot:  " + data.message, "bot");
             })
             .catch(error => {
                 console.error("Error:", error);
@@ -34,9 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayMessage(text, sender) {
-        const messageElement = document.createElement("div");
+        const messageElement = document.createElement("li");
+        messageElement.className = sender; // Add 'user' or 'bot' class to the new element
         messageElement.textContent = text;
-        messageElement.classList.add(sender);
         messageContainer.appendChild(messageElement);
     }
 });
+const chatbot=document.getElementById('chatbot');
+const msg=document.getElementsByClassName('msg');
+const msgbtn=()=>{
+    chatbot.style.display="block";
+    msg.classList.add('active');
+
+}
+
+const cbtn=()=>{
+    chatbot.style.display="none";
+}

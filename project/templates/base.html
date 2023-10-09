@@ -9,15 +9,22 @@
 
 		{% endblock %}
 	</title>
-
-	{% block head %}
-
-	{% endblock %}
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/chatbot.css') }}" />
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/navbar.css') }}" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/flashmessage.css') }}">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
+			rel="stylesheet" /> -->
+	{% block head %}
+
+	{% endblock %}
 </head>
 
 <body>
@@ -31,23 +38,9 @@
 				</div>
 
 				<div class="navbar">
-					<ul>
-						<li><a href="/home">HOME</a></li>
-						<li><a href="/about">ABOUT US</a></li>
-						<li><a href="/contact">CONTACT US</a></li>
-						<li class="dropdown"><a href="/service">SERVICES <i class="fa-solid fa-caret-down"></i></a>
+					{% block navbar %}
 
-							<div class="dropdown-content">
-								<a href="">Appointment</a>
-								<a href="">AI Chatbot</a>
-								<a href="">Order Medicine</a>
-							</div>
-						</li>
-						<!-- <li><a href="">TESTIMONIALS</a></li> -->
-
-
-						<!-- <li><a href=""></a></li> -->
-					</ul>
+					{% endblock %}
 				</div>
 
 				<div class="login_signup">
@@ -69,6 +62,35 @@
 
 		{% endblock %}
 		<!-- Footer Section -->
+		<div class="msg">
+			<button type="submit" onclick="msgbtn()"> <i class="fa-solid fa-message"></i></button>
+		</div>
+		<section class="c_bot">
+			<div id="chatbot">
+				<div id="chat-header">
+					<h2>HEALTH BOT</h2>
+					<button type="submit" class="chatbtn" onclick="cbtn()"><i class="fa-solid fa-xmark"></i></button>
+				</div>
+
+				<div id="message-container">
+					<!-- <div class="user">You: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, sapiente!
+				  </div>
+				  <div class="bot">Bot:Hello</div> -->
+				</div>
+
+
+
+				<div id="send">
+
+					<textarea type="text" id="message-input" placeholder="Enter your message" required></textarea>
+
+					<span id="send-button" class="material-icons">send</span>
+
+				</div>
+			</div>
+		</section>
+		<script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
+		<!-- <script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script> -->
 		<footer>
 			<section class="footer-section">
 				<div class="footer-left">
@@ -76,8 +98,8 @@
 					<p>
 						<a href="/home" id="link1">Home</a>
 						<a href="/about">About</a>
-						<a href="/service">Services</a>
 						<a href="/contact">Contact</a>
+						<a href="/order-medicine">Services</a>
 					</p>
 				</div>
 				<div class="footer-mid">
@@ -98,17 +120,12 @@
 						health
 						conditions
 					</p>
-					<p class="sicons">
-						<a href="#" style="background-color: white;"><i class="fa-brands fa-facebook-f"
-								style="color:#4267B2"></i></a>
-						<a href="#"
-							style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); ;"><i
-								class="fa-brands fa-instagram"></i></a>
-						<a href="#" style="background-color: #0072b1 ;"><i class="fa fa-linkedin"></i></a>
-						<a href="#" style="background-color: white;"><i class="fa-brands fa-twitter"
-								style="color:#1DA1F2"></i></a>
-					</p>
-				</div>
+					<div class="sicons">
+						<a href="#" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="#" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#" id="linkedin"><i class="fa fa-linkedin"></i></a>
+						<a href="#" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+					</div>
 			</section>
 		</footer>
 	</div>

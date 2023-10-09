@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/appointment_style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <form action="{{th_id}}" method="post">
+            <div class="heading">
+                <h1>Fill the Details below</h1>
+            </div>
+            <div class="name">
+                <div class="label">
+                    <label for="name">Name</label>
+                </div>
+                <div class="fields">
+                    <div>
+                        <input type="text" id="name" name="name" >
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="dob">
+                <div class="label">
+                    <label for="dob">Date of Birth</label>
+                </div>
+                <div class="fields">
+                    <input type="date" name="dob" id="dob">
+                </div>
+            </div>
+            <div class="gender">
+                <div class="label">
+                    <label for="">Gender</label>
+                </div>
+                <div class="fields">
+                    <div>
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" id="others" value="others">
+                        <label for="others">Others</label>
+                    </div>
+                </div>
+            </div>
+            <div class="email">
+                <div class="label">
+                    <label for="email">E-Mail</label>
+                </div>
+                <div class="fields">
+                    <input type="email" name="email" id="email">
+                </div>
+            </div>
+            <div class="phone">
+                <div class="label">
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="fields">
+                    <input type="tel" name="phone" id="phone">
+                </div>
+            </div>
+            <div class="guardian_name">
+                <div class="label">
+                    <label for="guardian-name">Guardian Name</label>
+                </div>
+                <div class="fields">
+                    <input type="text" name="guardian-name" id="guardian-name">
+                </div>
+            </div>
+            <div class="guardian_phone">
+				<div class="label">
+					<label for="guardian-phone">Guardian Contact Number</label>
+                </div>
+                <div class="fields">
+					<input type="tel" name="guardian-phone" id="guardian-phone">
+                </div>
+            </div>
+            <div class="emergency_contact">
+				<div class="label">
+					<label for="emergency-phone">Emergency Contact Number</label>
+                </div>
+                <div class="fields">
+					<input type="tel" name="emergency-phone" id="emergency-phone">
+                </div>
+            </div>
+			
+            <div class="address">
+				<div class="label">
+					<label for="address">Address</label>
+                </div>
+                <div class="fields">
+					<!-- <input type="text" name="address" id="address"> -->
+                    <textarea name="address" id="address"  rows="5" placeholder="Write Here..."></textarea>
+                </div>
+            </div>
+			<div class="doctor_name">
+				<div class="label">
+					<label for="doctor-name">Doctor Name</label>
+				</div>
+				<div class="fields">
+					<input type="text" name="doctor-name" id="doctor-name" value="{{therapist.th_name}}">
+				</div>
+			</div>
+            <div class="appointment_reason">
+                <div class="label">
+                    <label for="appointment-reason">Appointment Reason</label>
+                </div>
+                <div class="fields">
+                    <textarea name="appointment-reason" id="appointment-reason"  rows="6" placeholder="Write here..."></textarea>
+                </div>
+            </div>
+            <div class="appointment_slot">
+                <div class="label">
+                    <label for="">Appointment Slot</label>
+                </div>
+                <div class="fields">
+                    <span><label for="appointment-date">Appointment Date</label></span>
+                    <span><input type="date" name="appointment-date" id="appointment-date"></span>
+                    <span><label for="appointment-time">Appointment Time</label></span>
+                    <span><input type="time" name="appointment-time" id="appointment-time"></span>
+                </div>
+            </div>
+            <div class="medical_history">
+                <div class="label">
+                    <label for="medical-history">Medical History (If Any)</label>
+                </div>
+                <div class="fields">
+                    <textarea name="medical-history" id="medical-history"  rows="5" placeholder="Write here..."></textarea>
+                </div>
+            </div>
+            <div class="other_details">
+                <div class="label">
+                    <label for="other-details">Other Relevant Details</label>
+                </div>
+                <div class="fields">
+                    <textarea name="other-details" id="other-details"  rows="5" placeholder="Write here..."></textarea>
+                </div>
+            </div>
+            <div class="submission">
+                <div>
+                    <button type="reset">Reset</button>
+                </div>
+                <div>
+                    <button type="submit">Book Appointment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

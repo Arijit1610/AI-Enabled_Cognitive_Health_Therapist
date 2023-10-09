@@ -32,6 +32,19 @@ class Contacts(Base):
     def __repr__(self):
         return f"<Contact name={self.name}>"
 
+class Therapists(Base):
+	__tablename__= 'therapists'
+	id = Column(Integer, primary_key=True)
+	th_id = Column(String(5), unique=True, nullable=False)
+	th_name = Column(String(225), nullable=False)
+	address = Column(String(225),unique=True, nullable=False)
+	phone = Column(String(10),unique=True, nullable=False)
+	email = Column(String(50), nullable=False)
+	degree = Column(String(225), nullable=False)
+	specialty = Column(String(225), nullable=False)
+
+	def __repr__(self):
+		return f"<Contact name={self.th_name}>"
 
 # Create the table in the database.
 Base.metadata.create_all(bind=engine)

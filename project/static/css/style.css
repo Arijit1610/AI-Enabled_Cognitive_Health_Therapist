@@ -6,8 +6,7 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
-}
-/* footer */
+}/* footer */
 footer {
 	
 	background-color: #2d2a30;
@@ -17,8 +16,7 @@ footer {
 
 .footer-section {
 	display: flex;
-	text-align: left; 
-  
+	text-align: left;
 
 }
 

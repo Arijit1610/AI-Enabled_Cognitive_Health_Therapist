@@ -18,7 +18,7 @@ def login(type):
 	if current_user.is_authenticated:
 		# If the user is already logged in, redirect them to another page (e.g., the home page)
 		return redirect(url_for('route.home'))
-
+	flash("Please signin or Signup",category='info')
 	if type == 'signup':
 		if request.method == "POST":
 			username = request.form.get('username')
@@ -30,20 +30,20 @@ def login(type):
 			if '@gmail.in' not in email and len(email) < 12:
 				flash("Incorrect Email address")
 			elif user:
-				flash('Email already exists', category='error')
+				flash('Email already exists', category='info')
 			elif len(username) < 3:
-				flash("Username must be greater than 3 characters", category='error')
+				flash("Username must be greater than 3 characters", category='info')
 			elif len(phone) != 10:
 				flash("Invalid phone number")
 			elif len(password) < 6:
-				flash("Password must be at least 6 characters", category='error')
+				flash("Password must be at least 6 characters", category='info')
 			elif password != confirm_password:
-				flash("Passwords do not match", category='error')
+				flash("Passwords do not match", category='info')
 			else:
 				new_user = UserAccount(username=username, email=email, phonenumber=phone, password=password)
 				db_session.add(new_user)  # Corrected from db_session.add(user)
 				db_session.commit()
-				flash("Registration successful!", category='success')
+				flash("Registration successful!", category='info')
 				email_list=email
 				return redirect(url_for('auth.otp_verification'))  # Corrected redirection
 	elif type == 'signin':

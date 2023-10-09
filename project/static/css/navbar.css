@@ -1,3 +1,4 @@
+
 *
 {
     margin: 0px;
@@ -6,68 +7,43 @@
     text-decoration: none;
     list-style: none;
 }
-body
-{
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
-   
-   
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-/* .total{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-} */
 
 header  
 {
-    /* position: fixed;     */
+   
     width: 100%;
     font-family: 'Poppins', sans-serif;
-
+    position: absolute;
+    z-index: 2;
 	
 }
-
-/* .header_up
-{
-	display:flex;
-    justify-content: space-between;
-    font-family: Signika;
-	background-color: #234e31a7; 
-    color:rgba(255, 253, 253, 0.592);
-    margin-bottom: 3px;
-} */
-
 
 .header_down
 {
 	display: flex;
-	font-size: 18px;
-	font-family: Signika ;
     flex-wrap: wrap;
 	justify-content: space-between;
 	align-items:center;
-
-	/* overflow: auto; */
-	background: transparent;
-    /* border: 2px solid red; */
+	
 }
 .website-name
 {
-    /* font-family: Manjari ,Signika; */
-	font-size: 22px ;
-    width: 35%;
-    color: rgb(20, 126, 201) ;
-    flex-basis:250px ;
-    text-align: center;
+	font-size: 18px ;
+    /* width: 35%; */
+    color: rgb(231, 235, 237) ;
+    /* flex-basis:250px ; */
+    /* text-align: center; */
+    margin-left: 60px;
 }
-/* .website-name h1
-{
-	width: 164%;
-} */
+
 
 .login_signup{
-    margin-right: 20px;
+    margin-right: 60px;
 }
 .login_signup ul li
 {
@@ -79,15 +55,16 @@ header
     text-decoration: none;
     padding: 11px 21px;
     border-radius: 5px;
-    background-color: rgba(244, 240, 240, 0.592);
-    color: rgb(20, 126, 201) ;
+    background:transparent;
+    color: rgb(242, 242, 243) ;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
+    border: 2px solid #fff;
 }
 .login_signup ul li a:hover
 {
     background-color:#edf2ef ;
-    color: rgb(20, 126, 201) ;
+    color: rgb(1, 14, 23) ;
     padding: 11px 21px;
     border-radius: 5px;
 }
@@ -98,70 +75,48 @@ header
 
 
 
-.navbar
-{
-	font-size: 18px;
-}
-.navbar ul , .login_signup ul
+
+.navbar ul 
 {
     list-style-type: none;
     margin:5px 5px;
     padding:5px 5px;
-    /* overflow:auto; */
+   
 }
 .navbar ul li  
 {
     display: inline-block;
-    margin: 11px 5px; 
+    margin: 11px 20px; 
 }
 .navbar ul li a  
 {
     text-decoration: none;
-    padding: 11px 21px;
-    /* border-bottom: 2px  #3c6e4dc2; */
-    color: rgb(20, 126, 201) ;
+    padding: 11px 5px;
+    color: rgb(246, 246, 246) ;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;    
 }
-
-
-
-.dropdown
-{
-    position: relative;
-    display: inline-block;
+.navbar  a::before{
+    content: "";
+  position: absolute;
+  background: #f3efef;
+  width: 0;
+  height: 3px;
+  bottom:-3px;
+  left: 0;
+  transition: 0.3s ease;
 }
-.dropdown li a i 
-{
-    font-size: 10px;
-}
-div.dropdown-content
-{
-    display: none;
+header .navbar a:hover:before {
+    width: 100%;
+  }
+  
+  header .navbar  .active-nav:before {
+    content: "";
     position: absolute;
-    color: unset;
-}
-.dropdown:hover  .dropdown-content
-{
-    position : absolute;
-    top: 150%;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color: rgb(239, 241, 242);
-    color: black ;
-    border-radius: 7px;
-}
-.dropdown:hover .dropdown-content a
-{
-    padding: 11px 21px;
-    border-radius: 7px !important;
-    color: black;
-}
-.dropdown:hover .dropdown-content a:hover
-{
-    background-color:rgb(20, 126, 201)  ;
-    color:wheat;
-    border-bottom: none !important;
-    /* text-decoration: underline; */
-    padding: 11px 21px;
-    border-radius: 7px !important;
-}
+    background: #f3efef;
+    width: 100%;
+    height: 3px;
+    bottom:-3px;
+    left: 0;
+  }

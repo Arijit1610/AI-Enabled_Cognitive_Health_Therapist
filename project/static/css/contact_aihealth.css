@@ -1,38 +1,60 @@
-/* main content */
-
-.cover-content{
-    font-family: 'Poppins', sans-serif;
+.home {
+    padding: 100px 50px 100px 50px;
+    width: 100%;
+    height: 70vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 30vw;
-    width: 100%;
-
-}
-.image{
-    height: 100%;
-    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2696e9;
+    position: relative;
+  }
   
-}
-.cover-content img{
+  
+  .home:before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .home .content {
+    z-index: 888;
+    color: #fff9f9;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  
+  .home .content h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 40px;
+  }
+  
+  
+  .home img {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-   
-}
-.content{
- 
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.content h4{
-    color:rgb(20, 126, 201) ;
-    font-size: 40px;
-    font-weight: bold;
-}
+  }
+  
+
+/* form */
+/* .main{
+    background: url(./23.jpg);
+} */
 .query-cover{
   
     /* background-color: red; */
@@ -56,6 +78,7 @@
 .contact-box .contact-right{
     flex-basis: 65%;
     padding: 40px 60px;
+    background: url(liquid-marbling-paint-texture-background-fluid-painting-abstract-texture-intensive-color-mix-wallpaper.jpg);
 }
 .contact-right h3{
     margin-bottom: 40px;
@@ -74,6 +97,7 @@
     border-bottom:2px solid rgb(5, 50, 82) ;
     outline: none;
     padding-bottom: 5px;
+    background: transparent;
 }
 textarea{
     width: 100%;
@@ -82,11 +106,12 @@ textarea{
     padding: 10px;
     border: none;
     border-bottom: 2px solid rgb(5, 50, 82);
+    background: transparent;
 }
 label{
     margin-bottom: 6px;
     display: block;
-    color:rgb(15, 37, 177) ;
+    color:rgb(2, 6, 29) ;
 }
 button{
     background:rgb(20, 126, 201) ;
@@ -110,11 +135,14 @@ button{
     flex-basis: 35%;
     padding: 40px;
     background:rgb(11, 68, 190) ;
-    
+    border-radius: 15px 0px 0px 15px;
 }
+   
+    
+
  .list{
     display: flex;
-    flex-direction: column;
+
  }   
 
 .contact-left ul li a{
@@ -132,27 +160,48 @@ button{
  .follow{
     margin-top: 50px;
 }
-.contact-left.icons {
-	margin-top: 25px;
-	margin-bottom: 28px;
-}
-.icons{
+
+   
+.contact-left .icons{
     margin-top: 20px;
     display: flex;
-    align-items: center;
+    width: 100%;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-   gap: 10px;
+    gap: 10px;
+ 
 }
 
 .contact-left .icons a {
-	width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #33383b;
-    border-radius: 2px;
-    font-size: 20px;
-    color: #ffffff;
+	height: 40px;
+    width: 40px;
+	cursor: pointer;
+
+	border-radius: 2px;
+	font-size: 22px;
+	color: #ffffff;
     text-align: center;
-    line-height: 35px;
+    line-height: 40px;
+}
+#facebook{
+    background-color: white;
+    color: #224f98;
+}
+#instagram{
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+      );
+}
+#linkedin{
+    background-color: #0072b1;
+}
+#twitter{
+    color: #1da1f2;
+    background-color: white;
 }

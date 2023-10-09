@@ -1,8 +1,41 @@
-.alert {
-    padding: 18px;
-    margin-bottom: 15px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    background: cyan;
-    height: auto;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
 }
+.popup{
+    /* background-color: rgb(56 56 140); */
+    height: 4vw;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    /* margin: 50px auto auto auto; */
+    position: relative;
+}
+.info-msg{
+	background-color: rgb(56 56 140);
+}
+.error-msg{
+	background-color: rgba(168, 15, 51, 0.703);
+}
+.popup div{
+    height: 100%;
+    width: 5px ;
+    background-color: rgb(113, 190, 231);	 
+}
+.popup p{
+    margin-left: 40px;
+    font-size: 20px; 
+    font-weight: 800;
+}
+.popup  a i{
+    margin-right: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;  
+}
+
