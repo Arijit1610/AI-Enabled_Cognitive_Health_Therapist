@@ -17,9 +17,21 @@
 	{% if messages %}
 	{% for category, message in messages %}
 	{% if category == 'info' %}
-	<div class="popup" style ="background-color: aquamarine;">
+	<div class="popup" style ="background-color: rgb(243, 215, 0);">
 		<p>{{ message }}</p>
-		<a href="#"><i class="fa-regular fa-circle-xmark" id="icon"></i></a>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% if category == 'error' %}
+	<div class="popup" style ="background-color: rgb(90, 2, 2);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% if category == 'message' %}
+	<div class="popup" style ="background-color: rgb(100, 141, 229);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 	</div>
 	{% endif %}
 	{% endfor %}

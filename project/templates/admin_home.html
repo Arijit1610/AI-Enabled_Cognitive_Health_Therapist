@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>document1</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/adminpage.css') }}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+
+
+	<div class="total">
+
+		<header>
+
+			<div class="header_down">
+				<div class="website-name">
+					<h1>Health</h1>
+				</div>
+
+				<div class="navbar">
+					<ul>
+						<li><a href="/adminpanel">HOME</a></li>
+						<li><a href="/admin-patient-details">PATIENT</a></li>
+						<li><a href="/admin-doctor-details">DOCTOR</a></li>
+
+					</ul>
+				</div>
+
+				<div class="login_signup">
+					<ul>
+						<li><a href="/adminlogout">LOGOUT</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</header>
+
+		<div class="main">
+
+			<section class="cover-content">
+				<div class="content">
+					<h4>Welcome Admin</h4>
+				</div>
+				
+				<div class="image"><img src="{{ url_for('static',filename='img/7421188_3641599.jpg') }}" alt="">
+				</div>
+			</section>
+
+
+		</div>
+
+
+
+	</div>
+</body>
+
+</html>

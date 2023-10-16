@@ -26,7 +26,7 @@ HOME
 	<img class="image-slide active-sli" src="{{ url_for('static',filename='img/ai-health13.jpg') }}" alt="image" />
 	<img class="image-slide" src="{{ url_for('static',filename='img/ai-health14.jpg') }}" alt="image" />
 	<img class="image-slide" src="{{ url_for('static',filename='img/ai-health6_1696604608104.jpg') }}" alt="image" />
-	<img class="image-slide" src="{{ url_for('static',filename='img/ai.jpg') }}"" alt=" image" />
+	<img class="image-slide" src="{{ url_for('static',filename='img/ai.jpg') }}" alt=" image" />
 
 	<div class="content">
 		<h1>Welcome To<br /><span>Health</span></h1>
@@ -38,117 +38,121 @@ HOME
 		<div class="nav-btn"></div>
 	</div>
 </section>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == 'info' %}
+<div class="popup" style="background-color: rgb(243, 215, 0);">
+	<p>{{ message }}</p>
+	<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+</div>
+{% endif %}
+{% if category == 'error' %}
+<div class="popup" style="background-color: rgb(90, 2, 2);">
+	<p>{{ message }}</p>
+	<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+</div>
+{% endif %}
+{% if category == 'message' %}
+<div class="popup" style="background-color: rgb(100, 141, 229);">
+	<p>{{ message }}</p>
+	<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
 <!-- doclist> -->
+<!-- <section class="doc_list">
+    <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+            {% for therapist in therapists %}
+            <div class="swiper-slide card">
+                <div class="card-content">
+                    <div class="image">
+                        <img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+                    </div>
+                    <div class="description">
+                        <h4>{{ therapist.th_name }}</h4>
+                        <p class="para">
+                            Degree: {{ therapist.degree }}
+                        </p>
+                        <p class="para">
+                            Specialty: {{ therapist.specialty }}
+                        </p>
+                        <p class="para">
+                            Address: {{ therapist.address }}
+                        </p>
+                        <p class="para">
+                            Available days: {{ therapist_appointment_days[therapist.th_id] | join(', ') }}
+                        </p>
+                        <p class="para">
+                            Available time:
+                        </p>
+                        <div class="appointment">
+                            <a href="#">Book Appointment</a>
+                        </div>
+                        <p class="sicons">
+                            <a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</section> -->
 <section class="doc_list">
-	<div class="swiper mySwiper container">
-		<div class="swiper-wrapper content">
-			<div class="swiper-slide card">
-				<div class="card-content">
-					<div class="image">
-						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
-					</div>
-					<div class="description">
-						<h4>Jason Cummings</h4>
-						<p class="para">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-							dignissimos, itaque sunt sapiente facilis nisi illum
-							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
-							tempora, architecto error at cum et quod.
-						</p>
-						<div class="appointment">
-							<a href="#">Book Appointment</a>
-						</div>
-						<p class="sicons">
-							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
-							<a href="#"><i class="fa-brands fa-instagram"></i></a>
-							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide card">
-				<div class="card-content">
-					<div class="image">
-						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
-					</div>
-					<div class="description">
-						<h4>Jason Cummings</h4>
-						<p class="para">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-							dignissimos, itaque sunt sapiente facilis nisi illum
-							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
-							tempora, architecto error at cum et quod.
-						</p>
-						<div class="appointment">
-							<a href="#">Book Appointment</a>
-						</div>
-						<p class="sicons">
-							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
-							<a href="#"><i class="fa-brands fa-instagram"></i></a>
-							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide card">
-				<div class="card-content">
-					<div class="image">
-						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
-					</div>
-					<div class="description">
-						<h4>Jason Cummings</h4>
-						<p class="para">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-							dignissimos, itaque sunt sapiente facilis nisi illum
-							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
-							tempora, architecto error at cum et quod.
-						</p>
-						<div class="appointment">
-							<a href="#">Book Appointment</a>
-						</div>
-						<p class="sicons">
-							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
-							<a href="#"><i class="fa-brands fa-instagram"></i></a>
-							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-slide card">
-				<div class="card-content">
-					<div class="image">
-						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
-					</div>
-					<div class="description">
-						<h4>Jason Cummings</h4>
-						<p class="para">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-							dignissimos, itaque sunt sapiente facilis nisi illum
-							voluptatibus consequuntur rem explicabo ipsa nobis mollitia
-							tempora, architecto error at cum et quod.
-						</p>
-						<div class="appointment">
-							<a href="#">Book Appointment</a>
-						</div>
-						<p class="sicons">
-							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
-							<a href="#"><i class="fa-brands fa-instagram"></i></a>
-							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
-							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+    <div class="swiper mySwiper container">
+        <div class="swiper-wrapper content">
+            {% for therapist in therapists %}
+            <div class="swiper-slide card">
+                <div class="card-content">
+                    <div class="image">
+                        <img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+                    </div>
+                    <div class="description">
+                        <h4>{{ therapist.th_name }}</h4>
+                        <p class="para">
+                            Degree: {{ therapist.degree }}
+                        </p>
+                        <p class="para">
+                            Specialty: {{ therapist.specialty }}
+                        </p>
+                        <p class="para">
+                            Address: {{ therapist.address }}
+                        </p>
+                        <p class="para">
+                            Available days: {{ therapist_appointment_days[therapist.th_id] | join(', ') }}
+                        </p>
+                        <!-- <p class="para">
+                            Available time: 
+                        </p> -->
+                        <div class="appointment">
+                            <a href="/book/{{therapist.th_id}}">Book Appointment</a>
+                        </div>
+                        <p class="sicons">
+                            <a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 	<div class="swiper-button-next"></div>
 	<div class="swiper-button-prev"></div>
 </section>
 <script type="text/javascript" src="{{ url_for('static',filename='js/slider.js') }}"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='js/index.js') }}"></script>
+<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
 {% endblock %}

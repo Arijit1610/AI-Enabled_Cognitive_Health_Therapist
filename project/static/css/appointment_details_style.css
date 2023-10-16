@@ -1,0 +1,184 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    /* background-image: url(/ai-health6_1696604608104.jpg); */
+    /* background-size: contain; */
+}
+header  
+{
+    
+    /* opacity: 1; */
+    width: 100%;
+    background-color: #074b7f;
+    font-family: 'Poppins', sans-serif;
+    /* position: absolute; */
+    z-index: 0;
+	
+}
+
+.header_down
+{
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: space-between;
+	align-items:center;
+	
+}
+.website-name
+{
+	font-size: 18px ;
+    /* width: 35%; */
+    color: rgb(231, 235, 237) ;
+    /* flex-basis:250px ; */
+    /* text-align: center; */
+    margin-left: 60px;
+}
+
+
+.login_signup{
+    margin-right: 60px;
+}
+.login_signup ul li
+{
+    display: inline-block;
+    margin: 2px 2px; 
+}
+.login_signup ul li a
+{
+    text-decoration: none;
+    padding: 11px 21px;
+    border-radius: 5px;
+    background:transparent;
+    color: rgb(242, 242, 243) ;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid #fff;
+}
+.login_signup ul li a:hover
+{
+    background-color:#edf2ef ;
+    color: rgb(1, 14, 23) ;
+    padding: 11px 21px;
+    border-radius: 5px;
+}
+.fa-right-to-bracket{
+    margin-left: 5px;
+}
+
+
+
+
+
+.navbar ul 
+{
+    list-style-type: none;
+    margin:5px 5px;
+    padding:5px 5px;
+   
+}
+.navbar ul li  
+{
+    display: inline-block;
+    margin: 11px 20px; 
+}
+.navbar ul li a  
+{
+    text-decoration: none;
+    padding: 11px 5px;
+    color: rgb(246, 246, 246) ;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;    
+}
+.navbar  a::before{
+    content: "";
+  position: absolute;
+  background: #f3efef;
+  width: 0;
+  height: 3px;
+  bottom:-3px;
+  left: 0;
+  transition: 0.3s ease;
+}
+header .navbar a:hover:before {
+    width: 100%;
+  }
+  
+  header .navbar  .active:before {
+    content: "";
+    position: absolute;
+    background: #f3efef;
+    width: 100%;
+    height: 3px;
+    bottom:-3px;
+    left: 0;
+  }
+
+
+.container
+{
+    width: 80vw;
+    /* margin-top: 20%; */
+    height: 70vh;
+    margin: 10vh auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color:#ffffff;
+    opacity: 0.9;
+    overflow: auto;
+
+}
+.container table
+{
+    width: 100%;
+    margin: 6px auto;
+    text-align: center;
+}
+/* .container table tr
+{
+    padding: 5px 5px;;
+} */
+.container table tr>th
+{
+    padding: 12px 12px;
+    font-weight: bolder;
+    /* border-radius: 20px; */
+    /* color: white; */
+    /* background-color: #1080b8; */
+    /* box-shadow: 0px 2px 5px 0px #2a2f8a; */
+    margin: 0px 2px;
+    /* background-color: ; */
+    /* border: 1px solid black; */
+}
+.container table tr>td
+{
+    margin: 10px 0px;
+    padding: 15px 8px;
+}
+
+.container table a
+{
+    text-decoration: none;
+    color:black;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 8px 6px;
+}
+.container table a:hover
+{
+    background-color: black;
+    color: white;
+}

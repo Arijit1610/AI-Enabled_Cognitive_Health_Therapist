@@ -6,12 +6,14 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
-}/* footer */
+}
+
+/* footer */
 footer {
-	
+
 	background-color: #2d2a30;
 	color: white;
- 
+
 }
 
 .footer-section {
@@ -23,14 +25,14 @@ footer {
 .footer-section .footer-left {
 	flex-grow: 1;
 	flex-basis: 100%;
-  
+
 }
 
 .footer-left h3 {
 	color: #ffffff;
 	font-size: 30px;
 	margin: 40px 20px 20px 30px;
-    
+
 }
 
 .footer-left h3 span {
@@ -97,7 +99,7 @@ footer {
 	margin: 20px 45px 20px 20px;
 }
 
- .footer-right.sicons {
+.footer-right.sicons {
 	margin-top: 25px;
 	margin-bottom: 28px;
 }
@@ -113,5 +115,15 @@ footer {
 	color: #ffffff;
 	text-align: center;
 	line-height: 35px;
-	margin-right: 3px;
+	margin-right: 3px;
+}
+
+#admin-part {
+	border-top: 2px solid rgba(191, 187, 187, 0.17);
+	width: 100%;
+	text-align: center;
+}
+
+#admin-part a {
+	color: rgba(158, 155, 155, 0.879);
 }

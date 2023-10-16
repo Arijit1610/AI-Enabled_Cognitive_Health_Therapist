@@ -212,12 +212,16 @@ header .navbar .active-sli:before {
 
 
 .doc_list {
-	margin-top: 50px;
-	position: relative;
-	height: 450px;
-	width: 1075px;
-	display: flex;
-	align-items: center;
+	
+    margin-top: 50px;
+    position: relative;
+    height: 115vh;
+    width: 99vw;
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-between;
+    flex-wrap: nowrap;
+    align-items: flex-start;
 }
 
 .container {

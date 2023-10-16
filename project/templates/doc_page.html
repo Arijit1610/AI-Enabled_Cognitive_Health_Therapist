@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/doc_page_style.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
+		rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="header_down">
+            <div class="website-name">
+                <h1>Health</h1>
+            </div>
+
+            <div class="navbar">
+                <ul>
+                    <li><a href="{{url_for('route.doctor_dashboard',th_id=th_id)}}" class="active">HOME</a></li>
+                    <li><a href="{{url_for('route.doctor_appointment',th_id=th_id)}}">APPOINTMENTS</a></li>
+                    <li><a href="/contact" >CONTACT US</a></li>
+                    <li><a href="/order-medichine">ORDER MEDICHINE</a></li>
+                </ul>
+            </div>
+
+            <div class="login_signup">
+                <ul>
+                    <li>
+                        <a href="{{url_for('auth.doctor_logout',th_id=th_id)}}">LOGOUT<i class="fa-solid fa-right-to-bracket"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <img src="{{ url_for('static',filename='img/Best-Website-Welcome-Message-Examples.png') }}" alt="" >
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/adminlogin.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/flashmessage.css') }}">
+	<title>document</title>
+</head>
+
+<body>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	{% for category, message in messages %}
+	{% if category == 'info' %}
+	<div class="popup" style="background-color: rgb(243, 215, 0);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% if category == 'error' %}
+	<div class="popup" style="background-color: rgb(90, 2, 2);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% if category == 'message' %}
+	<div class="popup" style="background-color: rgb(100, 141, 229);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+	<div class="container">
+		<div class="forms-container">
+			<div class="signin-signup">
+				<form action="/doctorlogin" method="post" class="sign-in-form">
+					<h2 class="title">Login</h2>
+					<div class="input-field">
+						<i class="fa-solid fa-user"></i>
+						<input type="text" name="username" placeholder="username" />
+					</div>
+					<div class="input-field">
+						<i class="fas fa-lock"></i>
+						<input type="password" name="password" placeholder="Password" id="password" required />
+						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" />
+					</div>
+					<input type="submit" value="Login" class="btn solid" />
+				</form>
+			</div>
+		</div>
+		<div class="panels-container">
+			<div class="panel left-panel">
+				<div class="content">
+					<h3>Doctor Login</h3>
+				</div>
+				<img src="{{ url_for('static',filename='img/11667186_20945037-removebg-preview.png') }}" class="image"
+					alt="" />
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const passicon = document.getElementById("pass-icon");
+		const password = document.getElementById("password");
+		passicon.addEventListener("click", () => {
+			if (password.type == "password") {
+				password.type = "text";
+				passicon.src = "{{ url_for('static',filename='img/eye.png') }}"
+			}
+			else {
+				password.type = "password";
+				passicon.src = "{{ url_for('static',filename='img/hidden.png') }}"
+			}
+		})
+	</script>
+	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
+
+</body>
+
+</html>

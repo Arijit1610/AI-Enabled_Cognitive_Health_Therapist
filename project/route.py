@@ -1,10 +1,11 @@
-from flask import render_template, request, flash, redirect, url_for, Blueprint, jsonify
-from project.model import UserAccount, db_session, Contacts, Therapists
+from flask import render_template, request, flash, redirect, url_for, Blueprint, jsonify,session
+from project.model import UserAccount, db_session, Contacts, Therapists,Schedule
 from flask_login import login_required, current_user
 from flask_mail import Message
 from . import mail
 from project.helpers import custom_login_required
 from .runchatbot import chatbot_response
+import datetime
 # from project.forms import SignupForm
 route = Blueprint('route', __name__)
 # Route for the home page
@@ -13,9 +14,16 @@ route = Blueprint('route', __name__)
 @route.route('/')
 @route.route('/home')
 def home():
-    flash("Flask app message")
-    therapists = db_session.query(Therapists).all()
-    return render_template('home.html', user=current_user, therapists=therapists)
+	flash("Flask app message")
+	therapists = db_session.query(Therapists).all()
+
+	# Create a dictionary to store appointment days for each therapist
+	therapist_appointment_days = {}
+	for therapist in therapists:
+		schedule = db_session.query(Schedule.appointment_day).filter(Schedule.th_id == therapist.th_id).distinct().all()
+		therapist_appointment_days[therapist.th_id] = [day.appointment_day for day in schedule]
+
+	return render_template('home.html', user=current_user,therapists=therapists,therapist_appointment_days=therapist_appointment_days)
 
 
 # Route for the contact page
@@ -69,14 +77,21 @@ def send_message():
     bot_response = chatbot_response(user_message)
 
     return jsonify({'message': bot_response})
-@route.route('/book/<string:th_id>')
-@custom_login_required('auth.login', login_type='signin')
-def book(th_id):
-	therapist = db_session.query(Therapists).filter_by(th_id=th_id).first()
-	return render_template('appointment_form.html',therapist=therapist)
+# @route.route('/book/<string:th_id>')
+# @custom_login_required('auth.login', login_type='signin')
+# def book(th_id):
+# 	# Your code to collect user data
+# 	therapist = db_session.query(Therapists).filter_by(th_id=th_id).first()
+# 	# Fetch available appointment times from the schedule table
+
+
+# 	return render_template('appointment_form.html', therapist=therapist, available_times=available_times)
+
 @route.route('/book/<string:th_id>', methods=['GET', 'POST'])
 @custom_login_required('auth.login', login_type='signin')
 def submit_appointment(th_id):
+	therapist = db_session.query(Therapists).filter_by(th_id=th_id).first()
+	available_times = []
 	if request.method == 'POST':
 		name = request.form['name']
 		dob = request.form['dob']
@@ -92,24 +107,69 @@ def submit_appointment(th_id):
 		appointment_time = request.form['appointment-time']
 		medical_history = request.form['medical-history']
 		other_details = request.form['other-details']
-		print(f"Name: {name}")
-		print(f"Date of Birth: {dob}")
-		print(f"Gender: {gender}")
-		print(f"Email: {email}")
-		print(f"Phone: {phone}")
-		print(f"Guardian Name: {guardian_name}")
-		print(f"Guardian Phone: {guardian_phone}")
-		print(f"Emergency Phone: {emergency_phone}")
-		print(f"Address: {address}")
-		print(f"Appointment Reason: {appointment_reason}")
-		print(f"Appointment Date: {appointment_date}")
-		print(f"Appointment Time: {appointment_time}")
-		print(f"Medical History: {medical_history}")
-		print(f"Other Details: {other_details}")
-	return "Appoinment booked successfully!!"
+		
+		therapist_schedule = db_session.query(Schedule).filter_by(th_id=th_id, appointment_day=appointment_date).all()
+		available_times = [str(schedule.start_time) for schedule in therapist_schedule]
+		# print(f"Name: {name}")
+		# print(f"Date of Birth: {dob}")
+		# print(f"Gender: {gender}")
+		# print(f"Email: {email}")
+		# print(f"Phone: {phone}")
+		# print(f"Guardian Name: {guardian_name}")
+		# print(f"Guardian Phone: {guardian_phone}")
+		# print(f"Emergency Phone: {emergency_phone}")
+		# print(f"Address: {address}")
+		# print(f"Appointment Reason: {appointment_reason}")
+		# print(f"Appointment Date: {appointment_date}")
+		# print(f"Appointment Time: {appointment_time}")
+		# print(f"Medical History: {medical_history}")
+		# print(f"Other Details: {other_details}")
+	# return "Appoinment booked successfully!!"
+	return render_template('appointment_form.html', therapist=therapist, available_times=available_times)
+@route.route('/get_available_times/<string:th_id>', methods=['GET'])
+def get_available_times(th_id):
+	appointment_date = request.args.get('appointment_date')
+	print(appointment_date)
+	day_of_week = datetime.datetime.strptime(appointment_date, "%Y-%m-%d").weekday()
+	days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+	therapist_schedule = db_session.query(Schedule).filter_by(th_id=th_id, appointment_day=days[day_of_week]).all()
+	available_times = [str(schedule.start_time) for schedule in therapist_schedule]
+	return jsonify(available_times=available_times)
 
 @route.route('/order-medicine')
 def order_medicine():
-	return "<h1><center>Comming Soon</center></h1>"
+	return "<h1><center>Coming Soon</center></h1>"
+@route.route('/adminpanel')
+def adminpanel():
+	return render_template('admin_home.html')
+@route.route('/admin-doctor-details')
+def admin_doc_details():
+	if 'admin_username' in session:
+		therapists = db_session.query(Therapists).all()
+		return render_template('doctor_details.html',therapists=therapists)
+	else:
+		return redirect(url_for('auth.admin_login'))
+@route.route('/admin-patient-details')
+def admin_patient_details():
+	if 'admin_username' in session:
+		therapists = db_session.query(Therapists).all()
+		return render_template('patient_details.html')
+	else:
+		return redirect(url_for('auth.admin_login'))
+	
+@route.route('/doctor-dashboard/<string:th_id>')
+def doctor_dashboard(th_id):
+    if 'doctor_th_id' in session and session['doctor_th_id'] == th_id:
+        return render_template('doc_page.html', th_id=th_id)
+    else:
+        return "<h1>Access Denied!!!</h1>"
+
+@route.route('/doctor-appointment/<string:th_id>')
+def doctor_appointment(th_id):
+    if 'doctor_th_id' in session and session['doctor_th_id'] == th_id:
+        return render_template('appointment_details.html', th_id=th_id)
+    else:
+        return "<h1>Access Denied!!!</h1>"
+
 if __name__ == '__main__':
     app.run(debug=True)

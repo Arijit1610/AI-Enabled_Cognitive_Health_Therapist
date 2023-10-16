@@ -1,0 +1,163 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #ffffff;
+
+
+}
+
+/* .total{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+} */
+
+header {
+	/* position: fixed;     */
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+
+.header_down {
+	display: flex;
+	font-size: 18px;
+	font-family: Signika;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	/* overflow: auto; */
+	background: transparent;
+	/* border: 2px solid red; */
+}
+
+.website-name {
+	/* font-family: Manjari ,Signika; */
+	font-size: 22px;
+	width: 35%;
+	color: rgb(20, 126, 201);
+	flex-basis: 250px;
+	text-align: center;
+}
+
+/* .website-name h1
+{
+	width: 164%;
+} */
+
+.login_signup {
+	margin-right: 20px;
+}
+
+.login_signup ul li {
+	display: inline-block;
+	margin: 2px 2px;
+}
+
+.login_signup ul li a {
+	text-decoration: none;
+	padding: 11px 21px;
+	border-radius: 5px;
+	background-color: rgba(244, 240, 240, 0.592);
+	color: rgb(20, 126, 201);
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.login_signup ul li a:hover {
+	background-color: #edf2ef;
+	color: rgb(20, 126, 201);
+	padding: 11px 21px;
+	border-radius: 5px;
+}
+
+.fa-right-to-bracket {
+	margin-left: 5px;
+}
+
+
+
+
+.navbar {
+	font-size: 18px;
+}
+
+.navbar ul,
+.login_signup ul {
+	list-style-type: none;
+	margin: 5px 5px;
+	padding: 5px 5px;
+	/* overflow:auto; */
+}
+
+.navbar ul li {
+	display: inline-block;
+	margin: 11px 5px;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	padding: 11px 21px;
+	/* border-bottom: 2px  #3c6e4dc2; */
+	color: rgb(20, 126, 201);
+}
+
+
+
+
+.cover-content {
+	font-family: 'Poppins', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30vw;
+	width: 100%;
+	margin-top: 60px;
+
+}
+
+.image {
+	height: 100%;
+	width: 100%;
+
+}
+
+.cover-content img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+.content {
+
+	height: 70vh;
+	width: 90vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: scroll;
+}
+
+.content h4 {
+	color: rgb(20, 126, 201);
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.content h2 {
+	color: rgb(20, 126, 201);
+	font-size: 40px;
+	font-weight: bold;
+}
