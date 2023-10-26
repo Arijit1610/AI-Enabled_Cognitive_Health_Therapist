@@ -113,7 +113,7 @@ label{
     display: block;
     color:rgb(2, 6, 29) ;
 }
-button{
+.btan{
     background:rgb(20, 126, 201) ;
     width: 150px;
     border:none;

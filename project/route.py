@@ -141,7 +141,11 @@ def order_medicine():
 	return "<h1><center>Coming Soon</center></h1>"
 @route.route('/adminpanel')
 def adminpanel():
-	return render_template('admin_home.html')
+	if 'admin_username' in session:
+		therapists = db_session.query(Therapists).all()
+		return render_template('admin_home.html',therapists=therapists)
+	else:
+		return redirect(url_for('auth.admin_login'))
 @route.route('/admin-doctor-details')
 def admin_doc_details():
 	if 'admin_username' in session:
