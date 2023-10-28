@@ -15,10 +15,17 @@ CONTACT
 
 {% block navbar %}
 <ul>
-	<li><a href="/home">HOME</a></li>
-	<li><a href="/about">ABOUT US</a></li>
-	<li><a href="/contact" class="active-nav">CONTACT US</a></li>
-	<li><a href="/service">ORDER MEDICHINE</a></li>
+	{% if 'registered_user' in session %}
+	<li><a href="{{url_for('route.home',email = session['registered_user'])}}">HOME</a></li>
+	<li><a href="{{url_for('route.about',email = session['registered_user'])}}" >ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}" class="active-nav">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICHINE</a></li>
+	{% else %}
+	<li><a href="{{url_for('route.home')}}">HOME</a></li>
+	<li><a href="{{url_for('route.about')}}" >ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact')}}" class="active-nav">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICHINE</a></li>
+	{% endif %}
 </ul>
 {% endblock %}
 
@@ -43,20 +50,31 @@ CONTACT
 					<div class="list">
 						<ul>
 							<li>
-								<i class="fa fa-envelope"></i><a
-									href="mailto:health@company.com">health@company.com</a>
+								<i class="fa fa-envelope"></i>
+								<a href="mailto:a.i.e.c.h.t.g13@gmail.com">a.i.e.c.h.t.g13@gmail.com</a>
 							</li>
 							<li><i class="fa fa-phone"></i>6291640218</li>
 							<li>
 								<i class="fa-solid fa-location-dot"></i>Kolkata,West
 								Bengal
 							</li>
+							<li>
+								<iframe
+								  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58965.69323017644!2d88.34159165204558!3d22.528339733930913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02740a6095d3f7%3A0xac556ea09ce96171!2sThe%20Heritage%20Academy!5e0!3m2!1sen!2sin!4v1697448352554!5m2!1sen!2sin"
+								  width="300"
+								  height="100"
+								  style="border: 0"
+								  allowfullscreen=""
+								  loading="lazy"
+								  referrerpolicy="no-referrer-when-downgrade"
+								></iframe>
+							  </li>
 						</ul>
 					</div>
 
 					<h3 class="follow">Follow Us</h3>
 					<div class="icons">
-						<a href="#" id="facebook"><i class="fa-brands fa-facebook-f" ></i></a>
+						<a href="#" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" id="instagram"><i class="fa-brands fa-instagram"></i></a>
 						<a href="#" id="linkedin"><i class="fa fa-linkedin"></i></a>
 						<a href="#" id="twitter"><i class="fa-brands fa-twitter"></i></a>
@@ -88,7 +106,7 @@ CONTACT
 						</div>
 
 						<label>Message</label>
-						<textarea rows="5" name="msg" placeholder="Type Your Query"></textarea>
+						<textarea rows="5" cols="50"name="msg" placeholder="Type Your Query"></textarea>
 						<button type="submit" class="btan">Send</button>
 					</form>
 				</div>

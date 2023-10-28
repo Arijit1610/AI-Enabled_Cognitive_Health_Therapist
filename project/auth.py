@@ -15,7 +15,7 @@ otp = None
 # @custom_login_required('auth.login', login_type='signin')
 def login(type):
 	global email_list
-	if current_user.is_authenticated:
+	if 'registered_user' in session:
 		# If the user is already logged in, redirect them to another page (e.g., the home page)
 		return redirect(url_for('route.home'))
 	flash("Please signin or Signup",category='info')
@@ -54,8 +54,8 @@ def login(type):
 			if user:
 				if user.password == password:
 					flash('Logged in successfully!',category='message')
-					login_user(user, remember=True)
-					return redirect(url_for('route.home'))
+					session['registered_user'] = user.email
+					return redirect(url_for('route.home',email=user.email))
 				else:
 					flash("Incorrect Password, try again.",category='error')
 			else:
@@ -63,11 +63,11 @@ def login(type):
 
 	return render_template('login.html', user=current_user)
 
-@auth.route('/logout')
-@custom_login_required('auth.login', login_type='signin')
-def logout():
-	logout_user()
-	flash('Logged out successfully!',category='info')
+@auth.route('/logout/<string:email>')
+def logout(email):
+	if 'registered_user' in session and session['registered_user'] == email:
+		session.pop('registered_user',None)
+		flash('Logged out successfully!',category='info')
 	return redirect(url_for('route.home'))
 
 @auth.route('/otp-verification/', methods=['GET', 'POST'])
@@ -97,8 +97,8 @@ def otp_verification():
 		if int(new_otp) == otp:
 			print("correct")
 			user = db_session.query(UserAccount).filter_by(email=email_recipient).first()
-			login_user(user, remember=True)
-			return redirect(url_for('route.home'))
+			session['registered_user'] = user.email
+			return redirect(url_for('route.home', email=user.email))
 		else:
 			print("Incorrect")
 			print(new_otp)
@@ -134,7 +134,7 @@ def admin_login():
 
 @auth.route('/adminlogout', methods=['GET'])
 def admin_logout():
-	if 'admin_username' in session:
+	if 'admin_username' in session :
 		# If an admin is logged in, remove their session
 		session.pop('admin_username', None)
 		flash("Admin logged out successfully!", category='info')

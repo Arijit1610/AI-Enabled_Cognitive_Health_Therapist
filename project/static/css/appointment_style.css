@@ -60,7 +60,7 @@ body
 
 .appointment_slot span
 {
-    display: block;
+    display: table-header-group;
     margin: 10px 0px;
 }
 
@@ -75,6 +75,7 @@ input[type=text] , input[type=email], input[type=tel]
 textarea
 {
     width: 100%;
+	resize: vertical;
 }
 
 .submission 

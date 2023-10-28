@@ -10,10 +10,17 @@ ABOUT US
 
 {% block navbar %}
 <ul>
-	<li><a href="/home">HOME</a></li>
-	<li><a href="/about" class="active-nav">ABOUT US</a></li>
-	<li><a href="/contact">CONTACT US</a></li>
-	<li><a href="/service">ORDER MEDICHINE</a></li>
+	{% if 'registered_user' in session %}
+	<li><a href="{{url_for('route.home',email = session['registered_user'])}}">HOME</a></li>
+	<li><a href="{{url_for('route.about',email = session['registered_user'])}}" class="active-nav">ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICHINE</a></li>
+	{% else %}
+	<li><a href="{{url_for('route.home')}}">HOME</a></li>
+	<li><a href="{{url_for('route.about')}}" class="active-nav">ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact')}}">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICHINE</a></li>
+	{% endif %}
 </ul>
 {% endblock %}
 

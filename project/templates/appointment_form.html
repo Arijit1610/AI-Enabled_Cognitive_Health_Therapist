@@ -16,56 +16,56 @@
 			</div>
 			<div class="name">
 				<div class="label">
-					<label for="name">Name</label>
+					<label for="name">Name<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
 					<div>
-						<input type="text" id="name" name="name">
+						<input type="text" id="name" name="name" required>
 
 					</div>
 				</div>
 			</div>
 			<div class="dob">
 				<div class="label">
-					<label for="dob">Date of Birth</label>
+					<label for="dob">Date of Birth<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
-					<input type="date" name="dob" id="dob">
+					<input type="date" name="dob" id="dob" required>
 				</div>
 			</div>
 			<div class="gender">
 				<div class="label">
-					<label for="">Gender</label>
+					<label for="">Gender<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
 					<div>
-						<input type="radio" name="gender" id="male" value="male">
+						<input type="radio" name="gender" id="male" value="male" required>
 						<label for="male">Male</label>
 					</div>
 					<div>
-						<input type="radio" name="gender" id="female" value="female">
+						<input type="radio" name="gender" id="female" value="female" required>
 						<label for="female">Female</label>
 					</div>
 					<div>
-						<input type="radio" name="gender" id="others" value="others">
+						<input type="radio" name="gender" id="others" value="others"required>
 						<label for="others">Others</label>
 					</div>
 				</div>
 			</div>
 			<div class="email">
 				<div class="label">
-					<label for="email">E-Mail</label>
+					<label for="email">E-Mail<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
-					<input type="email" name="email" id="email">
+					<input type="email" name="email" id="email" required>
 				</div>
 			</div>
 			<div class="phone">
 				<div class="label">
-					<label for="phone">Phone Number</label>
+					<label for="phone">Phone Number<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
-					<input type="tel" name="phone" id="phone">
+					<input type="tel" name="phone" id="phone" required>
 				</div>
 			</div>
 			<div class="guardian_name">
@@ -86,16 +86,16 @@
 			</div>
 			<div class="emergency_contact">
 				<div class="label">
-					<label for="emergency-phone">Emergency Contact Number</label>
+					<label for="emergency-phone">Emergency Contact Number<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
-					<input type="tel" name="emergency-phone" id="emergency-phone">
+					<input type="tel" name="emergency-phone" id="emergency-phone" required>
 				</div>
 			</div>
 
 			<div class="address">
 				<div class="label">
-					<label for="address">Address</label>
+					<label for="address">Address<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
 					<!-- <input type="text" name="address" id="address"> -->
@@ -107,12 +107,12 @@
 					<label for="doctor-name">Doctor Name</label>
 				</div>
 				<div class="fields">
-					<input type="text" name="doctor-name" id="doctor-name" value="{{therapist.th_name}}">
+					<input type="text" name="doctor-name" id="doctor-name" value="{{therapist.th_name}}" readonly>
 				</div>
 			</div>
 			<div class="appointment_reason">
 				<div class="label">
-					<label for="appointment-reason">Appointment Reason</label>
+					<label for="appointment-reason">Appointment Reason<span style="color: red;">*</span></label>
 				</div>
 				<div class="fields">
 					<textarea name="appointment-reason" id="appointment-reason" rows="6"
@@ -124,9 +124,9 @@
 					<label for="">Appointment Slot</label>
 				</div>
 				<div class="fields">
-					<span><label for="appointment-date">Appointment Date</label></span>
+					<span><label for="appointment-date">Appointment Date<span style="color: red;">*</span></label></span>
 					<span><input type="date" id="appointment-date" name="appointment-date" min="2023-10-14" max="2023-11-14"></span>
-					<span><label for="appointment-time">Appointment Time</label></span>
+					<span><label for="appointment-time">Appointment Time<span style="color: red;">*</span></label></span>
 					<span>
 						<select id="appointment-time" name="appointment-time">
 							<!-- Options will be dynamically added here -->

@@ -34,7 +34,15 @@
 
 			<div class="header_down">
 				<div class="website-name">
-					<h1>Health</h1>
+					{% if 'registered_user' in session %}
+					<a href="{{url_for('route.home',email = session['registered_user'])}}">
+						<h1 style="color: rgb(255, 255, 255);">AIECHT</h1>
+					</a>
+					{% else %}
+					<a href="{{url_for('route.home',email = session['registered_user'])}}">
+						<h1 style="color: rgb(255, 255, 255);">AIECHT</h1>
+					</a>
+					{% endif %}
 				</div>
 
 				<div class="navbar">
@@ -43,15 +51,28 @@
 					{% endblock %}
 				</div>
 
-				<div class="login_signup">
+				{% if 'registered_user' in session %}
+				<div id="login_signup" class="login">
+
+					<!-- <li></li> -->
+					<img src="{{ profile_image }}" alt="profile image" id="click_btn" />
+
+					<div id="drop_list">
+						<a href="{{url_for('route.user_profile', email=session['registered_user'])}}">Profile</a>
+						<a href="#">Appointment Details</a>
+						<!-- <button href="" type="submit" id="logout" onclick="alert('Hello Sir')"> -->
+						<a href="{{url_for('auth.logout',email=session['registered_user'])}}">LOGOUT</a>
+						<!-- </button> -->
+					</div>
+				</div>
+				{% else %}
+				<div class="login">
+
 					<ul>
-						{% if user.is_authenticated %}
-						<li><a href="/logout">LOGOUT<i class="fa-solid fa-right-to-bracket"></i></a></li>
-						{% else %}
 						<li><a href="/user-panel/signin">LOGIN<i class="fa-solid fa-right-to-bracket"></i></a></li>
-						{% endif %}
 					</ul>
 				</div>
+				{% endif %}
 
 			</div>
 		</header>
@@ -68,7 +89,7 @@
 		<section class="c_bot">
 			<div id="chatbot">
 				<div id="chat-header">
-					<h2>HEALTH BOT</h2>
+					<h2 class="botname">HEALTH BOT</h2>
 					<button type="submit" class="chatbtn" onclick="cbtn()"><i class="fa-solid fa-xmark"></i></button>
 				</div>
 
@@ -82,7 +103,8 @@
 
 				<div id="send">
 
-					<textarea type="text" id="message-input" placeholder="Enter your message" required></textarea>
+					<textarea type="text" class="bottext" id="message-input" placeholder="Enter your message"
+						required></textarea>
 
 					<span id="send-button" class="material-icons">send</span>
 
@@ -94,12 +116,28 @@
 		<footer>
 			<section class="footer-section">
 				<div class="footer-left">
-					<h3><span>H</span>ealth</h3>
+					{% if 'registered_user' in session %}
+					<a href="{{url_for('route.home',email = session['registered_user'])}}">
+						<h3><span>A</span>IECHT</h3>
+					</a>
+					{% else %}
+					<a href="{{url_for('route.home',email = session['registered_user'])}}">
+						<h3><span>A</span>IECHT</h3>
+					</a>
+					{% endif %}
 					<p>
-						<a href="/home" id="link1">Home</a>
-						<a href="/about">About</a>
-						<a href="/contact">Contact</a>
-						<a href="/order-medicine">Order Medichine</a>
+						{% if 'registered_user' in session %}
+						<a href="{{url_for('route.home',email = session['registered_user'])}}" id="link1">Home</a>
+						<a href="{{url_for('route.about',email = session['registered_user'])}}">About</a>
+						<a href="{{url_for('route.contact',email = session['registered_user'])}}">Contact</a>
+						<a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">Order
+							Medicine</a>
+						{% else %}
+						<a href="{{url_for('route.home')}}">Home</a>
+						<a href="{{url_for('route.about')}}">About</a>
+						<a href="{{url_for('route.contact')}}">Contact</a>
+						<a href="{{url_for('route.order_medicine')}}">Order Medicine</a>
+						{% endif %}
 					</p>
 				</div>
 				<div class="footer-mid">
@@ -107,7 +145,8 @@
 						<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
 						<li><i class="fa fa-phone"></i>6291640218</li>
 						<li>
-							<i class="fa fa-envelope"></i><a href="mailto:health@company.com">health@company.com</a>
+							<i class="fa fa-envelope"></i><a
+								href="mailto:a.i.e.c.h.t.g13@gmail.com">a.i.e.c.h.t.g13@gmail.com</a>
 						</li>
 					</ul>
 				</div>
@@ -121,10 +160,10 @@
 						conditions
 					</p>
 					<div class="sicons">
-						<a href="#" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-						<a href="#" id="instagram"><i class="fa-brands fa-instagram"></i></a>
-						<a href="#" id="linkedin"><i class="fa fa-linkedin"></i></a>
-						<a href="#" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+						<a href="www.facebook.com" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+						<a href="www.instagram.com" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href=www.linkedin.com" id="linkedin"><i class="fa fa-linkedin"></i></a>
+						<a href="www.twitter.com" id="twitter"><i class="fa-brands fa-twitter"></i></a>
 					</div>
 			</section>
 			<div id="admin-part">
@@ -135,6 +174,15 @@
 			</div>
 		</footer>
 	</div>
+	<script>
+		const list = document.getElementById("drop_list");
+
+
+		const dropdown = () => {
+			list.classList.toggle('visible')
+		}
+		document.getElementById('click_btn').addEventListener('click', dropdown);
+	</script>
 </body>
 
 </html>

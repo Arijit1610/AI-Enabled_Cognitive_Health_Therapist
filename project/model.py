@@ -1,5 +1,5 @@
-from sqlalchemy import create_engine, Column, String, Integer,UniqueConstraint,Date,ForeignKey,Time,Boolean
-from flask_login import UserMixin
+from sqlalchemy import create_engine, Column, String, Integer,UniqueConstraint,Date,ForeignKey,Time,Boolean,BLOB
+# from flask_login import UserMixin
 from sqlalchemy.orm import declarative_base, Session
 
 # Create an SQLAlchemy engine for MySQL.
@@ -9,28 +9,31 @@ engine = create_engine("mysql://root:arijit@localhost/minor_project", echo=True)
 Base = declarative_base()
 
 # Define your UserAccount model.
-class UserAccount(Base, UserMixin):
+class UserAccount(Base):
 	__tablename__ = 'useraccountlist'
 	id = Column(Integer,unique = True,autoincrement=True)
 	username = Column(String(255))
 	email = Column(String(255),primary_key=True, nullable=False,unique=True)
 	phonenumber = Column(String(10), nullable=False,unique=True)
 	password = Column(String(255), nullable=False)
+	dob = Column(Date, nullable=True)
+	gender = Column(String(7),nullable=True)
+	blood_group = Column(String(5), nullable= True)
 
 	def __repr__(self):
 		return f"<UserAccount username={self.username}>"
 
 class Contacts(Base):
-    __tablename__ = 'contacts'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
-    phonenumber = Column(String(10), nullable=False)
-    email = Column(String(255), nullable=False)
-    dateofbirth = Column(Date(), nullable=False)
-    message = Column(String(1000), nullable=False)
+	__tablename__ = 'contacts'
+	id = Column(Integer, primary_key=True)
+	name = Column(String(50), nullable=False)
+	phonenumber = Column(String(10), nullable=False)
+	email = Column(String(255), nullable=False)
+	dateofbirth = Column(Date(), nullable=False)
+	message = Column(String(1000), nullable=False)
 
-    def __repr__(self):
-        return f"<Contact name={self.name}>"
+	def __repr__(self):
+		return f"<Contact name={self.name}>"
 
 class Therapists(Base):
 	__tablename__= 'therapists'
@@ -60,7 +63,7 @@ class Schedule(Base):
 		return f'Schedule(id={self.id}, th_id={self.th_id}, appointment_day={self.appointment_day}, start_time={self.start_time}, end_time={self.end_time}, is_available={self.is_available})'
 
 
-class Admin(Base,UserMixin):
+class Admin(Base):
 	__tablename__ = 'admins'
 	id = Column(Integer,unique = True,autoincrement=True)
 	username = Column(String(20),primary_key=True)
@@ -78,10 +81,14 @@ class TherapistLoginCredentials(Base):
 	password = Column(String(255), nullable=False)
 	# Define a relationship with the Therapists table
 	# therapist = relationship("Therapists", foreign_keys=[therapist_id])
-
-if __name__ == '__main__':
+class ImageUpload(Base):
+	__tablename__ = 'imageuploader'
+	id = Column(Integer, primary_key=True)
+	email = Column(String(255), ForeignKey('useraccountlist.email'),nullable=False)
+	image = Column(BLOB)
+# if __name__ == '__main__':
 # Create the table in the database.
-	Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 # Create a session to interact with the database.
 db_session = Session(bind=engine)

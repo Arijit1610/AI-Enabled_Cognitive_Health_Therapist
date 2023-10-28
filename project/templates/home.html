@@ -7,18 +7,31 @@ HOME
 {% block head %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
+	rel="stylesheet" />
 {% endblock %}
 
 {% block navbar %}
 <ul>
-	<li><a href="/home" class="active-nav">HOME</a></li>
-	<li><a href="/about">ABOUT US</a></li>
-	<li><a href="/contact">CONTACT US</a></li>
-	<li><a href="/service">ORDER MEDICHINE</a></li>
+	{% if 'registered_user' in session %}
+	<li><a href="{{url_for('route.home',email = session['registered_user'])}}" class="active-nav">HOME</a></li>
+	<li><a href="{{url_for('route.about',email = session['registered_user'])}}">ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICHINE</a></li>
+	{% else %}
+	<li><a href="{{url_for('route.home')}}" class="active-nav">HOME</a></li>
+	<li><a href="{{url_for('route.about')}}" >ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact')}}">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICHINE</a></li>
+	{% endif %}
 </ul>
 {% endblock %}
 {% block content %}
@@ -29,7 +42,7 @@ HOME
 	<img class="image-slide" src="{{ url_for('static',filename='img/ai.jpg') }}" alt=" image" />
 
 	<div class="content">
-		<h1>Welcome To<br /><span>Health</span></h1>
+		<h1>Welcome To<br /><span>AIECHT</span></h1>
 	</div>
 	<div class="slider-navigation">
 		<div class="nav-btn active-sli"></div>

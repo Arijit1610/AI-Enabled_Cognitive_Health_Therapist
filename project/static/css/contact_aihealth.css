@@ -107,6 +107,7 @@ textarea{
     border: none;
     border-bottom: 2px solid rgb(5, 50, 82);
     background: transparent;
+	resize: vertical;
 }
 label{
     margin-bottom: 6px;

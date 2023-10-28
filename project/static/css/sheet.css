@@ -1,0 +1,138 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(141, 49, 222));
+    overflow-y: hidden;
+}
+.query-cover{
+  
+    /* background-color: red; */
+    height: 60vw;
+    width: 100%;
+
+
+}
+.container{
+    width: 80%;
+    margin:60px auto;
+    /* border: 2px solid green; */
+}
+
+.contact-box{
+    background: #ffF;
+    display: flex;
+}
+
+
+.contact-box .contact-right{
+    flex-basis: 65%;
+    padding: 40px 60px;
+    /* background: url(./5001147_19742.jpg); */
+}
+
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.input-row .input-group{
+    flex-basis: 45%;
+}
+.input-group input,select{
+    width: 100%;
+    border: none;
+    border-bottom:2px solid rgb(5, 50, 82) ;
+    outline: none;
+    padding-bottom: 10px;
+    background: transparent;
+}
+
+label{
+    margin-bottom: 6px;
+    display: block;
+    color:rgb(2, 6, 29) ;
+}
+#send{
+    background:rgb(20, 126, 201) ;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(141, 49, 222));
+    width: 150px;
+    border:none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 30px;
+    margin-top: 60px;
+    box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+}
+
+.contact-box .contact-left{
+   
+    flex-basis: 35%;
+    padding: 25px;
+    /* border-radius: 15px 0px 0px 15px; */
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+
+   
+}
+.icon{
+   
+  
+    /* margin-right: 312px; */
+    left: 0;
+}
+.icon a{
+    color: black;
+    font-size: 25px;
+}
+#image{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+   background:  rgb(148, 36, 218);
+   padding: 3px;
+   margin-left:70px ;
+   
+   
+  
+   
+}
+#image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+
+}
+#update{
+    display: block;
+    margin-top: 20px;
+    width: 10vw;
+    height: 3vw;
+    /* background: rgb(148, 36, 218); */
+    background:rgb(53, 157, 232) ;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(104, 67, 137));;
+    text-align: center;
+    padding: 11px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:white;
+    border-radius: 5px;
+    margin-left:110px ;
+}
+#input-file{
+    display: none;
+}
+
+ 

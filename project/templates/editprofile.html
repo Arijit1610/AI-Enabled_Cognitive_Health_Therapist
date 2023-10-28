@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/sheet.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+	<div class="main">
+		<form action="/edit/{{ session['registered_user'] }}" method="POST" enctype="multipart/form-data">
+			<section class="query-cover">
+				<div class="container">
+					<div class="contact-box">
+						<div class="contact-left">
+							<div class="icon">
+								<a href="{{url_for('route.home',email = session['registered_user'])}}"><i
+										class="fa-solid fa-arrow-left"></i></a>
+							</div>
+							<div id="image">
+								<img src="{{ profile_image }}" alt="Profile Picture" id="profile-pic">
+							</div>
+
+							<label for="input-file" id="update">Update Image</label>
+							<input type="file" name="inputfile" id="input-file">
+
+						</div>
+						<div class="contact-right">
+
+							<div class="input-row">
+								<div class="input-group">
+									<label>UserName</label>
+									<input name="name" type="text" value="{{user.username}}" />
+								</div>
+
+								<div class="input-group">
+									<label>Date Of Birth</label>
+									<input name="date_of_birth" type="date" placeholder="" value="{{user.dob}}" />
+								</div>
+
+							</div>
+							<div class="input-row">
+								<div class="input-group">
+									<label>Gender</label>
+									<select name="gender">
+										<option>Select</option>
+										<option value="Male" {% if user.gender=="Male" %}selected{% endif %}>Male
+										</option>
+										<option value="Female" {% if user.gender=="Female" %}selected{% endif %}>Female
+										</option>
+										<option value="Other" {% if user.gender=="Other" %}selected{% endif %}>Other
+										</option>
+									</select>
+								</div>
+
+								<div class="input-group">
+									<label>Blood Group</label>
+									<select name="blood_group">
+										<option>Select</option>
+										<option value="A+" {% if user.blood_group=="A+" %}selected{% endif %}>A+
+										</option>
+										<option value="B+" {% if user.blood_group=="B+" %}selected{% endif %}>B+
+										</option>
+										<option value="O+" {% if user.blood_group=="O+" %}selected{% endif %}>O+
+										</option>
+										<option value="AB+" {% if user.blood_group=="AB+" %}selected{% endif %}>AB+
+										</option>
+										<option value="None" {% if user.blood_group=="None" %}selected{% endif %}>None
+										</option>
+									</select>
+								</div>
+
+							</div>
+							<div class="input-row">
+								<div class="input-group">
+									<label>Email</label>
+									<input type="email" placeholder="enteryouremail" value="{{user.email}}" readonly/>
+								</div>
+								<div class="input-group">
+									<label>Phone</label>
+									<input type="tel" placeholder="enter your phone number" value="{{user.phonenumber}}"
+										name="phone" />
+								</div>
+							</div>
+
+
+							<button id="send" type="submit">Save</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</form>
+	</div>
+	<script>
+		const profilepic = document.getElementById("profile-pic");
+		const inputfile = document.getElementById("input-file");
+
+
+		// inputfile.addEventListener("change",()=>{
+		//     profilepic.src=URL.createObjectURL(inputfile.files[0]);
+		// })
+
+		inputfile.onchange = function () {
+
+			profilepic.src = URL.createObjectURL(inputfile.files[0]);
+		}
+	</script>
+</body>
+
+</html>

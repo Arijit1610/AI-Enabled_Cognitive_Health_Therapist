@@ -1,25 +1,79 @@
-
-*
-{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
 }
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+/* 
+header {
+
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	position: absolute;
+	z-index: 2;
+
+}
+
+.header_down {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.website-name {
+	font-size: 18px;
+	/* width: 35%; */
+	/* color: rgb(231, 235, 237); */
+	/* flex-basis:250px ; */
+	/* text-align: center; */
+	/* margin-left: 60px; */
+/* } */
+
+
+.login {
+	margin-right: 60px;
+}
+
+.login ul li {
+	display: inline-block;
+	margin: 2px 2px;
+}
+
+.login ul li a {
+	text-decoration: none;
+	padding: 11px 21px;
+	border-radius: 5px;
+	background: transparent;
+	color: rgb(242, 242, 243);
+	font-weight: bold;
+	font-size: 18px;
+	border: 2px solid #fff;
+}
+
+.login ul li a:hover {
+	background-color: #edf2ef;
+	color: rgb(1, 14, 23);
+	padding: 11px 21px;
+	border-radius: 5px;
 }
 
 header  
 {
-   
+
     width: 100%;
     font-family: 'Poppins', sans-serif;
     position: absolute;
     z-index: 2;
+    border: 2px solid green;
 	
 }
 
@@ -33,90 +87,124 @@ header
 }
 .website-name
 {
-	font-size: 18px ;
-    /* width: 35%; */
+	font-size: 20.5px ;
     color: rgb(231, 235, 237) ;
-    /* flex-basis:250px ; */
-    /* text-align: center; */
     margin-left: 60px;
 }
 
 
-.login_signup{
+#login_signup{
+    height: 4.5vw;
+    width: 4.5vw;
     margin-right: 60px;
+    border-radius: 250px;
+    margin-top: 12px;
+    background-color: white;
 }
-.login_signup ul li
+
+#login_signup  img
 {
-    display: inline-block;
-    margin: 2px 2px; 
+    height:100% ;
+    width:100% ;
+    overflow: hidden;
+    border-radius:250px;
+   object-fit: cover;
+   border: 2px solid white;
+   cursor: pointer;
+
 }
-.login_signup ul li a
-{
-    text-decoration: none;
-    padding: 11px 21px;
+#drop_list{
+    border: 2px solid white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 15vw;
+    height: 15vw;
+    margin-left: -170px;
     border-radius: 5px;
-    background:transparent;
-    color: rgb(242, 242, 243) ;
-    font-weight: bold;
-    font-size: 18px;
-    border: 2px solid #fff;
+    padding:20px 0px 20px 0px ;
+    backdrop-filter: blur(15px);
+  
+
 }
-.login_signup ul li a:hover
-{
-    background-color:#edf2ef ;
-    color: rgb(1, 14, 23) ;
-    padding: 11px 21px;
-    border-radius: 5px;
-}
-.fa-right-to-bracket{
-    margin-left: 5px;
-}
-
-
-
-
-
-.navbar ul 
-{
-    list-style-type: none;
-    margin:5px 5px;
-    padding:5px 5px;
+#drop_list.visible{
+    display: flex;
+ 
    
 }
-.navbar ul li  
-{
-    display: inline-block;
-    margin: 11px 20px; 
+#drop_list  a{
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    /* border: 2px solid green; */
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
-.navbar ul li a  
-{
-    text-decoration: none;
-    padding: 11px 5px;
-    color: rgb(246, 246, 246) ;
-    font-size: 15px;
-    font-weight: bold;
-    position: relative;    
+
+
+#logout{
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    color: white;
+ 
+    /* margin-top: 30px; */
+    /* margin-bottom: 10px; */
+
 }
-.navbar  a::before{
-    content: "";
-  position: absolute;
-  background: #f3efef;
-  width: 0;
-  height: 3px;
-  bottom:-3px;
-  left: 0;
-  transition: 0.3s ease;
+
+.fa-right-to-bracket {
+	margin-left: 5px;
 }
+
+
+
+
+
+.navbar ul {
+	list-style-type: none;
+	margin: 5px 5px;
+	padding: 5px 5px;
+
+}
+
+.navbar ul li {
+	display: inline-block;
+	margin: 11px 20px;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	padding: 11px 5px;
+	color: rgb(246, 246, 246);
+	font-size: 15px;
+	font-weight: bold;
+	position: relative;
+}
+
+.navbar a::before {
+	content: "";
+	position: absolute;
+	background: #f3efef;
+	width: 0;
+	height: 3px;
+	bottom: -3px;
+	left: 0;
+	transition: 0.3s ease;
+}
+
 header .navbar a:hover:before {
-    width: 100%;
-  }
-  
-  header .navbar  .active-nav:before {
-    content: "";
-    position: absolute;
-    background: #f3efef;
-    width: 100%;
-    height: 3px;
-    bottom:-3px;
-    left: 0;
-  }
+	width: 100%;
+}
+
+header .navbar .active-nav:before {
+	content: "";
+	position: absolute;
+	background: #f3efef;
+	width: 100%;
+	height: 3px;
+	bottom: -3px;
+	left: 0;
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+order_medicine
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
+	rel="stylesheet" />
+{% endblock %}
+
+{% block navbar %}
+<ul>
+	{% if 'registered_user' in session %}
+	<li><a href="{{url_for('route.home',email = session['registered_user'])}}">HOME</a></li>
+	<li><a href="{{url_for('route.about',email = session['registered_user'])}}">ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}" class="active-nav">ORDER
+			MEDICHINE</a></li>
+	{% else %}
+	<li><a href="{{url_for('route.home')}}">HOME</a></li>
+	<li><a href="{{url_for('route.about')}}">ABOUT US</a></li>
+	<li><a href="{{url_for('route.contact')}}">CONTACT US</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}" class="active-nav">ORDER MEDICHINE</a></li>
+	{% endif %}
+</ul>
+{% endblock %}
+
+{% block content %}
+<div style="height: 50vh; width: 100%;">
+<img src="{{ url_for('static', filename='img/2923523.jpg') }}" alt="" srcset="" width="100%" height="100%">
+</div>
+
+<div style="height: 50vh; width: 100%;"></div>
+
+<div></div>
+{% endblock%}

@@ -13,9 +13,9 @@ def create_app():
     MAIL_PORT = '465',
     MAIL_USE_SSL = True,
 	MAIL_USE_TLS = False,
-    MAIL_USERNAME = "peter.spider.8777@gmail.com",
-    MAIL_PASSWORD = "fnsawmvxdgvxvrxt",
-	MAIL_DEFAULT_SENDER = "peter.spider.8777@gmail.com"
+    MAIL_USERNAME = "a.i.e.c.h.t.g13@gmail.com",
+    MAIL_PASSWORD = "izkbimepemrceiiy",
+	MAIL_DEFAULT_SENDER = "a.i.e.c.h.t.g13@gmail.com"
 	)
 	# mail = Mail(app)
 	from .route import route

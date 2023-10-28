@@ -1,4 +1,4 @@
-* {
+/* * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -24,13 +24,13 @@ header {
 .website-name {
 	font-size: 18px;
 	/* width: 35%; */
-	color: rgb(231, 235, 237);
+	/* color: rgb(231, 235, 237); */
 	/* flex-basis:250px ; */
 	/* text-align: center; */
-	margin-left: 60px;
-}
+	/* margin-left: 60px; */
+/* } */
 
-
+/* 
 .login_signup {
 	margin-right: 60px;
 }
@@ -106,7 +106,7 @@ header .navbar .active-sli:before {
 	height: 3px;
 	bottom: -3px;
 	left: 0;
-}
+} */ 
 
 .home {
 	padding: 100px 50px 100px 50px;

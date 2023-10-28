@@ -55,7 +55,7 @@
 	justify-content: space-between;
 }
 
-#chat-header h2 {
+#chat-header .botname {
 	color: white;
 	font-size: 1.4rem;
 	margin-left: 50px;
@@ -121,7 +121,7 @@
 	border-top: 1px solid #ccc;
 }
 
-#send textarea {
+#send .bottext {
 	height: 55px;
 	width: 100%;
 	border: none;

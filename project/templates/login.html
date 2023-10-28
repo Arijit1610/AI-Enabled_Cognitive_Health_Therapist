@@ -17,19 +17,19 @@
 	{% if messages %}
 	{% for category, message in messages %}
 	{% if category == 'info' %}
-	<div class="popup" style ="background-color: rgb(243, 215, 0);">
+	<div class="popup" style="background-color: rgb(243, 215, 0);">
 		<p>{{ message }}</p>
 		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 	</div>
 	{% endif %}
 	{% if category == 'error' %}
-	<div class="popup" style ="background-color: rgb(90, 2, 2);">
+	<div class="popup" style="background-color: rgb(90, 2, 2);">
 		<p>{{ message }}</p>
 		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 	</div>
 	{% endif %}
 	{% if category == 'message' %}
-	<div class="popup" style ="background-color: rgb(100, 141, 229);">
+	<div class="popup" style="background-color: rgb(100, 141, 229);">
 		<p>{{ message }}</p>
 		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 	</div>
@@ -47,9 +47,10 @@
 						<i class="fas fa-envelope"></i>
 						<input type="email" placeholder="Type your email" name="email" id="email" />
 					</div>
-					<div class="input-field">
+					<div class="input-field" >
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Enter your password" name="password" name="password" />
+						<input type="password" placeholder="Password" required />
+						<!-- <img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" /> -->
 					</div>
 					<input type="submit" value="Login" class="btn solid" />
 
@@ -68,13 +69,19 @@
 						<i class="fas fa-phone"></i>
 						<input type="tel" placeholder="Phone Number" name="phone_number" required />
 					</div>
-					<div class="input-field">
+					<div class="input-field" id="pwd">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Password" name="password" required />
+						<input type="password" placeholder="Password" id="password" required />
+						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" />
+					</div>
+					<div class="para">
+						<p>Password must be 8 to 16 characters</p>
+						<span id="st_para"></span>
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
 						<input type="password" placeholder="Confirm Password" name="confirm_password" required />
+						<!-- <img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" /> -->
 					</div>
 					<input type="submit" class="btn" value="Sign up" onclick="signup()" />
 
@@ -139,6 +146,79 @@
 
 	<script src="{{ url_for('static', filename = 'js/script.js')}}"></script>
 	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
+	<script>
+		const passicon = document.getElementById("pass-icon");
+		const password = document.getElementById("password");
+		passicon.addEventListener("click", () => {
+			if (password.type == "password") {
+				password.type = "text";
+				passicon.src = "{{ url_for('static',filename='img/eye.png') }}";
+			} else {
+				password.type = "password";
+				passicon.src = "{{ url_for('static',filename='img/hidden.png') }}";
+			}
+		});
+
+		const alphabet = /[a-zA-Z]/;
+		const number = /[0-9]/;
+		const symbols = /[!,@,#,$,%,^,&,*,?,_,(,),-,+,=,~,/,\,|]/;
+
+		const pwd = document.getElementById("pwd");
+		const stpara = document.getElementById("st_para");
+
+		const strengthchecker = (passwordInput) => {
+
+			if (passwordInput.length === 0) {
+				pwd.style.border = 'none';
+				stpara.style.color = 'none';
+				stpara.innerHTML = '';
+			}
+			if (
+				alphabet.test(passwordInput) &&
+				number.test(passwordInput) &&
+				symbols.test(passwordInput)
+			) {
+				console.log("strong");
+				pwd.style.border = '2px solid  rgb(8, 146, 8)';
+				stpara.style.color = 'rgb(8, 146, 8)'
+				stpara.innerHTML = 'Strong'
+			} else if (
+				(alphabet.test(passwordInput) && number.test(passwordInput)) ||
+				(alphabet.test(passwordInput) && symbols.test(passwordInput)) ||
+				(number.test(passwordInput) && symbols.test(passwordInput))
+			) {
+				console.log("medium");
+				pwd.style.border = '2px solid  rgb(206, 206, 5)'
+				stpara.style.color = 'rgb(206, 206, 5)'
+				stpara.innerHTML = 'Medium'
+
+			} else if (
+				alphabet.test(passwordInput) ||
+				number.test(passwordInput) ||
+				symbols.test(passwordInput)
+			) {
+				console.log("weak");
+				pwd.style.border = '2px solid  rgb(235, 10, 10)'
+				stpara.style.color = ' rgb(235, 10, 10)'
+				stpara.innerHTML = 'Weak'
+
+			}
+			// if(passwordInput.length>=8 && passwordInput.length<=16){
+			//   console.log('ok');
+			// }
+			// else{
+			//   console.log('invalid');
+			// }
+
+		}
+
+		password.addEventListener("input", () => {
+			const passwordInput = password.value;
+
+			strengthchecker(passwordInput);
+
+		});
+	</script>
 </body>
 
 </html>
