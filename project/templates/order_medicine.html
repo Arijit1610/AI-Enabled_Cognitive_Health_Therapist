@@ -10,6 +10,67 @@ order_medicine
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
 	rel="stylesheet" />
+<style>
+	/* * CSS for the "Coming Soon" page */  */
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Poppins', sans-serif;
+		background: url('/static/img/background-image.jpg') no-repeat center center fixed;
+		background-size: cover;
+		color: #fff;
+	}
+
+	.coming-soon-container {
+		text-align: center;
+		position: absolute;
+		top: 65%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.coming-soon-heading {
+		font-size: 36px;
+	}
+
+	.countdown {
+		font-size: 48px;
+		animation: pulse 1s infinite;
+	}
+
+	@keyframes pulse {
+		0% {
+			transform: scale(1);
+			color:cadetblue
+		}
+
+		50% {
+			transform: scale(1.1);
+			color: rgb(255, 30, 30);
+		}
+
+		100% {
+			transform: scale(1);
+			color: deepskyblue;
+		}
+	}
+
+	.social-icons {
+		margin-top: 20px;
+	}
+
+	.social-icons a {
+		color: #fff;
+		text-decoration: none;
+		margin: 0 10px;
+		font-size: 24px;
+		transition: transform 0.2s;
+	}
+
+	.social-icons a:hover {
+		transform: scale(1.2);
+	}
+</style>
 {% endblock %}
 
 {% block navbar %}
@@ -31,10 +92,23 @@ order_medicine
 
 {% block content %}
 <div style="height: 50vh; width: 100%;">
-<img src="{{ url_for('static', filename='img/2923523.jpg') }}" alt="" srcset="" width="100%" height="100%">
+	<img src="{{ url_for('static', filename='img/9d236dc22e9f8e83235b170b51f0080c.gif') }}" alt="" srcset="" width="100%" height="100%">
 </div>
 
-<div style="height: 50vh; width: 100%;"></div>
+<!-- <div style="height: 50vh; width: 100%;"></div> -->
+<div class="coming-soon-container">
+	<h1 class="coming-soon-heading">Coming Soon!</h1>
+	<p class="countdown">Stay tuned for exciting updates.</p>
+	<!-- <div class="social-icons">
+		<a href="#" class="fab fa-facebook-f"></a>
+		<a href="#" class="fab fa-twitter"></a>
+		<a href="#" class="fab fa-instagram"></a>
+		<a href="#" class="fab fa-linkedin"></a>
+	</div> -->
+</div>
+<div style="height: 100vh; width: 100%;">
+	<img src="{{ url_for('static', filename='img/jakehawkins.gif') }}" alt="" srcset="" height="100%" width = "100%">
+</div>
 
 <div></div>
 {% endblock%}

@@ -52,136 +52,162 @@
 				</div>
 
 				{% if 'registered_user' in session %}
-				<div id="login_signup" class="login">
-
-					<!-- <li></li> -->
+				<!-- <div id="login_signup" class="login">
 					<img src="{{ profile_image }}" alt="profile image" id="click_btn" />
 
 					<div id="drop_list">
 						<a href="{{url_for('route.user_profile', email=session['registered_user'])}}">Profile</a>
 						<a href="#">Appointment Details</a>
-						<!-- <button href="" type="submit" id="logout" onclick="alert('Hello Sir')"> -->
 						<a href="{{url_for('auth.logout',email=session['registered_user'])}}">LOGOUT</a>
-						<!-- </button> -->
 					</div>
+				</div> -->
+				<div id="user_pic">
+					<img src="{{ profile_image }}" alt="Profile Picture" id="click_btn" />
 				</div>
-				{% else %}
-				<div class="login">
-
-					<ul>
-						<li><a href="/user-panel/signin">LOGIN<i class="fa-solid fa-right-to-bracket"></i></a></li>
-					</ul>
-				</div>
-				{% endif %}
-
 			</div>
-		</header>
-		<!-- <div style="height: 50vh ; width: 100%;"></div>
+
+			<div id="drop_list">
+				<div id="drop_list_content">
+					<div id="user_info">
+						<img src="{{ profile_image }}" alt="" />
+						<h3>Welcome {{user.username}}</h3>
+					</div>
+					<hr />
+					<a href="{{url_for('route.user_profile', email=session['registered_user'])}}" class="drop_link">
+						<i class="fa-solid fa-user"></i>
+						<p class="drop_p">Edit Profile</p>
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+
+					<a href="{{url_for('route.booked',email=session['registered_user'])}}" class="drop_link">
+						<i class="fa-solid fa-circle-info"></i>
+						<p class="drop_p">Appointment Details</p>
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+
+					<a href="{{url_for('auth.logout',email=session['registered_user'])}}" class="drop_link">
+						<i class="fa-solid fa-right-from-bracket"></i>
+						<p class="drop_p">Logout</p>
+						<i class="fa-solid fa-angle-right"></i>
+					</a>
+				</div>
+			</div>
+			{% else %}
+			<div class="login">
+
+				<ul>
+					<li><a href="/user-panel/signin">LOGIN<i class="fa-solid fa-right-to-bracket"></i></a></li>
+				</ul>
+			</div>
+			{% endif %}
+
+	</div>
+	</header>
+	<!-- <div style="height: 50vh ; width: 100%;"></div>
     <div style="height: 50vh ; width: 100%;"></div>
     <div></div> -->
-		{% block content %}
+	{% block content %}
 
-		{% endblock %}
-		<!-- Footer Section -->
-		<div class="msg">
-			<button type="submit" onclick="msgbtn()"> <i class="fa-solid fa-message"></i></button>
-		</div>
-		<section class="c_bot">
-			<div id="chatbot">
-				<div id="chat-header">
-					<h2 class="botname">HEALTH BOT</h2>
-					<button type="submit" class="chatbtn" onclick="cbtn()"><i class="fa-solid fa-xmark"></i></button>
-				</div>
+	{% endblock %}
+	<!-- Footer Section -->
+	<div class="msg">
+		<button type="submit" onclick="msgbtn()"> <i class="fa-solid fa-message"></i></button>
+	</div>
+	<section class="c_bot">
+		<div id="chatbot">
+			<div id="chat-header">
+				<h2 class="botname">HEALTH BOT</h2>
+				<button type="submit" class="chatbtn" onclick="cbtn()"><i class="fa-solid fa-xmark"></i></button>
+			</div>
 
-				<div id="message-container">
-					<!-- <div class="user">You: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, sapiente!
+			<div id="message-container">
+				<!-- <div class="user">You: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci, sapiente!
 				  </div>
 				  <div class="bot">Bot:Hello</div> -->
-				</div>
-
-
-
-				<div id="send">
-
-					<textarea type="text" class="bottext" id="message-input" placeholder="Enter your message"
-						required></textarea>
-
-					<span id="send-button" class="material-icons">send</span>
-
-				</div>
 			</div>
-		</section>
-		<script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
-		<!-- <script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script> -->
-		<footer>
-			<section class="footer-section">
-				<div class="footer-left">
+
+
+
+			<div id="send">
+
+				<textarea type="text" class="bottext" id="message-input" placeholder="Enter your message"
+					required></textarea>
+
+				<span id="send-button" class="material-icons">send</span>
+
+			</div>
+		</div>
+	</section>
+	<script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
+	<!-- <script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script> -->
+	<footer>
+		<section class="footer-section">
+			<div class="footer-left">
+				{% if 'registered_user' in session %}
+				<a href="{{url_for('route.home',email = session['registered_user'])}}">
+					<h3><span>A</span>IECHT</h3>
+				</a>
+				{% else %}
+				<a href="{{url_for('route.home',email = session['registered_user'])}}">
+					<h3><span>A</span>IECHT</h3>
+				</a>
+				{% endif %}
+				<p>
 					{% if 'registered_user' in session %}
-					<a href="{{url_for('route.home',email = session['registered_user'])}}">
-						<h3><span>A</span>IECHT</h3>
-					</a>
+					<a href="{{url_for('route.home',email = session['registered_user'])}}" id="link1">Home</a>
+					<a href="{{url_for('route.about',email = session['registered_user'])}}">About</a>
+					<a href="{{url_for('route.contact',email = session['registered_user'])}}">Contact</a>
+					<a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">Order
+						Medicine</a>
 					{% else %}
-					<a href="{{url_for('route.home',email = session['registered_user'])}}">
-						<h3><span>A</span>IECHT</h3>
-					</a>
+					<a href="{{url_for('route.home')}}">Home</a>
+					<a href="{{url_for('route.about')}}">About</a>
+					<a href="{{url_for('route.contact')}}">Contact</a>
+					<a href="{{url_for('route.order_medicine')}}">Order Medicine</a>
 					{% endif %}
-					<p>
-						{% if 'registered_user' in session %}
-						<a href="{{url_for('route.home',email = session['registered_user'])}}" id="link1">Home</a>
-						<a href="{{url_for('route.about',email = session['registered_user'])}}">About</a>
-						<a href="{{url_for('route.contact',email = session['registered_user'])}}">Contact</a>
-						<a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">Order
-							Medicine</a>
-						{% else %}
-						<a href="{{url_for('route.home')}}">Home</a>
-						<a href="{{url_for('route.about')}}">About</a>
-						<a href="{{url_for('route.contact')}}">Contact</a>
-						<a href="{{url_for('route.order_medicine')}}">Order Medicine</a>
-						{% endif %}
-					</p>
-				</div>
-				<div class="footer-mid">
-					<ul>
-						<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
-						<li><i class="fa fa-phone"></i>6291640218</li>
-						<li>
-							<i class="fa fa-envelope"></i><a
-								href="mailto:a.i.e.c.h.t.g13@gmail.com">a.i.e.c.h.t.g13@gmail.com</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer-right">
-					<h4>About The Company</h4>
-					<p>
-						The AI-Enabled Cognitive Health Therapist project is a research initiative that aims to develop
-						an
-						AI-powered chatbot that can provide cognitive behavioural therapy (CBT) to people with mental
-						health
-						conditions
-					</p>
-					<div class="sicons">
-						<a href="www.facebook.com" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-						<a href="www.instagram.com" id="instagram"><i class="fa-brands fa-instagram"></i></a>
-						<a href=www.linkedin.com" id="linkedin"><i class="fa fa-linkedin"></i></a>
-						<a href="www.twitter.com" id="twitter"><i class="fa-brands fa-twitter"></i></a>
-					</div>
-			</section>
-			<div id="admin-part">
-				<a href="/doctorlogin">Doctor login</a>
+				</p>
 			</div>
-			<div id="admin-part">
-				<a href="/adminlogin">Admin</a>
+			<div class="footer-mid">
+				<ul>
+					<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
+					<li><i class="fa fa-phone"></i>6291640218</li>
+					<li>
+						<i class="fa fa-envelope"></i><a
+							href="mailto:a.i.e.c.h.t.g13@gmail.com">a.i.e.c.h.t.g13@gmail.com</a>
+					</li>
+				</ul>
 			</div>
-		</footer>
+			<div class="footer-right">
+				<h4>About The Company</h4>
+				<p>
+					The AI-Enabled Cognitive Health Therapist project is a research initiative that aims to develop
+					an
+					AI-powered chatbot that can provide cognitive behavioural therapy (CBT) to people with mental
+					health
+					conditions
+				</p>
+				<div class="sicons">
+					<a href="www.facebook.com" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="www.instagram.com" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href=www.linkedin.com" id="linkedin"><i class="fa fa-linkedin"></i></a>
+					<a href="www.twitter.com" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+				</div>
+		</section>
+		<div id="admin-part">
+			<a href="/doctorlogin">Doctor login</a>
+		</div>
+		<div id="admin-part">
+			<a href="/adminlogin">Admin</a>
+		</div>
+	</footer>
 	</div>
 	<script>
 		const list = document.getElementById("drop_list");
 
-
 		const dropdown = () => {
-			list.classList.toggle('visible')
-		}
-		document.getElementById('click_btn').addEventListener('click', dropdown);
+			list.classList.toggle("visible");
+		};
+		document.getElementById("click_btn").addEventListener("click", dropdown);
 	</script>
 </body>
 

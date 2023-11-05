@@ -25,9 +25,12 @@
   .home .content {
     z-index: 888;
     color: #fff9f9;
-    width: 100%;
+    width: 30%;
     margin-top: 50px;
     margin-left: 20px;
+	position:absolute;
+    /* top: 40%; */
+    left:2%
   }
   
   .home .content h1 {

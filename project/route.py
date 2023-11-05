@@ -1,11 +1,12 @@
 from flask import render_template, request, flash, redirect, url_for, Blueprint, jsonify, session,Response
-from project.model import UserAccount, db_session, Contacts, Therapists, Schedule, ImageUpload
+from project.model import UserAccount, db_session, Contacts, Therapists, Schedule, ImageUpload,Appointment
 from flask_login import login_required, current_user
 from flask_mail import Message
 from . import mail
 from project.helpers import custom_login_required
 from .runchatbot import chatbot_response
 import datetime
+# from datetime import datetime
 from PIL import Image
 import io
 # from project.forms import SignupForm
@@ -50,7 +51,8 @@ def home(email='guestuser'):
 @route.route('/contact', methods=["GET", "POST"])
 def contact(email='guestuser'):
 	image_record = None
-	image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
+	if 'registered_user' in session:
+		image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
 	db_session.close()
 	default_image_url = url_for(
 		'static', filename='img/default-avatar-icon-of-social-media-user-vector.jpg')
@@ -59,9 +61,9 @@ def contact(email='guestuser'):
 	else:
 		image_url = default_image_url
 	if request.method == "POST":
-		image_record = None
-		image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
-		db_session.close()
+		# image_record = None
+		# image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
+		# db_session.close()
 		default_image_url = url_for(
 			'static', filename='img/default-avatar-icon-of-social-media-user-vector.jpg')
 		if image_record:
@@ -101,8 +103,8 @@ def contact(email='guestuser'):
 @route.route('/about')
 def about(email='guestuser'):
 	image_record = None
-
-	image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
+	if 'registered_user' in session:
+		image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
 
 	db_session.close()
 
@@ -140,8 +142,27 @@ def send_message():
 
 # 	return render_template('appointment_form.html', therapist=therapist, available_times=available_times)
 
-@route.route('/book/<string:th_id>', methods=['GET', 'POST'])
-def submit_appointment(th_id):
+@route.route('/book/', methods=['GET', 'POST'])
+def submit_appointment():
+	th_id = request.args.get('th_id')
+	email = request.args.get('email')
+	user = db_session.query(UserAccount).filter_by(email=email).first()
+	image_record = None
+	default_image_url = url_for(
+		'static', filename='img/default-avatar-icon-of-social-media-user-vector.jpg')
+	try:
+		image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
+
+		db_session.close()
+
+
+		if image_record:
+			image_url = url_for('route.user_image', user_email=image_record.email)  # Use user.email, not image_record.email
+		else:
+			image_url = default_image_url
+	except:
+		image_url = default_image_url
+
 	if 'registered_user' not in session:
 		return redirect(url_for('auth.login', type='singin'))
 	else:
@@ -162,11 +183,59 @@ def submit_appointment(th_id):
 			appointment_time = request.form['appointment-time']
 			medical_history = request.form['medical-history']
 			other_details = request.form['other-details']
-
+			image = request.files['inputfile']
 			therapist_schedule = db_session.query(Schedule).filter_by(
 				th_id=th_id, appointment_day=appointment_date).all()
 			available_times = [str(schedule.start_time)
 							   for schedule in therapist_schedule]
+			
+			
+			if user:
+				user.full_name = name
+				user.dob = dob
+				user.gender = gender
+				user.phone = phone
+				db_session.commit()
+			
+			if image.filename != '':
+				# Read the uploaded image
+				img_data = image.read()
+
+				# Compress the image using Pillow
+				img = Image.open(io.BytesIO(img_data))
+
+				# Resize and save the image with compression
+				img = img.resize((500, 500))  # Adjust the size as needed
+				img_data_compressed = io.BytesIO()
+				# Adjust the format and quality as needed
+				img.save(img_data_compressed, format='JPEG', quality=70)
+
+				# Check if the user exists in the database
+				if user:
+					# Save the compressed image to the database
+					image_record = db_session.query(
+				ImageUpload).filter_by(email=user.email).first()
+					db_session.commit()
+					if image_record:
+						image_record.image=img_data_compressed.getvalue()
+					else:
+						new_img = ImageUpload(
+							image=img_data_compressed.getvalue(), email=user.email)
+						db_session.add(new_img)
+					db_session.commit()
+			new_appoinments = Appointment(email = user.email, th_id = therapist.th_id,appointment_date = appointment_date,appointment_time=appointment_time,appointment_reason = appointment_reason, medical_history = medical_history, other_details = other_details)
+			db_session.add(new_appoinments)
+			db_session.commit()
+			email_msg = Message(
+				subject="Appoinment Booked",
+				recipients=[email],
+				body=f"Thank you {name},\n You have successfull take appoinments\n Therapist Name: {therapist.th_name}\nAppointment Date:{appointment_date} \n Appoinment Time: {appointment_time}",
+			)
+			mail.send(email_msg)
+			print("mail send")
+			return redirect(url_for('route.home', email=user.email))
+
+				
 			# print(f"Name: {name}")
 			# print(f"Date of Birth: {dob}")
 			# print(f"Gender: {gender}")
@@ -182,7 +251,7 @@ def submit_appointment(th_id):
 			# print(f"Medical History: {medical_history}")
 			# print(f"Other Details: {other_details}")
 		# return "Appoinment booked successfully!!"
-		return render_template('appointment_form.html', therapist=therapist, available_times=available_times)
+		return render_template('appointment_form.html', therapist=therapist, user=user,available_times=available_times,profile_image=image_url)
 
 
 @route.route('/get_available_times/<string:th_id>', methods=['GET'])
@@ -203,8 +272,8 @@ def get_available_times(th_id):
 @route.route('/order-medicine')
 def order_medicine(email='guestuser'):
 	image_record = None
-
-	image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
+	if 'registered_user' in session:
+		image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
 
 	db_session.close()
 
@@ -215,7 +284,7 @@ def order_medicine(email='guestuser'):
 		image_url = url_for('route.user_image', user_email=image_record.email)  # Use user.email, not image_record.email
 	else:
 		image_url = default_image_url
-	return render_template('order_medicine.html',profile_image=image_url)
+	return render_template('order_medicine.html',profile_image=image_url,user=current_user)
 
 
 @route.route('/adminpanel')
@@ -273,7 +342,7 @@ def user_profile(email):
 			blood_group = request.form.get('blood_group')
 			email = request.form.get('email')
 			phone = request.form.get('phone')
-			user.username = name
+			user.full_name = name
 			user.dob = date_of_birth
 			user.blood_group = blood_group
 			user.gender = gender
@@ -334,17 +403,58 @@ def user_profile(email):
 
 @route.route('/user_image/<string:user_email>')
 def user_image(user_email):
-    user = db_session.query(UserAccount).filter_by(email=user_email).first()
-    image_record = db_session.query(ImageUpload).filter_by(email=user.email).first()
-    db_session.close()
+	user = db_session.query(UserAccount).filter_by(email=user_email).first()
+	image_record = db_session.query(ImageUpload).filter_by(email=user.email).first()
+	db_session.close()
 
-    if image_record:
-        return Response(image_record.image, content_type='image/jpeg')
-    else:
-        default_image = open('static/img/default-avatar-icon-of-social-media-user-vector.jpg', 'rb').read()
-        return default_image
+	if image_record:
+		return Response(image_record.image, content_type='image/jpeg')
+	else:
+		default_image = open('static/img/default-avatar-icon-of-social-media-user-vector.jpg', 'rb').read()
+		return default_image
+
+@route.route('/go_back')
+def go_back():
+	if 'history' in session:
+		if len(session['history']) > 1:
+			session['history'].pop()
+			return redirect(session['history'][-1])
+	return redirect(url_for('route.home',email = session['registered_user']))
+@route.route('/booked-appointments/<string:email>', methods=['GET','POST'])
+def booked(email):
+	if 'registered_user' in session and session['registered_user'] == email:
+		user = db_session.query(UserAccount).filter_by(email=email).first()
+		print(user.full_name)
+		appointments = db_session.query(Appointment).filter_by(email = email).order_by(Appointment.appointment_time).all()
+		therapists = db_session.query(Therapists).all()
+		image_record = None
+		default_image_url = url_for(
+		'static', filename='img/default-avatar-icon-of-social-media-user-vector.jpg')
+		try:
+			image_record = db_session.query(ImageUpload).filter_by(email=session['registered_user']).first()
+
+			db_session.close()
 
 
+			if image_record:
+				image_url = url_for('route.user_image', user_email=image_record.email)  # Use user.email, not image_record.email
+			else:
+				image_url = default_image_url
+		except:
+			image_url = default_image_url
+		# for appointment in appointments:
+		# 	print(appointment.email)
+		current_date = datetime.date.today()
+		return render_template('bookedappointment.html', current_date=current_date, profile_image=image_url, therapists=therapists,appointments = appointments,user=user)
+	else:
+		return "SORRY YOU CANNOT ACCESS TO THAT PAGE!!!!!"
+@route.route("/cancel/<string:id>",methods = ['GET', 'POST'])
+def cancelappo(id):
+	if 'registered_user' in session:
+		appointment = db_session.query(Appointment).filter_by(id=id).first()
+		db_session.delete(appointment)
+		db_session.commit()
+	return redirect(url_for('route.booked',email=session['registered_user']))
 
 if __name__ == '__main__':
 	app.run(debug=True)

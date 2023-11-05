@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/bookedappoinment.css') }}">
+</head>
+
+<body>
+	<header>
+		<div class="link">
+			<a href="{{url_for('route.go_back')}}"> <i class="fa-solid fa-arrow-left"></i>Back</a>
+		</div>
+		<div class="image">
+			<a href="{{url_for('route.user_profile', email=session['registered_user'])}}"><img src="{{ profile_image }}"	alt=""></a>
+			<h3><a href="{{url_for('route.user_profile', email=session['registered_user'])}}" style="color: white;">{{user.full_name}}</a></h3>
+		</div>
+		<div class="para">
+			<p>Application Details</p>
+		</div>
+	</header>
+
+	<main>
+		<section>
+
+			<marquee>* You Can Cancel Appointment One Day Before Of Booking Date.</marquee>
+			{% if appointments %}
+			<h2>Today's Appointment</h2>
+			{% for appointment in appointments %}
+			{% if appointment.appointment_date == current_date%}
+			<div class="card">
+				<div class="name">
+					{% if appointment.th_id %}
+					{% for therapist in therapists %}
+					{% if therapist.th_id == appointment.th_id %}
+					<p>{{ therapist.th_name }}</p>
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+				</div>
+				<div class="table">
+					<table>
+						<tr>
+							<th>Appointment Date</th>
+							<th>Appointment Time</th>
+						</tr>
+						<tr>
+							<td>{{appointment.appointment_date}}</td>
+							<td>{{appointment.appointment_time}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="button">
+					<!-- <div id="cancel">Cancel</div> -->
+					<div id="view"><a href="">View</a></div>
+				</div>
+				
+			</div>
+			{% endif %}
+			{% endfor%}
+			{% endif %}
+			{% if appointments %}
+			<h2> Future appointments </h2>
+			{% for appointment in appointments %}
+			{% if appointment.appointment_date > current_date %}
+			<div class="card">
+				<div class="name">
+					{% if appointment.th_id %}
+					{% for therapist in therapists %}
+					{% if therapist.th_id == appointment.th_id %}
+					<p>{{ therapist.th_name }}</p>
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+				</div>
+				<div class="table">
+					<table>
+						<tr>
+							<th>Appointment Date</th>
+							<th>Appointment Time</th>
+						</tr>
+						<tr>
+							<td>{{appointment.appointment_date}}</td>
+							<td>{{appointment.appointment_time}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="button">
+					<div id="cancel"><a href="{{url_for('route.cancelappo', id=appointment.id)}}" class="link" style="color: wheat;">Cancel</a></div>
+					<div id="view"><a href="">View</a></div>
+				</div>
+				
+			</div>
+			{% endif %}
+			{% endfor%}
+			{% endif %}
+			{% if appointments %}
+			<h2>older appointment</h2>
+			{% for appointment in appointments %}
+			{% if  appointment.appointment_date < current_date %}
+			<div class="card">
+				<div class="name">
+					{% if appointment.th_id %}
+					{% for therapist in therapists %}
+					{% if therapist.th_id == appointment.th_id %}
+					<p>{{ therapist.th_name }}</p>
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+				</div>
+				<div class="table">
+					<table>
+						<tr>
+							<th>Appointment Date</th>
+							<th>Appointment Time</th>
+						</tr>
+						<tr>
+							<td>{{appointment.appointment_date}}</td>
+							<td>{{appointment.appointment_time}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="button">
+					<!-- <div id="cancel">Cancel</div> -->
+					<div id="view"><a href="">View</a></div>
+				</div>
+				
+			</div>
+			{% endif %}
+			{% endfor%}
+			{% else %}
+			<center>
+				<h2>Book appointments Now!!</h2>
+			</center>
+			{% endif %}
+
+		</section>
+	</main>
+	<!-- <h2>hello</h2> -->
+</body>
+
+</html>

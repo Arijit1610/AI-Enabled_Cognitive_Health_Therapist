@@ -1,97 +1,148 @@
-*
-{
-    margin: 0px;
-    padding: 0px;
-}
-
-body
-{
-    background-color: rgb(50, 52, 136);
-}
-.container
-{
-    width: 60vw;
-    margin: auto;
-    border-radius: 7px;
-    padding: 3vw;
-    position: relative;
-    top: 70px;
-    background-color: #86b2ea;
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    /* margin-top: 10vh; */
 }
-
-.container form
-{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+body{
+    background:url('29081643_japanese_abstract_wave_pattern_design_1606.jpg');
+    background-repeat: no-repeat;
 }
-.heading
-{
-    justify-content: space-around;
-    /* display: block; */
-    /* text-align: center; */
-}
-.container form>div
-{
-    width: 90%; 
-    /* margin: auto; */
-    margin: 10px auto;
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-}
-
-.container form .label
-{
-    font-size: 22px;
-    width: 43%;
-}
-.container form .fields
-{
-    font-size: 22px;
-    width:57%;
-    /* text-align: center; */
-}
-
-.appointment_slot span
-{
-    display: table-header-group;
-    margin: 10px 0px;
-}
-
-input[type=text] , input[type=email], input[type=tel]
-{
-    font-size: 25px;
-    width: 100%;
-    /* font-size:; */
-    border-style: none;
-    border-radius: 3px;
-} 
-textarea
-{
-    width: 100%;
-	resize: vertical;
-}
-
-.submission 
-{
-    justify-content: space-between;
-}
-.submission button
-{
-    padding: 10px 31px;
-    margin: 5px 5px;
-    /* border: 2px solid white; */
-    border-style: none;
-    border-radius: 8px;
-}
-.submission button:hover
-{
-    background-color: rgb(50, 52, 136);
+.heading{
+    margin-top: 20px;
+    text-align: center;
     color: white;
 }
+
+.container{
+    width: 80%;
+    margin:40px auto;
+}
+
+.contact-box{
+    background:url('white-painted-wall-texture-background.jpg');
+    display: flex;
+}
+marquee{
+    color:red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-box .contact-right{
+    flex-basis: 100%;
+    padding: 40px 60px;
+    /* background: url(./5001147_19742.jpg); */
+}
+.user_pic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#image{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+   background:  rgb(60, 122, 222);
+   padding: 3px;
+
+}
+#image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+#update{
+    width: 15vw;
+    height: 3vw;
+    background:rgb(4, 65, 108) ;
+    background-image: linear-gradient(to top, rgba(255,0,0,0),  rgb(60, 122, 222));;
+    text-align: center;
+    padding: 11px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color:white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+#input-file{
+    display: none;
+}
+
+.input-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.input-row .input-group{
+    flex-basis: 45%;
+}
+.input-row1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.input-row1 .input-group1{
+    flex-basis: 30%;
+}
+ input,select{
+    width: 100%;
+    border: none;
+    border-bottom:2px solid rgb(5, 50, 82) ;
+    outline: none;
+    padding-bottom: 10px;
+    background: transparent;
+    font-size: 15px
+}
+span{
+    color: red;
+}
+
+label{
+    margin-bottom: 6px;
+    display: block;
+    color:rgb(2, 6, 29) ;
+    font-size: 18px;
+}
+textarea{
+    width: 100%;
+    /* border: 2px solid rgb(5, 50, 82); */
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(5, 50, 82);
+    background: transparent;
+    resize: none;
+    font-size: 16px;
+   
+}
+.areatext{
+    margin-bottom: 40px;
+}
+#bookbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#send{
+    background:rgb(20, 126, 201) ;
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(30, 165, 202));
+    width: 15vw;
+    border:none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    height: 3.5vw;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+    font-size: 20px;
+}
+#send:hover{
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(7, 147, 222));
+}
+
+ 

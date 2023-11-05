@@ -28,7 +28,7 @@ HOME
 	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICHINE</a></li>
 	{% else %}
 	<li><a href="{{url_for('route.home')}}" class="active-nav">HOME</a></li>
-	<li><a href="{{url_for('route.about')}}" >ABOUT US</a></li>
+	<li><a href="{{url_for('route.about')}}">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact')}}">CONTACT US</a></li>
 	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICHINE</a></li>
 	{% endif %}
@@ -120,47 +120,51 @@ HOME
 	<div class="swiper-button-next"></div>
 	<div class="swiper-button-prev"></div>
 </section> -->
+<div>
+	<h2>Book Our Therapist now...</h2>
+</div>
 <section class="doc_list">
-    <div class="swiper mySwiper container">
-        <div class="swiper-wrapper content">
-            {% for therapist in therapists %}
-            <div class="swiper-slide card">
-                <div class="card-content">
-                    <div class="image">
-                        <img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
-                    </div>
-                    <div class="description">
-                        <h4>{{ therapist.th_name }}</h4>
-                        <p class="para">
-                            Degree: {{ therapist.degree }}
-                        </p>
-                        <p class="para">
-                            Specialty: {{ therapist.specialty }}
-                        </p>
-                        <p class="para">
-                            Address: {{ therapist.address }}
-                        </p>
-                        <p class="para">
-                            Available days: {{ therapist_appointment_days[therapist.th_id] | join(', ') }}
-                        </p>
-                        <!-- <p class="para">
+	<div class="swiper mySwiper container">
+		<div class="swiper-wrapper content">
+			{% for therapist in therapists %}
+			<div class="swiper-slide card">
+				<div class="card-content">
+					<div class="image">
+						<img src="{{ url_for('static',filename='img/img_avatar.png') }}" alt="image" />
+					</div>
+					<div class="description">
+						<h4>{{ therapist.th_name }}</h4>
+						<p class="para">
+							Degree: {{ therapist.degree }}
+						</p>
+						<p class="para">
+							Specialty: {{ therapist.specialty }}
+						</p>
+						<p class="para">
+							Address: {{ therapist.address }}
+						</p>
+						<p class="para">
+							Available days: {{ therapist_appointment_days[therapist.th_id] | join(', ') }}
+						</p>
+						<!-- <p class="para">
                             Available time: 
                         </p> -->
-                        <div class="appointment">
-                            <a href="/book/{{therapist.th_id}}">Book Appointment</a>
-                        </div>
-                        <p class="sicons">
-                            <a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+						<div class="appointment">
+							<a href="{{ url_for('route.submit_appointment', th_id=therapist.th_id, email=session['registered_user']) }}
+							">Book Appointment</a>
+						</div>
+						<p class="sicons">
+							<a href="#"><i class="fa-brands fa-facebook-f" style="color: #4267b2"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter" style="color: #1da1f2"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
 	<div class="swiper-button-next"></div>
 	<div class="swiper-button-prev"></div>
 </section>

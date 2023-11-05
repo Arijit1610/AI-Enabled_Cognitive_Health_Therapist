@@ -1,166 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Book Appointment</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/appointment_style.css')}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/appointment_style.css')}}">
 </head>
-
 <body>
-	<div class="container">
-		<form action="{{th_id}}" method="post">
-			<div class="heading">
-				<h1>Fill the Details below</h1>
-			</div>
-			<div class="name">
-				<div class="label">
-					<label for="name">Name<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<div>
-						<input type="text" id="name" name="name" required>
+    <div class="heading">
+        <h1>Book Your Appointment</h1>
+    </div>
+  
+    <div class="main">
+    
+        <section class="query-cover">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-right">
+                        <marquee>You Need To Required To Fill Mandatory(*) Fields.</marquee>
+                        <form action="{{th_id}}" method="post" enctype="multipart/form-data">
+                            <div class="user_pic">
+                                <div id="image">
+                                    <img src="{{ profile_image }}" alt="Profile Picture" id="profile-pic">
+                                 </div>
+                                 <label for="input-file" id="update">Update Image</label>
+                                 <input type="file" name="inputfile" id="input-file" accept="image/jpeg, image/jpg, image/png" id="input-file">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Patient Name <span>*</span></label>
+                                    <input type="text" name="name" value="{{user.full_name}}" required />
+                                </div>
 
-					</div>
-				</div>
-			</div>
-			<div class="dob">
-				<div class="label">
-					<label for="dob">Date of Birth<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<input type="date" name="dob" id="dob" required>
-				</div>
-			</div>
-			<div class="gender">
-				<div class="label">
-					<label for="">Gender<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<div>
-						<input type="radio" name="gender" id="male" value="male" required>
-						<label for="male">Male</label>
-					</div>
-					<div>
-						<input type="radio" name="gender" id="female" value="female" required>
-						<label for="female">Female</label>
-					</div>
-					<div>
-						<input type="radio" name="gender" id="others" value="others"required>
-						<label for="others">Others</label>
-					</div>
-				</div>
-			</div>
-			<div class="email">
-				<div class="label">
-					<label for="email">E-Mail<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<input type="email" name="email" id="email" required>
-				</div>
-			</div>
-			<div class="phone">
-				<div class="label">
-					<label for="phone">Phone Number<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<input type="tel" name="phone" id="phone" required>
-				</div>
-			</div>
-			<div class="guardian_name">
-				<div class="label">
-					<label for="guardian-name">Guardian Name</label>
-				</div>
-				<div class="fields">
-					<input type="text" name="guardian-name" id="guardian-name">
-				</div>
-			</div>
-			<div class="guardian_phone">
-				<div class="label">
-					<label for="guardian-phone">Guardian Contact Number</label>
-				</div>
-				<div class="fields">
-					<input type="tel" name="guardian-phone" id="guardian-phone">
-				</div>
-			</div>
-			<div class="emergency_contact">
-				<div class="label">
-					<label for="emergency-phone">Emergency Contact Number<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<input type="tel" name="emergency-phone" id="emergency-phone" required>
-				</div>
-			</div>
+                                <div class="input-group">
+                                    <label>Date Of Birth <span>*</span></label>
+                                    <input type="date" name="dob"  value="{{user.dob}}" required placeholder="" />
+                                </div>
+                                
+                            </div>
 
-			<div class="address">
-				<div class="label">
-					<label for="address">Address<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<!-- <input type="text" name="address" id="address"> -->
-					<textarea name="address" id="address" rows="5" placeholder="Write Here..."></textarea>
-				</div>
-			</div>
-			<div class="doctor_name">
-				<div class="label">
-					<label for="doctor-name">Doctor Name</label>
-				</div>
-				<div class="fields">
-					<input type="text" name="doctor-name" id="doctor-name" value="{{therapist.th_name}}" readonly>
-				</div>
-			</div>
-			<div class="appointment_reason">
-				<div class="label">
-					<label for="appointment-reason">Appointment Reason<span style="color: red;">*</span></label>
-				</div>
-				<div class="fields">
-					<textarea name="appointment-reason" id="appointment-reason" rows="6"
-						placeholder="Write here..."></textarea>
-				</div>
-			</div>
-			<div class="appointment_slot">
-				<div class="label">
-					<label for="">Appointment Slot</label>
-				</div>
-				<div class="fields">
-					<span><label for="appointment-date">Appointment Date<span style="color: red;">*</span></label></span>
-					<span><input type="date" id="appointment-date" name="appointment-date" min="2023-10-14" max="2023-11-14"></span>
-					<span><label for="appointment-time">Appointment Time<span style="color: red;">*</span></label></span>
-					<span>
-						<select id="appointment-time" name="appointment-time">
-							<!-- Options will be dynamically added here -->
-						</select>
-					</span>
-				</div>
-			</div>
-			<div class="medical_history">
-				<div class="label">
-					<label for="medical-history">Medical History (If Any)</label>
-				</div>
-				<div class="fields">
-					<textarea name="medical-history" id="medical-history" rows="5"
-						placeholder="Write here..."></textarea>
-				</div>
-			</div>
-			<div class="other_details">
-				<div class="label">
-					<label for="other-details">Other Relevant Details</label>
-				</div>
-				<div class="fields">
-					<textarea name="other-details" id="other-details" rows="5" placeholder="Write here..."></textarea>
-				</div>
-			</div>
-			<div class="submission">
-				<div>
-					<button type="reset">Reset</button>
-				</div>
-				<div>
-					<button type="submit">Book Appointment</button>
-				</div>
-			</div>
-		</form>
-	</div>
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Gender <span>*</span></label>
+                                    <select name="gender" required>
+                                        <option value="Male" {% if user.gender=="Male" %}selected{% endif %}>Male</option>
+                                        <option value="Female" {% if user.gender=="Female" %}selected{% endif %}>Female</option>
+                                        <option  value="Other" {% if user.gender=="Other" %}selected{% endif %}>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group">
+                                    <label>Bload Group <span>*</span></label>
+                                    <select>
+                                        <option value="A+" {% if user.blood_group=="A+" %}selected{% endif %}>A+
+										</option>
+										<option value="B+" {% if user.blood_group=="B+" %}selected{% endif %}>B+
+										</option>
+										<option value="O+" {% if user.blood_group=="O+" %}selected{% endif %}>O+
+										</option>
+										<option value="AB+" {% if user.blood_group=="AB+" %}selected{% endif %}>AB+
+										</option>
+										<option value="None" {% if user.blood_group=="None" %}selected{% endif %}>None
+										</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Email <span>*</span></label>
+                                    <input type="email" name="email"  value="{{user.email}}" required placeholder="" readonly />
+                                </div>
+                                <div class="input-group">
+                                    <label>Contact No <span>*</span></label>
+                                    <input type="tel" name="phone"  value="{{user.phonenumber}}" required placeholder="" />
+                                </div>
+                            </div>
+
+                            <div class="input-row1">
+                                <div class="input-group1">
+                                    <label>Guardain Name</label>
+                                    <input type="name" name="guardian-name" placeholder="" />
+                                </div>
+                                <div class="input-group1">
+                                    <label>Guardain Contact No</label>
+                                    <input type="tel" name="guardian-phone" placeholder="" />
+                                </div>
+                                <div class="input-group1">
+                                    <label>Emergency Contact No <span>*</span></label>
+                                    <input type="tel" name="emergency-phone" placeholder="" />
+                                </div>
+                            </div>
+
+                            <label>Address <span>*</span></label>
+                  <textarea rows="5" name="address" placeholder=""></textarea>
+
+                  <div class="input-row1">
+                    <div class="input-group1">
+                        <label>Doctor Name <span>*</span></label>
+                        <input type="text" name="doctor-name" value="{{therapist.th_name}}" readonly placeholder="" />
+                    </div>
+                    <div class="input-group1">
+                        <label for="appointment-date">Apointment Date<span>*</span></label>
+                        <input type="date" name="appointment-date" id="appointment-date" min="2023-10-14"
+                        max="2023-11-14" placeholder="" />
+                    </div>
+                    <div class="input-group1">
+                        <label for="appointment-time">Appointment Time <span>*</span></label>
+                        <select type="tel"  name="appointment-time" id="appointment-time" placeholder="" >
+                            <option >Select</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label>Appointment Reason <span>*</span></label>
+                <textarea class="areatext" name="appointment-reason" rows="5" placeholder=""></textarea>
+
+                <label>Medical History(If Any)</label>
+                  <textarea class="areatext" name="medical-history" rows="5" placeholder=""></textarea>
+
+                  <label>Other Relevent Details</label>
+                  <textarea class="areatext" name="other-details" rows="5" placeholder=""></textarea>
+
+
+                           <div id="bookbtn">
+                            <button id="send" type="submit">Book</button>
+                           </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function () {
@@ -210,7 +184,19 @@
 			return `${year}-${month}-${day}`;
 		}
 	</script>
+    <script>
+        const profilepic=document.getElementById("profile-pic");
+        const inputfile=document.getElementById("input-file");
 
+
+        // inputfile.addEventListener("change",()=>{
+        //     profilepic.src=URL.createObjectURL(inputfile.files[0]);
+        // })
+
+            inputfile.onchange=function(){
+
+                profilepic.src=URL.createObjectURL(inputfile.files[0]);
+            }
+    </script>
 </body>
-
 </html>

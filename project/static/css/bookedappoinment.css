@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+header{
+    width: 100%;
+    /* border: 2px solid red; */
+    height: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: rgb(171, 13, 224);
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(26, 139, 220));
+}
+.link{
+    font-size: 22px;
+}
+.link a{
+    color: white;
+}
+.link i{
+    margin-right: 20px;
+}
+.image{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+.image img{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 250px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.para{
+    font-size: 22px;
+    color: white;
+}
+body{
+    background: url('white-painted-wall-texture-background.jpg') no-repeat;
+    object-fit: cover;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+marquee{
+    color: red;
+    font-weight: bold;
+}
+.card{
+    width: 90vw;
+    height: 8vw;
+    border-radius: 5px;
+  margin-top: 30px;
+  /* border: 2px solid rgb(155, 73, 237); */
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px 20px;
+}
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.table td{
+    text-align: center;
+}
+table{
+    border-collapse: separate;
+  border-spacing: 50px 0;
+}
+.button{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#cancel{
+   width: 8vw;
+   height: 3vw;
+   text-align: center;
+   padding: 7px 0px;
+   background: rgb(209, 24, 24);
+   color: white;
+
+}
+#view{
+    width: 8vw;
+   height: 3vw;
+   text-align: center;
+   padding: 8px 0px;
+   background:rgb(76, 165, 230);
+ 
+}
+#view a{
+    color: white;
+}
