@@ -48,6 +48,10 @@ header {
 	display: inline-block;
 	margin: 2px 2px;
 }
+.login ul {
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
 
 .login ul li a {
 	text-decoration: none;
@@ -67,27 +71,37 @@ header {
 	border-radius: 5px;
 }
 
-header {
+.navbar-header {
 	width: 100%;
-	height: 6vw;
+	height: 4vw;
 	font-family: "Poppins", sans-serif;
-	position: absolute;
-	z-index: 2;
+	position: fixed;
+	z-index: 999;
+
 }
 
-.header_down {
+.head-er_down {
+	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	position: relative;
-	margin-top: 10px;
+	backdrop-filter: blur(18px);
 }
 
-.website-name {
+.head-er_down.sticky {
+	background: rgb(171, 13, 224);
+	background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(59, 163, 238));
+}
+
+.website-name h1 {
 	font-size: 18px;
 	color: rgb(231, 235, 237);
 	margin-left: 60px;
+	color: white;
+	font-family: poppins, sans-serif;
+	font-size: 36px;
 }
 
 #login_signup {
@@ -156,11 +170,11 @@ header {
 
 
 #user_pic {
-	height: 4vw;
-	width: 4vw;
+	height: 3vw;
+	width: 3vw;
 	margin-right: 60px;
 	border-radius: 250px;
-	margin-top: 12px;
+	/* margin-top: 12px; */
 	background-color: white;
 }
 
@@ -195,6 +209,8 @@ header {
 #drop_list_content {
 	backdrop-filter: blur(15px);
 	padding: 20px;
+	background: rgb(171, 13, 224);
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(59, 163, 238));
 	/* margin: 10px; */
 }
 
@@ -225,8 +241,11 @@ header {
 	font-size: 16px;
 }
 
-.drop_link p {
+.drop_link .drop_p {
 	width: 100%;
+	color: rgb(255, 255, 255);
+	margin: 0px;
+	font-weight: bold;
 }
 
 .fa-right-from-bracket,
@@ -248,18 +267,18 @@ header {
 
 
 
-.navbar ul {
+.nav-bar ul {
 	list-style-type: none;
 	margin: 0px 5px;
 	padding: 0px 5px;
 }
 
-.navbar ul li {
+.nav-bar ul li {
 	display: inline-block;
 	margin: 0px 20px;
 }
 
-.navbar ul li a {
+.nav-bar ul li a {
 	text-decoration: none;
 	padding: 5px 5px;
 	color: rgb(246, 246, 246);
@@ -268,7 +287,7 @@ header {
 	position: relative;
 }
 
-.navbar a::before {
+.nav-bar a::before {
 	content: "";
 	position: absolute;
 	background: #f3efef;
@@ -279,11 +298,11 @@ header {
 	transition: 0.3s ease;
 }
 
-header .navbar a:hover:before {
+.nav-bar a:hover:before {
 	width: 100%;
 }
 
-header .navbar .active-nav:before {
+.nav-bar .active-nav:before {
 	content: "";
 	position: absolute;
 	background: #f3efef;
@@ -292,3 +311,14 @@ header .navbar .active-nav:before {
 	bottom: -3px;
 	left: 0;
 }
+
+/* code for pregress bar */
+#progress{
+	width: 0px;
+	height: 5px;
+	position: fixed;
+	z-index: 999;
+	background: rgb(39, 228, 89);
+	/* background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(81, 4, 4)); */
+	margin-top: 55px; 
+  }

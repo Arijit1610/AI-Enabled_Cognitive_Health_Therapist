@@ -22,6 +22,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
 	<!-- <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
 			rel="stylesheet" /> -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/scrolltotop.css') }}">
+
 	{% block head %}
 
 	{% endblock %}
@@ -29,10 +31,11 @@
 
 <body>
 	<div class="total">
-		<!-- Nav Bar Section -->
-		<header>
 
-			<div class="header_down">
+		<!-- Nav Bar Section -->
+		<div class="navbar-header" id="header">
+
+			<div class="head-er_down" id="newheader">
 				<div class="website-name">
 					{% if 'registered_user' in session %}
 					<a href="{{url_for('route.home',email = session['registered_user'])}}">
@@ -45,7 +48,7 @@
 					{% endif %}
 				</div>
 
-				<div class="navbar">
+				<div class="nav-bar">
 					{% block navbar %}
 
 					{% endblock %}
@@ -101,8 +104,9 @@
 			</div>
 			{% endif %}
 
+		</div>
 	</div>
-	</header>
+	<div id="progress"></div>
 	<!-- <div style="height: 50vh ; width: 100%;"></div>
     <div style="height: 50vh ; width: 100%;"></div>
     <div></div> -->
@@ -139,7 +143,7 @@
 		</div>
 	</section>
 	<script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
-	<!-- <script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script> -->
+	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
 	<footer>
 		<section class="footer-section">
 			<div class="footer-left">
@@ -160,7 +164,7 @@
 					<a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">Order
 						Medicine</a>
 					{% else %}
-					<a href="{{url_for('route.home')}}">Home</a>
+					<a href="{{url_for('route.home')}}" id="link1">Home</a>
 					<a href="{{url_for('route.about')}}">About</a>
 					<a href="{{url_for('route.contact')}}">Contact</a>
 					<a href="{{url_for('route.order_medicine')}}">Order Medicine</a>
@@ -170,7 +174,7 @@
 			<div class="footer-mid">
 				<ul>
 					<li><i class="fa-solid fa-location-dot"></i>Kolkata,West Bengal</li>
-					<li><i class="fa fa-phone"></i>6291640218</li>
+					<li><i class="fa fa-phone"></i><a href="tel:+91 8777297367">8777297367</a></li>
 					<li>
 						<i class="fa fa-envelope"></i><a
 							href="mailto:a.i.e.c.h.t.g13@gmail.com">a.i.e.c.h.t.g13@gmail.com</a>
@@ -186,11 +190,11 @@
 					health
 					conditions
 				</p>
-				<div class="sicons">
-					<a href="www.facebook.com" id="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-					<a href="www.instagram.com" id="instagram"><i class="fa-brands fa-instagram"></i></a>
-					<a href=www.linkedin.com" id="linkedin"><i class="fa fa-linkedin"></i></a>
-					<a href="www.twitter.com" id="twitter"><i class="fa-brands fa-twitter"></i></a>
+				<div class="ficons">
+					<a href="#" id="facebookan" class="media-icons"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#" id="instagraman" class="media-icons" ><i class="fa-brands fa-instagram"></i></a>
+					<a href="#" id="linkedinan" class="media-icons" ><i class="fa fa-linkedin"></i></a>
+					<a href="#" id="twitteran" class="media-icons" ><i class="fa-brands fa-twitter"></i></a>
 				</div>
 		</section>
 		<div id="admin-part">
@@ -201,14 +205,40 @@
 		</div>
 	</footer>
 	</div>
+	<script src="{{ url_for('static',filename='js/scrolltotop.js') }}"></script>
 	<script>
+		window.addEventListener("scroll", () => {
+			const header = document.querySelector(".head-er_down")
+			header.classList.toggle("sticky", window.scrollY > 500);
+		})
 		const list = document.getElementById("drop_list");
 
 		const dropdown = () => {
 			list.classList.toggle("visible");
 		};
 		document.getElementById("click_btn").addEventListener("click", dropdown);
-	</script>
-</body>
+		// nav bar effect
 
+	</script>
+
+
+</body>
+<script>
+	// scroll in progress
+
+	window.addEventListener("DOMContentLoaded", () => {
+		const progress = document.getElementById("progress")
+
+		const scrollprogress = () => {
+			const TotalHeightOfWebPage = document.body.scrollHeight
+			const currentDistanceFromTop = document.documentElement.scrollTop
+
+			const windowHeight = document.documentElement.clientHeight;
+
+			const scrolledPercentage = (currentDistanceFromTop / (TotalHeightOfWebPage - windowHeight) * 100);
+			progress.style.width = scrolledPercentage + "%";
+		}
+		document.addEventListener("scroll", scrollprogress)
+	})
+</script>
 </html>

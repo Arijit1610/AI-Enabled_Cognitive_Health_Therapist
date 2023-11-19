@@ -29,15 +29,15 @@
 
 			<marquee>* You Can Cancel Appointment One Day Before Of Booking Date.</marquee>
 			{% if appointments %}
-			<h2>Today's Appointment</h2>
+			<h2>Today's Appointments</h2>
 			{% for appointment in appointments %}
-			{% if appointment.appointment_date == current_date%}
+			{% if appointment.appointment_date == current_date %}
 			<div class="card">
 				<div class="name">
-					{% if appointment.th_id %}
-					{% for therapist in therapists %}
-					{% if therapist.th_id == appointment.th_id %}
-					<p>{{ therapist.th_name }}</p>
+					{% if appointment.docid %}
+					{% for  doctor in  doctors %}
+					{% if  doctor.docid == appointment.docid %}
+					<p>{{  doctor.name }}</p>
 					{% endif %}
 					{% endfor %}
 					{% endif %}
@@ -46,33 +46,34 @@
 					<table>
 						<tr>
 							<th>Appointment Date</th>
-							<th>Appointment Time</th>
+							 
 						</tr>
 						<tr>
 							<td>{{appointment.appointment_date}}</td>
-							<td>{{appointment.appointment_time}}</td>
+							 
 						</tr>
 					</table>
 				</div>
 				<div class="button">
 					<!-- <div id="cancel">Cancel</div> -->
-					<div id="view"><a href="">View</a></div>
+					<div id="view"><a href="{{url_for('route.viewappo',id=appointment.id)}}">View</a></div>
 				</div>
 				
 			</div>
 			{% endif %}
 			{% endfor%}
 			{% endif %}
+			
 			{% if appointments %}
-			<h2> Future appointments </h2>
+			<h2> Future Appointments </h2>
 			{% for appointment in appointments %}
 			{% if appointment.appointment_date > current_date %}
 			<div class="card">
 				<div class="name">
-					{% if appointment.th_id %}
-					{% for therapist in therapists %}
-					{% if therapist.th_id == appointment.th_id %}
-					<p>{{ therapist.th_name }}</p>
+					{% if appointment.docid %}
+					{% for  doctor in  doctors %}
+					{% if  doctor.docid == appointment.docid %}
+					<p>{{  doctor.name }}</p>
 					{% endif %}
 					{% endfor %}
 					{% endif %}
@@ -81,17 +82,17 @@
 					<table>
 						<tr>
 							<th>Appointment Date</th>
-							<th>Appointment Time</th>
+							 
 						</tr>
 						<tr>
 							<td>{{appointment.appointment_date}}</td>
-							<td>{{appointment.appointment_time}}</td>
+							
 						</tr>
 					</table>
 				</div>
 				<div class="button">
 					<div id="cancel"><a href="{{url_for('route.cancelappo', id=appointment.id)}}" class="link" style="color: wheat;">Cancel</a></div>
-					<div id="view"><a href="">View</a></div>
+					<div id="view"><a href="{{url_for('route.viewappo',id=appointment.id)}}">View</a></div>
 				</div>
 				
 			</div>
@@ -99,15 +100,15 @@
 			{% endfor%}
 			{% endif %}
 			{% if appointments %}
-			<h2>older appointment</h2>
+			<h2>Older Appointments</h2>
 			{% for appointment in appointments %}
 			{% if  appointment.appointment_date < current_date %}
 			<div class="card">
 				<div class="name">
-					{% if appointment.th_id %}
-					{% for therapist in therapists %}
-					{% if therapist.th_id == appointment.th_id %}
-					<p>{{ therapist.th_name }}</p>
+					{% if appointment.docid %}
+					{% for  doctor in  doctors %}
+					{% if  doctor.docid == appointment.docid %}
+					<p>{{  doctor.name }}</p>
 					{% endif %}
 					{% endfor %}
 					{% endif %}
@@ -116,17 +117,17 @@
 					<table>
 						<tr>
 							<th>Appointment Date</th>
-							<th>Appointment Time</th>
+							 
 						</tr>
 						<tr>
 							<td>{{appointment.appointment_date}}</td>
-							<td>{{appointment.appointment_time}}</td>
+							 
 						</tr>
 					</table>
 				</div>
 				<div class="button">
 					<!-- <div id="cancel">Cancel</div> -->
-					<div id="view"><a href="">View</a></div>
+					<div id="view"><a href="{{url_for('route.viewappo',id=appointment.id)}}">View</a></div>
 				</div>
 				
 			</div>

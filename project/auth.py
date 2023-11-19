@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for,session
 from flask_login import login_user, logout_user, current_user,login_required
-from .model import UserAccount, db_session,Admin,TherapistLoginCredentials
+from .model import UserAccount, db_session,Admin
+# ,TherapistLoginCredentials
 from project.helpers import custom_login_required
 from flask_mail import Message
 import random
@@ -18,7 +19,7 @@ def login(type):
 	if 'registered_user' in session:
 		# If the user is already logged in, redirect them to another page (e.g., the home page)
 		return redirect(url_for('route.home'))
-	flash("Please signin or Signup",category='info')
+	flash("Unlock a brighter, healthier you. Join us on your journey to better mental health. Log in and start your path to well-being today.",category='info')
 	if type == 'signup':
 		if request.method == "POST":
 			username = request.form.get('username')
@@ -42,7 +43,7 @@ def login(type):
 			else:
 				new_user = UserAccount(username=username, email=email, phonenumber=phone, password=password)
 				db_session.add(new_user)  # Corrected from db_session.add(user)
-				db_session.commit()
+				
 				flash("Registration successful!",category='info')
 				email_list=email
 				return redirect(url_for('auth.otp_verification'))  # Corrected redirection
@@ -55,7 +56,7 @@ def login(type):
 				if user.password == password:
 					flash('Logged in successfully!',category='message')
 					session['registered_user'] = user.email
-					return redirect(url_for('route.home',email=user.email))
+					return redirect(url_for('route.user_profile', email=session['registered_user']))
 				else:
 					flash("Incorrect Password, try again.",category='error')
 			else:
@@ -96,15 +97,18 @@ def otp_verification():
 		new_otp = digi_1 + digi_2 + digi_3 + digi_4 + digi_5 + digi_6
 		if int(new_otp) == otp:
 			print("correct")
+			db_session.commit()
 			user = db_session.query(UserAccount).filter_by(email=email_recipient).first()
 			session['registered_user'] = user.email
-			return redirect(url_for('route.home', email=user.email))
+
+			return redirect(url_for('route.user_profile', email=session['registered_user']))
 		else:
 			print("Incorrect")
 			print(new_otp)
 			print(otp)
 			print(f"{digi_1} {digi_2} {digi_3} {digi_4} {digi_5} {digi_6} ")
 			flash("invalid OTP entered!! try again",category='info')
+			db_session.rollback()
 	return render_template("otpverification.html")
 
 @auth.route('/adminlogin', methods=['POST', 'GET'])
@@ -143,38 +147,38 @@ def admin_logout():
 	
 	return redirect(url_for('auth.admin_login'))
 
-@auth.route('/doctorlogin', methods=['POST', 'GET'])
-def doctor_login():
-	if 'doctor_th_id' in session:
-		# If an admin is already logged in, redirect them to the admin panel
-		return redirect(url_for('route.doctor_dashboard',th_id = session['doctor_th_id']))
+# @auth.route('/doctorlogin', methods=['POST', 'GET'])
+# def doctor_login():
+# 	if 'doctor_th_id' in session:
+# 		# If an admin is already logged in, redirect them to the admin panel
+# 		return redirect(url_for('route.doctor_dashboard',th_id = session['doctor_th_id']))
 
-	if request.method == 'POST':
-		username = request.form.get('username')
-		password = request.form.get('password')
-		doctor = db_session.query(TherapistLoginCredentials).filter_by(username=username).first()
-		if doctor:
-			if doctor.password == password:
-				# Store doctor's ID in the session to track their login status
-				session['doctor_th_id'] = doctor.th_id
-				flash(f"Welcome, Dr. {doctor.username}!", category='info')
-				return redirect(url_for('route.doctor_dashboard', th_id = doctor.th_id))  # Replace 'doctor.dashboard' with your doctor's dashboard route
-			else:
-				flash("Incorrect Password", category='error')
-		else:
-			flash("Incorrect doctor details entered", category='error')
+# 	if request.method == 'POST':
+# 		username = request.form.get('username')
+# 		password = request.form.get('password')
+# 		doctor = db_session.query(TherapistLoginCredentials).filter_by(username=username).first()
+# 		if doctor:
+# 			if doctor.password == password:
+# 				# Store doctor's ID in the session to track their login status
+# 				session['doctor_th_id'] = doctor.th_id
+# 				flash(f"Welcome, Dr. {doctor.username}!", category='info')
+# 				return redirect(url_for('route.doctor_dashboard', th_id = doctor.th_id))  # Replace 'doctor.dashboard' with your doctor's dashboard route
+# 			else:
+# 				flash("Incorrect Password", category='error')
+# 		else:
+# 			flash("Incorrect doctor details entered", category='error')
 
-	# If the request method is GET or login failed, render the doctor login page
-	return render_template('Doctor login.html')
+# 	# If the request method is GET or login failed, render the doctor login page
+# 	return render_template('Doctor login.html')
 
-@auth.route('/doctorlogout/<string:th_id>', methods=['GET'])
-def doctor_logout(th_id):
-	if 'doctor_th_id' in session and session['doctor_th_id'] == th_id:
-		# If an doctor is logged in, remove their session
-		session.pop('doctor_th_id', None)
-		flash("doctor logged out successfully!", category='info')
-	else:
-		return "Access Denied!!!!"
+# @auth.route('/doctorlogout/<string:th_id>', methods=['GET'])
+# def doctor_logout(th_id):
+# 	if 'doctor_th_id' in session and session['doctor_th_id'] == th_id:
+# 		# If an doctor is logged in, remove their session
+# 		session.pop('doctor_th_id', None)
+# 		flash("doctor logged out successfully!", category='info')
+# 	else:
+# 		return "Access Denied!!!!"
 	
-	return redirect(url_for('auth.doctor_login'))
+# 	return redirect(url_for('auth.doctor_login'))
 

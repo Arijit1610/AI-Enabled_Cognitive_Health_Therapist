@@ -11,20 +11,22 @@ CONTACT
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;600&display=swap"
 	rel="stylesheet" />
+
+	
 {% endblock %}
 
 {% block navbar %}
 <ul>
 	{% if 'registered_user' in session %}
 	<li><a href="{{url_for('route.home',email = session['registered_user'])}}">HOME</a></li>
-	<li><a href="{{url_for('route.about',email = session['registered_user'])}}" >ABOUT US</a></li>
+	<li><a href="{{url_for('route.about',email = session['registered_user'])}}">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}" class="active-nav">CONTACT US</a></li>
-	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICHINE</a></li>
+	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICINE</a></li>
 	{% else %}
 	<li><a href="{{url_for('route.home')}}">HOME</a></li>
-	<li><a href="{{url_for('route.about')}}" >ABOUT US</a></li>
+	<li><a href="{{url_for('route.about')}}">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact')}}" class="active-nav">CONTACT US</a></li>
-	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICHINE</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICINE</a></li>
 	{% endif %}
 </ul>
 {% endblock %}
@@ -60,15 +62,10 @@ CONTACT
 							</li>
 							<li>
 								<iframe
-								  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58965.69323017644!2d88.34159165204558!3d22.528339733930913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02740a6095d3f7%3A0xac556ea09ce96171!2sThe%20Heritage%20Academy!5e0!3m2!1sen!2sin!4v1697448352554!5m2!1sen!2sin"
-								  width="300"
-								  height="100"
-								  style="border: 0"
-								  allowfullscreen=""
-								  loading="lazy"
-								  referrerpolicy="no-referrer-when-downgrade"
-								></iframe>
-							  </li>
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58965.69323017644!2d88.34159165204558!3d22.528339733930913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02740a6095d3f7%3A0xac556ea09ce96171!2sThe%20Heritage%20Academy!5e0!3m2!1sen!2sin!4v1697448352554!5m2!1sen!2sin"
+									width="300" height="100" style="border: 0" allowfullscreen="" loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</li>
 						</ul>
 					</div>
 
@@ -86,27 +83,29 @@ CONTACT
 						<div class="input-row">
 							<div class="input-group">
 								<label>Name</label>
-								<input type="text" name="name" placeholder="Type Your Name ">
+								<input type="text" name="name" placeholder="Type Your Name " required>
 							</div>
 							<div class="input-group">
 								<label>Phone</label>
-								<input type="tel" name="phonenumber" placeholder="Type Your Phone Number">
+								<input type="tel" name="phonenumber" class="phone" placeholder="Type Your Phone Number"
+									required>
+								<span class="phoneError" style="color: red;"></span>
 							</div>
 						</div>
 
 						<div class="input-row">
 							<div class="input-group">
 								<label>Email</label>
-								<input type="email" name="email" placeholder="Type Your Email ">
+								<input type="email" name="email" placeholder="Type Your Email " required>
 							</div>
 							<div class="input-group">
 								<label>Date Of Birth</label>
-								<input type="date" name="dob" placeholder="Enter Your DOB">
+								<input type="date" name="dob" placeholder="Enter Your DOB" required>
 							</div>
 						</div>
 
 						<label>Message</label>
-						<textarea rows="5" cols="50"name="msg" placeholder="Type Your Query"></textarea>
+						<textarea rows="5" cols="50" name="msg" placeholder="Type Your Query" required></textarea>
 						<button type="submit" class="btan">Send</button>
 					</form>
 				</div>
@@ -114,4 +113,30 @@ CONTACT
 		</div>
 	</section>
 </div>
+
+<script>
+	// Function to validate the phone number
+	function validatePhone(event) {
+		var phoneInput = event.target;
+		var phoneError = phoneInput.nextElementSibling;
+
+		// Remove non-digit characters from the phone number
+		var phoneNumber = phoneInput.value.replace(/\D/g, '');
+
+		// Check if the phone number is exactly 10 digits long
+		if (phoneNumber.length !== 10) {
+			phoneError.textContent = 'Phone number must be 10 digits long';
+			phoneInput.setCustomValidity('Invalid phone number');
+		} else {
+			phoneError.textContent = '';
+			phoneInput.setCustomValidity('');
+		}
+	}
+
+	// Add event listeners to all elements with the 'phone' class
+	var phoneInputs = document.querySelectorAll('.phone');
+	phoneInputs.forEach(function (input) {
+		input.addEventListener('input', validatePhone);
+	});
+</script>
 {% endblock %}

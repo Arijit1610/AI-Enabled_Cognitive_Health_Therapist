@@ -72,6 +72,7 @@ footer {
 .footer-mid ul {
 	margin: 30px 20px 40px 20px;
 	font-size: 18px;
+	color: white;
 }
 
 .footer-mid li i {
@@ -92,14 +93,17 @@ footer {
 
 .footer-right h4 {
 	margin: 30px 20px 20px 20px;
-	font-size: 18px;
+    font-size: 18px;
+    color: white;
 }
 
 .footer-right p {
 	margin: 20px 45px 20px 20px;
+    color: white;
+    font-family: auto;
 }
 
-.footer-right.sicons {
+/* .footer-right.sicons {
 	margin-top: 25px;
 	margin-bottom: 28px;
 }
@@ -116,7 +120,60 @@ footer {
 	text-align: center;
 	line-height: 35px;
 	margin-right: 3px;
+} */
+
+.footer-right .ficons {
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* border: 2px solid red; */
+    margin-left: 19px;
+
 }
+
+.footer-right .ficons .media-icons{
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+
+	border-radius: 2px;
+	font-size: 22px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 40px;
+}
+
+#facebookan {
+	background-color: white;
+	color: #224f98;
+}
+
+#instagraman {
+	background: linear-gradient(45deg,
+			#f09433 0%,
+			#e6683c 25%,
+			#dc2743 50%,
+			#cc2366 75%,
+			#bc1888 100%);
+	color: white;
+}
+
+#linkedinan {
+	background-color: #0072b1;
+	color: white;
+}
+
+#twitteran {
+	color: #1da1f2;
+	background-color: white;
+}
+
+
+
 
 #admin-part {
 	border-top: 2px solid rgba(191, 187, 187, 0.17);

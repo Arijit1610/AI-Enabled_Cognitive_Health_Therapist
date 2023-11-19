@@ -1,8 +1,8 @@
-from sqlalchemy import create_engine, Column, String, Integer, UniqueConstraint, Date, ForeignKey, Time, Boolean, BLOB,DateTime
+from sqlalchemy import create_engine, Column, String, Integer, UniqueConstraint, Date, ForeignKey, Time, Boolean, BLOB, DateTime, Float, JSON
 # from flask_login import UserMixin
 from datetime import datetime
 from sqlalchemy.orm import declarative_base, Session, relationship
-
+import pandas as pd
 # Create an SQLAlchemy engine for MySQL.
 engine = create_engine(
     "mysql://root:arijit@localhost/minor_project", echo=True)
@@ -11,6 +11,9 @@ engine = create_engine(
 Base = declarative_base()
 
 # Define your UserAccount model.
+
+
+
 
 
 class UserAccount(Base):
@@ -42,33 +45,33 @@ class Contacts(Base):
         return f"<Contact name={self.name}>"
 
 
-class Therapists(Base):
-    __tablename__ = 'therapists'
-    id = Column(Integer, primary_key=True)
-    th_id = Column(String(5), unique=True, nullable=False)
-    th_name = Column(String(225), nullable=False)
-    address = Column(String(225), unique=True, nullable=False)
-    phone = Column(String(10), unique=True, nullable=False)
-    email = Column(String(50), nullable=False)
-    degree = Column(String(225), nullable=False)
-    specialty = Column(String(225), nullable=False)
+# class Therapists(Base):
+# 	__tablename__ = 'therapists'
+# 	id = Column(Integer, primary_key=True)
+# 	th_id = Column(String(5), unique=True, nullable=False)
+# 	th_name = Column(String(225), nullable=False)
+# 	address = Column(String(225), unique=True, nullable=False)
+# 	phone = Column(String(10), unique=True, nullable=False)
+# 	email = Column(String(50), nullable=False)
+# 	degree = Column(String(225), nullable=False)
+# 	specialty = Column(String(225), nullable=False)
 
-    def __repr__(self):
-        return f"<Contact name={self.th_name}>"
+# 	def __repr__(self):
+# 		return f"<Contact name={self.th_name}>"
 
 
-class Schedule(Base):
-    __tablename__ = 'schedule'
+# class Schedule(Base):
+# 	__tablename__ = 'schedule'
 
-    schedule_id = Column(Integer, primary_key=True)
-    th_id = Column(String(5), ForeignKey('therapists.th_id'), nullable=False)
-    appointment_day = Column(String(20), nullable=False)
-    start_time = Column(Time, nullable=False)
-    end_time = Column(Time, nullable=False)
-    is_available = Column(Boolean, default=True, nullable=False)
+# 	schedule_id = Column(Integer, primary_key=True)
+# 	th_id = Column(String(5), ForeignKey('therapists.th_id'), nullable=False)
+# 	appointment_day = Column(String(20), nullable=False)
+# 	start_time = Column(Time, nullable=False)
+# 	end_time = Column(Time, nullable=False)
+# 	is_available = Column(Boolean, default=True, nullable=False)
 
-    def __repr__(self):
-        return f'Schedule(id={self.id}, th_id={self.th_id}, appointment_day={self.appointment_day}, start_time={self.start_time}, end_time={self.end_time}, is_available={self.is_available})'
+# 	def __repr__(self):
+# 		return f'Schedule(id={self.id}, th_id={self.th_id}, appointment_day={self.appointment_day}, start_time={self.start_time}, end_time={self.end_time}, is_available={self.is_available})'
 
 
 class Admin(Base):
@@ -81,16 +84,16 @@ class Admin(Base):
         return f'<username ={self.username}'
 
 
-class TherapistLoginCredentials(Base):
-    __tablename__ = 'therapist_credentials'
+# class TherapistLoginCredentials(Base):
+# 	__tablename__ = 'therapist_credentials'
 
-    # Add fields for login credentials
-    th_id = Column(String(5), ForeignKey('therapists.th_id'), nullable=False)
-    username = Column(String(30), primary_key=True,
-                      unique=True, nullable=False)
-    password = Column(String(255), nullable=False)
-    # Define a relationship with the Therapists table
-    # therapist = relationship("Therapists", foreign_keys=[therapist_id])
+# 	# Add fields for login credentials
+# 	th_id = Column(String(5), ForeignKey('therapists.th_id'), nullable=False)
+# 	username = Column(String(30), primary_key=True,
+# 					  unique=True, nullable=False)
+# 	password = Column(String(255), nullable=False)
+# 	# Define a relationship with the Therapists table
+# 	# therapist = relationship("Therapists", foreign_keys=[therapist_id])
 
 
 class ImageUpload(Base):
@@ -106,15 +109,38 @@ class Appointment(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(255), ForeignKey(
         'useraccountlist.email'), nullable=False)
-    th_id = Column(String(5), ForeignKey('therapists.th_id'), nullable=False)
+    docid = Column(String(10), ForeignKey('doctors.docid'), nullable=False)
     appointment_date = Column(Date, nullable=False)
-    appointment_time = Column(Time, nullable=False)
+    # appointment_time = Column(Time, nullable=False)
     appointment_reason = Column(String(255))
     medical_history = Column(String(1000))
     other_details = Column(String(1000))
     created_at = Column(DateTime, default=datetime.now)
     # user = relationship("UserAccount")
     # therapist = relationship("Therapists")
+
+
+class Preferences(Base):
+    __tablename__ = 'userpreferences'
+    id = Column(Integer, primary_key=True)
+    email = Column(String(255), ForeignKey('useraccountlist.email'))
+    user_specialty = Column(String(255))
+    user_location = Column(String(255))
+    user_languages_spoken = Column(String(255))
+
+
+class Doctor(Base):
+    __tablename__ = 'doctors'
+    id = Column(Integer)
+    docid = Column(String(10), primary_key=True)
+    name = Column(String(50))
+    specialty = Column(String(50))
+    phonenumber = Column(String(20))
+    location = Column(String(50))
+    experience_years = Column(Integer)
+    patient_reviews = Column(Float)
+    availability = Column(String(50))
+    languages_spoken = Column(String(50))
 
 
 # if __name__ == '__main__':
@@ -125,3 +151,21 @@ Base.metadata.create_all(bind=engine)
 db_session = Session(bind=engine)
 # # ret = db_session.query(UserAccount).filter_by(email='annandy2002@gmail.com').first()
 # print(ret.email)
+# encoding = 'ISO-8859-1'
+# data = pd.read_csv('doctors_data.csv', encoding=encoding)
+# for _, row in data.iterrows():
+#     doctor = Doctor(
+# 		id = row['id'],
+# 		docid = row['docid'],
+#         name=row['name'],
+#         specialty=row['specialty'],
+# 		phonenumber = row['PhoneNumber'],
+#         location=row['location'],
+#         experience_years=row['experience_years'],
+#         patient_reviews=row['patient_reviews'],
+#         availability=row['availability'],
+#         languages_spoken=row['languages_spoken']
+#     )
+#     db_session.add(doctor)
+
+# db_session.commit()

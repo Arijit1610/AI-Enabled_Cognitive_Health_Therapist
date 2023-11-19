@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/appointment_style.css')}}">
+</head>
+<body>
+    <div class="heading">
+        <h1>Appointment Details </h1>
+    </div>
+  
+    <div class="main">
+    
+        <section class="query-cover">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-right">      
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Patient Name <span>*</span></label>
+                                    <input type="text" name="name" value="{{user.full_name}}" required readonly/>
+                                </div>
+
+                                <div class="input-group">
+                                    <label>Date Of Birth <span>*</span></label>
+                                    <input type="date" name="dob"  value="{{user.dob}}" required placeholder="" readonly/>
+                                </div>
+                                
+                            </div>
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Gender <span>*</span></label>
+                                    <input type="text" name="" id="" value="{{user.gender}}" readonly>
+                                </div>
+
+                                <div class="input-group">
+                                    <label>Bload Group <span>*</span></label>
+                                    <input type="text" name="" id="" value="{{user.blood_group}}" readonly>
+                                </div>
+                                
+                            </div>
+
+
+                            <div class="input-row">
+                                <div class="input-group">
+                                    <label>Email <span>*</span></label>
+                                    <input type="email" name="email"  value="{{user.email}}" required placeholder="" readonly/>
+                                </div>
+                                <div class="input-group">
+                                    <label>Contact No <span>*</span></label>
+                                    <input type="tel" name="phone"  value="{{user.phonenumber}}" required placeholder="" readonly/>
+                                </div>
+                            </div>
+
+
+                  <div class="input-row">
+                    <div class="input-group">
+                        <label>Doctor Name <span>*</span></label>
+                        <input type="text" name="doctor-name" value="{{doctor.name}}" readonly placeholder="" />
+                    </div>
+                    <div class="input-group">
+                        <label>Apointment Date<span>*</span></label>
+                        <input type="text" name="appointment-date" value ="{{appointment.appointment_date}}" placeholder="" readonly >
+                    </div>
+                    
+                </div>
+
+                <label>Appointment Reason <span>*</span></label>
+                <input type="text" name="" id="" value ="{{appointment.appointment_reason}}" readonly>
+
+                <label>Medical History(If Any)</label>
+                  <input type="text" name="" value ="{{appointment.medical_history}}" readonly>
+
+                  <label>Other Relevent Details</label>
+                  <input type="text" name="" id="" value ="{{appointment.other_details}}" readonly>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

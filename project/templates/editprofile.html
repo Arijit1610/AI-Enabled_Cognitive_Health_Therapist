@@ -8,9 +8,37 @@
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/sheet.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/flashmessage.css') }}">
 </head>
 
 <body>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	{% for category, message in messages %}
+	{% if category == 'info' %}
+	<div class="popup" style="background-color: rgb(0, 0, 0);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% if category == 'error' %}
+	<div class="popup" style="background-color: rgb(90, 2, 2);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% if category == 'message' %}
+	<div class="popup" style="background-color: rgb(100, 141, 229);">
+		<p>{{ message }}</p>
+		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
+	</div>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+	{% endwith %} 
+	<h3 style="background-color: powderblue; border: 2px  solid burlywood;">
+		Specialist available here for...Anxiety and Stress Management,Family and Relationship Counseling, Depression and Mood Disorders,Marriage and Couples Counseling,Trauma and PTSD,Child and Adolescent Counseling,Grief and Loss Counseling,Substance Abuse and Addiction, Couples Therapy,Eating Disorders ,Anger Management ,Autism Spectrum Disorders 
+	</h3>
 	<div class="main">
 		<form action="/edit/{{ session['registered_user'] }}" method="POST" enctype="multipart/form-data">
 			<section class="query-cover">
@@ -18,15 +46,14 @@
 					<div class="contact-box">
 						<div class="contact-left">
 							<div class="icon">
-								<a href="{{url_for('route.go_back')}}"><i
-										class="fa-solid fa-arrow-left"></i></a>
+								<a href="{{url_for('route.go_back')}}"><i class="fa-solid fa-arrow-left"></i></a>
 							</div>
 							<div id="image">
 								<img src="{{ profile_image }}" alt="Profile Picture" id="profile-pic">
 							</div>
 
 							<label for="input-file" id="update">Update Image</label>
-							<input type="file" name="inputfile" id="input-file">
+							<input type="file" name="inputfile" id="input-file" required>
 
 						</div>
 						<div class="contact-right">
@@ -34,12 +61,16 @@
 							<div class="input-row">
 								<div class="input-group">
 									<label>UserName</label>
-									<input name="name" type="text" value="{{user.full_name}}"  required>
+									<input name="name" type="text"
+										value="{% if user.full_name %}{{ user.full_name }}{% endif %}" required
+										placeholder="Enter your name">
+
 								</div>
 
 								<div class="input-group">
 									<label>Date Of Birth</label>
-									<input name="date_of_birth" type="date" placeholder="" value="{{user.dob}}" required/>
+									<input name="date_of_birth" type="date" id="dob" placeholder="" value="{{user.dob}}" max=""
+										required />
 								</div>
 
 							</div>
@@ -48,12 +79,22 @@
 									<label>Gender</label>
 									<select name="gender" required>
 										<!-- <option>Select</option> -->
+										{% if user.gender %}
 										<option value="Male" {% if user.gender=="Male" %}selected{% endif %}>Male
 										</option>
 										<option value="Female" {% if user.gender=="Female" %}selected{% endif %}>Female
 										</option>
 										<option value="Other" {% if user.gender=="Other" %}selected{% endif %}>Other
 										</option>
+										{% else %}
+										<option value="" selected>--select your gender-- </option>
+										<option value="Male">Male
+										</option>
+										<option value="Female">Female
+										</option>
+										<option value="Other">Other
+										</option>
+										{% endif %}
 									</select>
 								</div>
 
@@ -61,6 +102,7 @@
 									<label>Blood Group</label>
 									<select name="blood_group" required>
 										<!-- <option>Select</option> -->
+										{% if user.blood_group %}
 										<option value="A+" {% if user.blood_group=="A+" %}selected{% endif %}>A+
 										</option>
 										<option value="B+" {% if user.blood_group=="B+" %}selected{% endif %}>B+
@@ -71,6 +113,18 @@
 										</option>
 										<option value="None" {% if user.blood_group=="None" %}selected{% endif %}>None
 										</option>
+										{% else %}
+										<option value="None">--select your blood group--
+										</option>
+										<option value="A+">A+
+										</option>
+										<option value="B+">B+
+										</option>
+										<option value="O+">O+
+										</option>
+										<option value="AB+">AB+
+										</option>
+										{% endif %}
 									</select>
 								</div>
 
@@ -78,13 +132,32 @@
 							<div class="input-row">
 								<div class="input-group">
 									<label>Email</label>
-									<input type="email" placeholder="enteryouremail" value="{{user.email}}" readonly/>
+									<input type="email" placeholder="enteryouremail" value="{{user.email}}" readonly />
 								</div>
 								<div class="input-group">
 									<label>Phone</label>
-									<input type="tel" placeholder="enter your phone number" value="{{user.phonenumber}}"
-										name="phone" />
+									<input type="tel" name="phonenumber" class="phone"
+										placeholder="Type Your Phone Number" value="{% if user.phonenumber %}{{ user.phonenumber }}{% endif %}" required >
+									<span class="phoneError" style="color: red;"></span>
 								</div>
+							</div>
+							<div class="input-row">
+								<div class="input-group">
+									<label>Prefered language</label>
+									<input type="text" name="languages_spoken" value="{% if preferences.user_languages_spoken %} {{preferences.user_languages_spoken}} {% endif %}" placeholder="Type Your prefered language"
+										required>
+								</div>
+								<div class="input-group">
+									<label>Prefered City</label>
+									<input type="text" name="location"  value="{% if preferences.user_location %} {{preferences.user_location}} {% endif %}" placeholder="Type Your prefered city" required>
+								</div>
+
+								<div class="input-group">
+									<label>Prefered Specialist</label>
+									<input type="text" name="specialist"  value="" placeholder="Type Your prefered specialst"
+										required>
+								</div>
+
 							</div>
 
 
@@ -109,6 +182,55 @@
 			profilepic.src = URL.createObjectURL(inputfile.files[0]);
 		}
 	</script>
+
+	<script>
+		// Function to validate the phone number
+		function validatePhone(event) {
+			var phoneInput = event.target;
+			var phoneError = phoneInput.nextElementSibling;
+
+			// Remove non-digit characters from the phone number
+			var phoneNumber = phoneInput.value.replace(/\D/g, '');
+
+			// Check if the phone number is exactly 10 digits long
+			if (phoneNumber.length !== 10) {
+				phoneError.textContent = 'Phone number must be 10 digits long';
+				phoneInput.setCustomValidity('Invalid phone number');
+			} else {
+				phoneError.textContent = '';
+				phoneInput.setCustomValidity('');
+			}
+		}
+
+		// Add event listeners to all elements with the 'phone' class
+		var phoneInputs = document.querySelectorAll('.phone');
+		phoneInputs.forEach(function (input) {
+			input.addEventListener('input', validatePhone);
+		});
+	</script>
+	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
+	<script>
+        // Set the max attribute to five years ago from the current date
+        var currentDate = new Date();
+        var minDate = new Date(currentDate);
+        minDate.setFullYear(currentDate.getFullYear() - 5);
+
+        var dobInput = document.getElementById('dob');
+        dobInput.max = getFormattedDate(minDate);
+
+        // Function to format date as YYYY-MM-DD
+        function getFormattedDate(date) {
+            var year = date.getFullYear();
+
+            var month = date.getMonth() + 1;
+            month = month < 10 ? '0' + month : month;
+
+            var day = date.getDate();
+            day = day < 10 ? '0' + day : day;
+
+            return year + '-' + month + '-' + day;
+        }
+    </script>
 </body>
 
 </html>

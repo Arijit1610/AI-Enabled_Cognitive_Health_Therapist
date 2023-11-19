@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Simple Chat</title>
-</head>
-<body>
-    <h1>Chat Interface</h1>
-    <div id="chat">
-        <div id="message-container"></div>
-        <input type="text" id="message-input" placeholder="Enter your message">
-        <button id="send-button">Send</button>
-    </div>
 
-   <script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Chat</title>
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Chat Interface</h1>
+	<div id="chat">
+		<div id="message-container"></div>
+		<input type="text" id="message-input" placeholder="Enter your message">
+		<button id="send-button">Send</button>
+	</div>
+
+	<script src="{{ url_for('static', filename = 'js/chatbot.js') }}"></script>
 </body>
+
 </html>

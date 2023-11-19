@@ -5,12 +5,11 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/login.css')}}" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/flashmessage.css') }}">
-	<title>document</title>
+	<title>Signup-Signin Page</title>
 </head>
 
 <body>
@@ -18,7 +17,7 @@
 	{% if messages %}
 	{% for category, message in messages %}
 	{% if category == 'info' %}
-	<div class="popup" style="background-color: rgb(243, 215, 0);">
+	<div class="popup" style="background-color: rgb(0, 0, 0);">
 		<p>{{ message }}</p>
 		<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 	</div>
@@ -44,79 +43,82 @@
 			<div class="signin-signup">
 				<form action="/user-panel/signin" method="POST" class="sign-in-form">
 					<h2 class="title">Sign in</h2>
-					<div class="input-field">
+					<div class="input-field ">
 						<i class="fas fa-envelope"></i>
-						<input type="email" placeholder="Type your email" name="email" id="email" />
+						<input type="email"  placeholder="Type your email" name="email"
+							id="email" required/>
 					</div>
-					<div class="input-field" >
+					<div class="input-field pwd">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Password" name="password" required />
-						<!-- <img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" /> -->
+						<input type="password" class="password" placeholder="Password" name="password" required />
+						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" class="pass-icon" />
+					</div>
+					<div class="para">
+						<p>Password must be 8 to 16 characters</p>
+						<span class="st_para"></span>
 					</div>
 					<input type="submit" value="Login" class="btn solid" />
-
 				</form>
 				<form action="/user-panel/signup" method="POST" class="sign-up-form">
 					<h2 class="title">Sign up</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i>
-						<input type="text" placeholder="Username" name="username" required />
+						<input type="text" class="required-field" placeholder="Username" name="username" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-envelope"></i>
-						<input type="email" placeholder="Email" name="email_address" required />
+						<input type="email" class="required-field" placeholder="Email" name="email_address" required />
 					</div>
 					<div class="input-field">
 						<i class="fas fa-phone"></i>
-						<input type="tel" placeholder="Phone Number" name="phone_number" required />
+						<input type="tel" class="phone required-field"
+							placeholder="Type Your Phone Number" name="phone_number" required>
 					</div>
-					<div class="input-field" id="pwd">
+					<div class="para">
+						<p class="phoneError" style="color: red;"></p>
+					</div>
+					<div class="input-field pwd">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Password" id="password" required />
-						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" />
+						<input type="password" class="password required-field" placeholder="Password" name="password"
+							required />
+						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" class="pass-icon" />
 					</div>
 					<div class="para">
 						<p>Password must be 8 to 16 characters</p>
-						<span id="st_para"></span>
+						<span class="st_para"></span>
 					</div>
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
-						<input type="password" placeholder="Confirm Password" name="confirm_password" required />
-						<!-- <img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" id="pass-icon" /> -->
+						<input type="password" class="password required-field" placeholder="Confirm Password"
+							name="confirm_password" required />
+						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" class="pass-icon" />
 					</div>
-					<input type="submit" class="btn" value="Sign up" onclick="signup()" />
 
+					<input type="submit" class="btn" value="Sign up" onclick="signup()" />
 				</form>
 			</div>
-
-
 		</div>
-
 
 		<div class="panels-container">
 			<div class="panel left-panel">
+				<a href="#" class="house"><i class="fa-solid fa-house"></i></a>
 				<div class="content">
 					<h3>New here ?</h3>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-						ex ratione. Aliquid!
+						Create an new account
 					</p>
-					<button class="btn transparent" id="sign-up-btn">
-						Sign up
-					</button>
+					<button class="btn transparent" id="sign-up-btn">Sign up</button>
 				</div>
 				<img src="{{ url_for('static', filename = 'img/2382727-removebg-preview.png')}}" class="image" alt="" />
 			</div>
 			<div class="panel right-panel">
+				<a href="#" class="house1"><i class="fa-solid fa-house"></i></a>
 				<div class="content">
 					<h3>One of us ?</h3>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-						laboriosam ad deleniti.
+						Signin up to an existing account
 					</p>
-					<button class="btn transparent" id="sign-in-btn">
-						Sign in
-					</button>
+					<button class="btn transparent" id="sign-in-btn">Sign in</button>
 				</div>
 				<img src="{{ url_for('static', filename = 'img/5209447-removebg-preview.png')}}" class="image" alt="" />
 			</div>
@@ -125,54 +127,100 @@
 			<div id="otp-cover">
 				<div class="otp">
 					<div class="txt">OTP Verification</div>
-					<img src="{{ url_for('static', filename = 'img/5209447-removebg-preview.png')}}" class="image"
-						alt="" />
+					<img src="{{ url_for('static', filename = 'img/5209447-removebg-preview.png')}}" alt=""
+						class="logo-img" />
 
 					<p id="p">We have sent a verification to your email</p>
 					<form id="inputs">
-						<input class="inp" id='input1' type='text' maxLength="1" />
-						<input class="inp" id='input2' type='text' maxLength="1" />
-						<input class="inp" id='input3' type='text' maxLength="1" />
-						<input class="inp" id='input4' type='text' maxLength="1" />
-						<input class="inp" id='input5' type='text' maxLength="1" />
-						<input class="inp" id='input6' type='text' maxLength="1" />
+						<input class="inp" id="input1" type="text" maxlength="1" />
+						<input class="inp" id="input2" type="text" maxlength="1" />
+						<input class="inp" id="input3" type="text" maxlength="1" />
+						<input class="inp" id="input4" type="text" maxlength="1" />
+						<input class="inp" id="input5" type="text" maxlength="1" />
+						<input class="inp" id="input6" type="text" maxlength="1" />
 					</form>
 					<button id="oneb">Submit</button>
 				</div>
 			</div>
 		</section>
-
-
 	</div>
-
-	<script src="{{ url_for('static', filename = 'js/script.js')}}"></script>
 	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
 	<script>
-		const passicon = document.getElementById("pass-icon");
-		const password = document.getElementById("password");
-		passicon.addEventListener("click", () => {
-			if (password.type == "password") {
-				password.type = "text";
-				passicon.src = "{{ url_for('static',filename='img/eye.png') }}";
-			} else {
-				password.type = "password";
-				passicon.src = "{{ url_for('static',filename='img/hidden.png') }}";
-			}
+		const sign_in_btn = document.querySelector("#sign-in-btn");
+		const sign_up_btn = document.querySelector("#sign-up-btn");
+		const container = document.querySelector(".container");
+		const otp_container = document.querySelector("#otp-conainer");
+		// const signup=document.querySelector("#sign-up");
+
+		sign_up_btn.addEventListener("click", () => {
+			container.classList.add("sign-up-mode");
 		});
 
+		sign_in_btn.addEventListener("click", () => {
+			container.classList.remove("sign-up-mode");
+		});
+		const isValidEmail = (email) => {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
+		};
+
+		const signup = () => {
+			// Get all the required fields
+			const requiredFields = document.querySelectorAll(".required-field");
+
+			// Get the email field
+			const emailField = document.querySelector('input[name="email_address"]');
+
+			// Check if all required fields are filled and email is valid
+			const allFieldsFilled = Array.from(requiredFields).every(field => field.value.trim() !== '');
+			const isEmailValid = isValidEmail(emailField.value.trim());
+
+			// If all required fields are filled and email is valid, activate the signup logic
+			if (allFieldsFilled && isEmailValid) {
+				otp_container.classList.add("verify");
+			} else {
+				// If any required field is empty or email is invalid, show an error message or take appropriate action
+				if (!isEmailValid) {
+					alert("Please enter a valid email address.");
+					// You can also update the UI to indicate the email field is invalid.
+				} else {
+					alert("Please fill in all required fields.");
+					// You can also update the UI to indicate which fields are missing.
+				}
+			}
+		};
+
+		// hide button
+		const passicons = document.querySelectorAll(".pass-icon");
+		const passwords = document.querySelectorAll(".password");
+
+		passicons.forEach((passicon, index) => {
+			passicon.addEventListener("click", () => {
+				const pd = passwords[index];
+				if (pd.type === "password") {
+					pd.type = "text";
+					passicon.src = "{{ url_for('static',filename='img/eye.png') }}";
+				} else {
+					pd.type = "password";
+					passicon.src = "{{ url_for('static',filename='img/hidden.png') }}";
+				}
+			});
+		});
+
+
+		//password strength check
 		const alphabet = /[a-zA-Z]/;
 		const number = /[0-9]/;
 		const symbols = /[!,@,#,$,%,^,&,*,?,_,(,),-,+,=,~,/,\,|]/;
 
-		const pwd = document.getElementById("pwd");
-		const stpara = document.getElementById("st_para");
+		const pwd = document.querySelectorAll(".pwd");
+		const stpara = document.querySelectorAll(".st_para");
 
-		const strengthchecker = (passwordInput) => {
-
+		const strengthchecker = (passwordInput, index) => {
 			if (passwordInput.length === 0) {
-				pwd.style.border = 'none';
-				stpara.style.color = 'none';
-				stpara.innerHTML = '';
+				pwd[index].style.border = "none";
+				stpara[index].style.color = "none";
+				stpara[index].innerHTML = "";
 			}
 			if (
 				alphabet.test(passwordInput) &&
@@ -180,29 +228,27 @@
 				symbols.test(passwordInput)
 			) {
 				console.log("strong");
-				pwd.style.border = '2px solid  rgb(8, 146, 8)';
-				stpara.style.color = 'rgb(8, 146, 8)'
-				stpara.innerHTML = 'Strong'
+				pwd[index].style.border = "2px solid  rgb(8, 146, 8)";
+				stpara[index].style.color = "rgb(8, 146, 8)";
+				stpara[index].innerHTML = "Strong";
 			} else if (
 				(alphabet.test(passwordInput) && number.test(passwordInput)) ||
 				(alphabet.test(passwordInput) && symbols.test(passwordInput)) ||
 				(number.test(passwordInput) && symbols.test(passwordInput))
 			) {
 				console.log("medium");
-				pwd.style.border = '2px solid  rgb(206, 206, 5)'
-				stpara.style.color = 'rgb(206, 206, 5)'
-				stpara.innerHTML = 'Medium'
-
+				pwd[index].style.border = "2px solid  rgb(206, 206, 5)";
+				stpara[index].style.color = "rgb(206, 206, 5)";
+				stpara[index].innerHTML = "Medium";
 			} else if (
 				alphabet.test(passwordInput) ||
 				number.test(passwordInput) ||
 				symbols.test(passwordInput)
 			) {
 				console.log("weak");
-				pwd.style.border = '2px solid  rgb(235, 10, 10)'
-				stpara.style.color = ' rgb(235, 10, 10)'
-				stpara.innerHTML = 'Weak'
-
+				pwd[index].style.border = "2px solid  rgb(235, 10, 10)";
+				stpara[index].style.color = " rgb(235, 10, 10)";
+				stpara[index].innerHTML = "Weak";
 			}
 			// if(passwordInput.length>=8 && passwordInput.length<=16){
 			//   console.log('ok');
@@ -210,16 +256,73 @@
 			// else{
 			//   console.log('invalid');
 			// }
+		};
 
-		}
+		passwords.forEach((ele, ind) => {
+			ele.addEventListener("input", () => {
 
-		password.addEventListener("input", () => {
-			const passwordInput = password.value;
+				const passwordInput = ele.value;
 
-			strengthchecker(passwordInput);
+				strengthchecker(passwordInput, ind);
+			});
 
 		});
+
+		//otp
+		const inputs = ["input1", "input2", "input3", "input4", "input5", "input6"];
+
+		inputs.map((id) => {
+			const input = document.getElementById(id);
+			addListener(input);
+		});
+
+		function addListener(input) {
+			input.addEventListener("keyup", () => {
+				const code = parseInt(input.value);
+				if (code >= 0 && code <= 9) {
+					const n = input.nextElementSibling;
+					if (n) n.focus();
+				} else {
+					input.value = "";
+				}
+
+				const key = event.key;
+				if (key === "Backspace" || key === "Delete") {
+					const prev = input.previousElementSibling;
+					if (prev) prev.focus();
+				}
+			});
+		}
+
 	</script>
+
+	<script>
+
+		// Function to validate the phone number
+		function validatePhone(event) {
+			var phoneInput = event.target;
+			var phoneError = phoneInput.closest('.input-field').nextElementSibling.querySelector('.phoneError');
+
+			// Remove non-digit characters from the input
+			var cleanedPhoneNumber = phoneInput.value.replace(/\D/g, '');
+
+			// Check if the cleaned phone number is exactly 10 digits long
+			if (cleanedPhoneNumber.length !== 10) {
+				phoneError.textContent = 'Phone number must be 10 digits long';
+				phoneInput.setCustomValidity('Invalid phone number');
+			} else {
+				phoneError.textContent = '';
+				phoneInput.setCustomValidity('');
+			}
+		}
+
+		// Add event listeners to all elements with the 'phone' class
+		var phoneInputs = document.querySelectorAll('.phone');
+		phoneInputs.forEach(function (input) {
+			input.addEventListener('input', validatePhone);
+		});
+	</script>
+
 </body>
 
 </html>

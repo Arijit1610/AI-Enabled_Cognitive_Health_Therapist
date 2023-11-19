@@ -1,21 +1,22 @@
 .home {
-	padding: 100px 50px 100px 50px;
+	padding: 100px 0px 100px 50px;
 	width: 100%;
-	height: 70vh;
+	height: 80vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: space-between;
 	flex-direction: column;
 	background-color: #2696e9;
 	position: relative;
 }
 
-
 .home:before {
 	z-index: 1;
 	content: "";
 	position: absolute;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%);
+	background: linear-gradient(to top,
+			rgba(0, 0, 0, 0.5) 50%,
+			rgba(0, 0, 0, 0.5) 50%);
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -25,23 +26,17 @@
 .home .content {
 	z-index: 888;
 	color: #fff9f9;
-	width: 30%;
-	margin-top: 50px;
-	margin-left: 20px;
-	position: absolute;
-	/* top: 40%; */
-	left: 2%
+	width: 50%;
 }
 
 .home .content h1 {
-	font-size: 3em;
+	font-size: 4em;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	line-height: 75px;
 	margin-bottom: 40px;
 }
-
 
 .home img {
 	z-index: 0;
@@ -57,23 +52,23 @@
 .first-content {
 	margin-top: 80px;
 	width: 100%;
-	height: 555px;
-
+	height: 40vw;
+	/* border: 2px solid red; */
+	display: flex;
+	justify-content: space-between;
 }
 
 
 
 
 .info {
-	width: 40%;
-	height: 500px;
-
-	float: left;
+	width: 50%;
+	height: 100%;
 	text-align: center;
-	margin-left: 120px;
-	/*background-color: rgba(0, 0, 0,0.5);*/
-	margin-top: 15px;
-	margin-bottom: 35px;
+	/* border: 2px solid black; */
+	padding: 40px 40px 40px 40px;
+	margin-left: 30px;
+
 
 }
 
@@ -81,8 +76,7 @@
 	font-size: 30px;
 	font-weight: bold;
 	color: #05406d;
-	padding: 80px 0px 0px 0px;
-
+	margin: 40px;
 }
 
 .info span {
@@ -90,75 +84,73 @@
 }
 
 .info p {
-	font-size: 22px;
-	padding: 40px 30px 5px 30px;
-	/*text-align: left;*/
+	font-size: 20px;
 	color: black;
 	text-align: justify;
 }
 
-.abt_pic {
-	width: 40%;
-	height: 550px;
-	padding-top: 35px;
-	float: left;
 
+.abt_pic {
+	width: 50vw;
+	height: 30vw;
+	margin-top: 30px;
+	border-radius: 30px;
+	margin-right: 20px;
+	/* border: 2px solid black; */
 }
 
 .abt_pic img {
-	width: 50vw;
-	height: 65vh;
-	border-radius: 45px;
-	padding: 20px 20px 20px 20px;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px;
+	object-fit: cover;
 
 }
 
-.middle {
-	margin-top: 100px;
-	height: 150vh;
-	/*background-color: #252525;*/
-	/*color: rgb(250, 248, 248);*/
-	background-color: rgba(0, 0, 0, 0.6);
-	/*border: 2px solid black;*/
+.back_abt_pic {
+	margin-left: 20px;
 }
 
+.back_info {
+	margin-right: 30px;
+}
+
+/* background-attachment: fixed; */
 .parallax {
-	/* The image used */
-	background-image: url("pxfuel.jpg");
-
-	/* Set a specific height */
-	min-height: 300px;
-
-	/* Create the parallax scrolling effect */
+	height: 75vw;
+	width: 100%;
+	overflow: hidden;
+	background: url("pxfuel.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	background-repeat: no-repeat;
 }
+
 
 
 .caption p {
 	text-align: center;
 	font-size: 40px;
 	font-weight: bold;
-	padding-top: 30px;
+	margin-top: 30px;
 	color: white;
 }
 
 .card {
-
-	width: 28%;
-	/*border: 1px solid black;*/
+	width: 28vw;
+	height: 15vw;
+	/* border: 1px solid black; */
 	display: inline-block;
 	margin-top: 80px;
-	margin-left: 180px;
+	margin-left: 200px;
 
 }
 
 .card2 {
-
 	width: 28%;
-	/*border: 1px solid black;*/
-	display: inline-block;
+	/* border: 1px solid black; */
+	/* display: inline-block; */
 	margin-top: 80px;
 	margin-left: 500px;
 
@@ -182,11 +174,6 @@
 	color: white;
 }
 
-.back-content {
-	margin-top: 100px;
-	width: 100%;
-	height: 555px;
-	/*background-color: #2696e9;*/
-	border-bottom: 2px solid #000;
-
+.hd .span {
+	font-size: 18px;
 }

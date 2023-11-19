@@ -6,6 +6,7 @@ ABOUT US
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/aboutus_newproj.css') }}" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 {% endblock %}
 
 {% block navbar %}
@@ -14,12 +15,12 @@ ABOUT US
 	<li><a href="{{url_for('route.home',email = session['registered_user'])}}">HOME</a></li>
 	<li><a href="{{url_for('route.about',email = session['registered_user'])}}" class="active-nav">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}">CONTACT US</a></li>
-	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICHINE</a></li>
+	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}">ORDER MEDICINE</a></li>
 	{% else %}
 	<li><a href="{{url_for('route.home')}}">HOME</a></li>
 	<li><a href="{{url_for('route.about')}}" class="active-nav">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact')}}">CONTACT US</a></li>
-	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICHINE</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}">ORDER MEDICINE</a></li>
 	{% endif %}
 </ul>
 {% endblock %}
@@ -32,16 +33,17 @@ ABOUT US
 	<img class="image-slide" src="{{ url_for('static',filename='img/ai-health10.jpg') }}" alt="image" />
 
 	<div class="content">
-		<h1>ABOUT US</h1>
+		<h1 class="content_head"></h1>
 	</div>
 
 </section>
 <main>
 	<section>
 		<div class="first-content">
-			<div class="info">
+			<div class="info" data-aos="zoom-in">
 				<h2><span>ABOUT</span> AI-HEALTH</h2>
-				<p>AI-powered chatbot furnishes cognitive behavioral therapy (CBT) to people with mental health issues.
+				<p><b>A</b>I-powered chatbot furnishes cognitive behavioral therapy (CBT) to people with mental health
+					issues.
 					This software elucidates AI-enabled cognitive Health Therapists to provide pristine frontiers to
 					people who need human touch the most. A vital benefit of the proposed technology is its ability to
 					create personalized CBT exercises and interventions that address each user's specific needs and
@@ -52,7 +54,7 @@ ABOUT US
 				</p>
 			</div>
 
-			<div class="abt_pic">
+			<div class="abt_pic" data-aos="zoom-in">
 				<img src="{{ url_for('static',filename='img/1695875726090.gif') }}" alt="image" />
 			</div>
 		</div>
@@ -64,14 +66,14 @@ ABOUT US
 		<div class="parallax">
 
 			<div class="middle">
-				<div class="caption">
+				<div class="caption" data-aos="fade">
 					<p>
 						KNOW ABOUT US
 					</p>
 				</div>
 
 
-				<div class="card">
+				<div class="card" data-aos="fade-right">
 					<div class="profile">
 						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
 					</div>
@@ -80,7 +82,7 @@ ABOUT US
 					</div>
 				</div>
 
-				<div class="card">
+				<div class="card" data-aos="fade-left">
 					<div class="profile">
 						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
 					</div>
@@ -89,25 +91,25 @@ ABOUT US
 					</div>
 				</div>
 
-				<div class="card">
+				<div class="card" data-aos="fade-right">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+						<img src="{{ url_for('static',filename='img/20231019_121354.jpg') }}" alt="image" />
 					</div>
 					<div class="hd">
 						<p><b>ARIJIT NANDY</b><br>AI Chatbot and Backend Developer</p>
 					</div>
 				</div>
 
-				<div class="card">
+				<div class="card" data-aos="fade-left">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
+						<img src="{{ url_for('static',filename='img/akhiljpeg.jpeg') }}" alt="image" />
 					</div>
 					<div class="hd">
 						<p><b>AKHIL KUMAR GOPE</b><br>Developer of Frontend</p>
 					</div>
 				</div>
 
-				<div class="card2">
+				<div class="card2" data-aos="fade-up">
 					<div class="profile">
 						<img src="{{ url_for('static',filename='img/dev.jpg') }}" alt="image" />
 					</div>
@@ -121,16 +123,18 @@ ABOUT US
 	</section>
 
 	<section>
-		<div class="back-content">
+		<div class="first-content back-content">
 
 
-			<div class="abt_pic">
-				<img src="{{ url_for('static',filename='img/55CB350C-421C-4D81-B951-80D75EFF1C45-35459-00000448F60D46D9.gif') }}" alt="image">
+			<div class="abt_pic back_abt_pic" data-aos="zoom-in">
+				<img src="{{ url_for('static',filename='img/55CB350C-421C-4D81-B951-80D75EFF1C45-35459-00000448F60D46D9.gif') }}"
+					alt="image">
 			</div>
 
-			<div class="info">
+			<div class="info back_info" data-aos="zoom in">
 				<h2><span>WHY</span> US ?</h2>
-				<p>A critical step toward democratizing mental health care is being taken with the "AI-Enabled Cognitive
+				<p><b>A</b> critical step toward democratizing mental health care is being taken with the "AI-Enabled
+					Cognitive
 					Health Therapist" initiative. This ground-breaking approach delivers individualized and accessible
 					therapy by utilizing artificial intelligence. It not only empowers consumers but also aligns with
 					changing healthcare demands thanks to its easy user interface, ongoing customisation, and strict
@@ -141,5 +145,33 @@ ABOUT US
 		</div>
 	</section>
 </main>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    //   const list = document.getElementById("drop_list");
 
+    //   const dropdown = () => {
+    //     list.classList.toggle("visible");
+    //   };
+    //   document.getElementById("click_btn").addEventListener("click", dropdown);
+
+      //Animation
+      const content = document.getElementsByClassName("content_head")[0];
+      const text = "About US";
+      const textTypingEffect = (element, text, i = 0) => {
+        if (i === 0) {
+          element.textContent = "";
+        }
+        element.textContent += text[i];
+
+        if (i === text.length - 1) {
+          return;
+        }
+        setTimeout(() => textTypingEffect(element, text, i + 1), 200);
+      };
+      textTypingEffect(content, text);
+
+      AOS.init({
+        duration: 800,
+      });
+    </script>
 {% endblock %}

@@ -1,8 +1,16 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const messageInput = document.getElementById("message-input");
     const sendButton = document.getElementById("send-button");
     const messageContainer = document.getElementById("message-container");
+
+    // Function to send a greeting message automatically
+    function sendGreeting() {
+        const greetingMessage = "Hello, I'm your friendly chatbot. How can I assist you today?";
+        displayMessage("Bot: " + greetingMessage, "bot");
+    }
+
+    // Call the sendGreeting function to send the initial greeting message
+    sendGreeting();
 
     sendButton.addEventListener("click", sendMessage);
 
@@ -14,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messageInput.value = "";
 
         // Create a new message element and display it
-        displayMessage("You: " + message, "user");
+        displayMessage("You: " + message, "user"); // Note that the sender is "user" here
 
         // Send the message to the Flask backend
         fetch("/send", {
@@ -27,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 // Display the bot's response
-                displayMessage("Bot:  " + data.message, "bot");
+                displayMessage("Bot: " + data.message, "bot"); // The sender is "bot" for bot's messages
             })
             .catch(error => {
                 console.error("Error:", error);
@@ -36,19 +44,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayMessage(text, sender) {
         const messageElement = document.createElement("li");
-        messageElement.className = sender; // Add 'user' or 'bot' class to the new element
         messageElement.textContent = text;
+        messageElement.classList.add(sender); // Add the sender class
         messageContainer.appendChild(messageElement);
     }
 });
-const chatbot=document.getElementById('chatbot');
-const msg=document.getElementsByClassName('msg');
-const msgbtn=()=>{
-    chatbot.style.display="block";
-    msg.classList.add('active');
 
+//     function displayMessage(text, sender) {
+//         const messageElement = document.createElement("li");
+//         messageElement.className = sender; // Add 'user' or 'bot' class to the new element
+//         messageElement.textContent = text;
+//         messageContainer.appendChild(messageElement);
+//     }
+// });
+
+const chatbot = document.getElementById('chatbot');
+
+const msgbtn = () => {
+    chatbot.style.display = "block";
 }
 
-const cbtn=()=>{
-    chatbot.style.display="none";
+const cbtn = () => {
+    chatbot.style.display = "none";
 }

@@ -1,59 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/appointment_style.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/appointment_style.css')}}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
+
 <body>
-    <div class="heading">
-        <h1>Book Your Appointment</h1>
-    </div>
-  
-    <div class="main">
-    
-        <section class="query-cover">
-            <div class="container">
-                <div class="contact-box">
-                    <div class="contact-right">
-                        <marquee>You Need To Required To Fill Mandatory(*) Fields.</marquee>
-                        <form action="{{th_id}}" method="post" enctype="multipart/form-data">
-                            <div class="user_pic">
-                                <div id="image">
-                                    <img src="{{ profile_image }}" alt="Profile Picture" id="profile-pic">
-                                 </div>
-                                 <label for="input-file" id="update">Update Image</label>
-                                 <input type="file" name="inputfile" id="input-file" accept="image/jpeg, image/jpg, image/png" id="input-file">
-                            </div>
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label>Patient Name <span>*</span></label>
-                                    <input type="text" name="name" value="{{user.full_name}}" required />
-                                </div>
+	<div class="heading">
+		<h1>Book Your Appointment</h1>
+	</div>
 
-                                <div class="input-group">
-                                    <label>Date Of Birth <span>*</span></label>
-                                    <input type="date" name="dob"  value="{{user.dob}}" required placeholder="" />
-                                </div>
-                                
-                            </div>
+	<div class="main">
 
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label>Gender <span>*</span></label>
-                                    <select name="gender" required>
-                                        <option value="Male" {% if user.gender=="Male" %}selected{% endif %}>Male</option>
-                                        <option value="Female" {% if user.gender=="Female" %}selected{% endif %}>Female</option>
-                                        <option  value="Other" {% if user.gender=="Other" %}selected{% endif %}>Other</option>
-                                    </select>
-                                </div>
+		<section class="query-cover">
+			<div class="container">
+				<div class="contact-box">
+					<div class="contact-right">
+						<marquee>You Need To Required To Fill Mandatory(*) Fields.</marquee>
+						<form action="{{doctid}}" method="post" enctype="multipart/form-data">
+							<div class="user_pic">
+								<div id="image">
+									<img src="{{ profile_image }}" alt="Profile Picture" id="profile-pic">
+								</div>
+								<label for="input-file" id="update">Update Image</label>
+								<input type="file" name="inputfile" id="input-file"
+									accept="image/jpeg, image/jpg, image/png" id="input-file">
+							</div>
+							<div class="input-row">
+								<div class="input-group">
+									<label>Patient Name <span>*</span></label>
+									<input type="text" name="name" value="{% if user.full_name %}{{ user.full_name }}{% endif %}" required />
+								</div>
 
-                                <div class="input-group">
-                                    <label>Bload Group <span>*</span></label>
-                                    <select>
-                                        <option value="A+" {% if user.blood_group=="A+" %}selected{% endif %}>A+
+								<div class="input-group">
+									<label>Date Of Birth <span>*</span></label>
+									<input type="date" name="dob" id="dob" value="{% if user.dob %}{{ user.dob }}{% endif %}" required placeholder="" max="" />
+								</div>
+							
+
+							</div>
+
+							<div class="input-row">
+								<div class="input-group">
+									<label>Gender <span>*</span></label>
+									<select name="gender" required>
+										<!-- <option>Select</option> -->
+										{% if user.gender %}
+										<option value="Male" {% if user.gender=="Male" %}selected{% endif %}>Male
+										</option>
+										<option value="Female" {% if user.gender=="Female" %}selected{% endif %}>Female
+										</option>
+										<option value="Other" {% if user.gender=="Other" %}selected{% endif %}>Other
+										</option>
+										{% else %}
+										<option value="" selected>--select your gender-- </option>
+										<option value="Male">Male
+										</option>
+										<option value="Female">Female
+										</option>
+										<option value="Other">Other
+										</option>
+										{% endif %}
+									</select> 
+								</div>
+
+								<div class="input-group">
+									<label>Blood Group <span>*</span></label>
+									<select name="blood_group" required>
+										<!-- <option>Select</option> -->
+										{% if user.blood_group %}
+										<option value="A+" {% if user.blood_group=="A+" %}selected{% endif %}>A+
 										</option>
 										<option value="B+" {% if user.blood_group=="B+" %}selected{% endif %}>B+
 										</option>
@@ -63,103 +84,130 @@
 										</option>
 										<option value="None" {% if user.blood_group=="None" %}selected{% endif %}>None
 										</option>
-                                    </select>
-                                </div>
-                                
-                            </div>
+										{% else %}
+										<option value="None">--select your blood group--
+										</option>
+										<option value="A+">A+
+										</option>
+										<option value="B+">B+
+										</option>
+										<option value="O+">O+
+										</option>
+										<option value="AB+">AB+
+										</option>
+										{% endif %}
+									</select>
+								</div>
+
+							</div>
 
 
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label>Email <span>*</span></label>
-                                    <input type="email" name="email"  value="{{user.email}}" required placeholder="" readonly />
-                                </div>
-                                <div class="input-group">
-                                    <label>Contact No <span>*</span></label>
-                                    <input type="tel" name="phone"  value="{{user.phonenumber}}" required placeholder="" />
-                                </div>
-                            </div>
+							<div class="input-row">
+								<div class="input-group">
+									<label>Email <span>*</span></label>
+									<input type="email" name="email" value="{{user.email}}" required placeholder=""
+										readonly />
+								</div>
+								<div class="input-group">
+									<label>Phone Number <span>*</span></label>
+									<input type="tel" name="phone" class="phone" value="{% if user.phonenumber %}{{ user.phonenumber }}{% endif %}" required placeholder="" />
+									<span class="phoneError" style="color: red;"></span>
+								</div>
+							</div>
 
-                            <div class="input-row1">
-                                <div class="input-group1">
-                                    <label>Guardain Name</label>
-                                    <input type="name" name="guardian-name" placeholder="" />
-                                </div>
-                                <div class="input-group1">
-                                    <label>Guardain Contact No</label>
-                                    <input type="tel" name="guardian-phone" placeholder="" />
-                                </div>
-                                <div class="input-group1">
-                                    <label>Emergency Contact No <span>*</span></label>
-                                    <input type="tel" name="emergency-phone" placeholder="" />
-                                </div>
-                            </div>
+							<div class="input-row1">
+								<div class="input-group1">
+									<label>Guardain Name</label>
+									<input type="name" name="guardian-name"  />
+								</div>
+								<div class="input-group1">
+									<label>Guardain Contact No</label>
+									<input type="tel" name="guardian-phone" placeholder="" class="phone" />
+									<span class="phoneError" style="color: red;"></span>
+								</div>
+								<div class="input-group1">
+									<label>Emergency Contact No <span>*</span></label>
+									<input type="tel" name="emergency-phone"class="phone" placeholder="" required/>
+									<span class="phoneError" style="color: red;"></span>
+								</div>
+							</div>
 
-                            <label>Address <span>*</span></label>
-                  <textarea rows="5" name="address" placeholder=""></textarea>
+							<label>Address <span>*</span></label>
+							<textarea rows="5" name="address" placeholder="" required></textarea>
 
-                  <div class="input-row1">
-                    <div class="input-group1">
-                        <label>Doctor Name <span>*</span></label>
-                        <input type="text" name="doctor-name" value="{{therapist.th_name}}" readonly placeholder="" />
-                    </div>
-                    <div class="input-group1">
-                        <label for="appointment-date">Apointment Date<span>*</span></label>
-                        <input type="date" name="appointment-date" id="appointment-date" min="2023-10-14"
-                        max="2023-11-14" placeholder="" />
-                    </div>
-                    <div class="input-group1">
-                        <label for="appointment-time">Appointment Time <span>*</span></label>
-                        <select type="tel"  name="appointment-time" id="appointment-time" placeholder="" >
-                            <option >Select</option>
-                        </select>
-                    </div>
-                </div>
+							<div class="input-row">
+								<div class="input-group">
+									<label>Doctor Name <span>*</span></label>
+									<input type="text" name="doctor-name" value="{{doctor.name}}" readonly
+										placeholder="" />
+								</div>
+								<div class="input-group">
+									<label for="appointment-date">Apointment Date<span>*</span></label>
+									<input type="date" name="appointment-date" id="appointment-date" min="2023-10-14"
+										max="2023-11-14" placeholder=""  required>
+								</div>
+							</div>
 
-                <label>Appointment Reason <span>*</span></label>
-                <textarea class="areatext" name="appointment-reason" rows="5" placeholder=""></textarea>
+							<label>Appointment Reason <span>*</span></label>
+							<textarea class="areatext" name="appointment-reason" rows="5" placeholder="" required></textarea>
 
-                <label>Medical History(If Any)</label>
-                  <textarea class="areatext" name="medical-history" rows="5" placeholder=""></textarea>
+							<label>Medical History(type If It Is  Less Than 500 Words )</label>
+							<textarea class="areatext" name="medical-history" rows="5" placeholder=""></textarea>
+							
 
-                  <label>Other Relevent Details</label>
-                  <textarea class="areatext" name="other-details" rows="5" placeholder=""></textarea>
+							<label>Other Relevent Details</label>
+							<textarea class="areatext" name="other-details" rows="5" placeholder=""></textarea>
 
 
-                           <div id="bookbtn">
-                            <button id="send" type="submit">Book</button>
-                           </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+							<div id="bookbtn">
+								<button id="send" type="submit">Book</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script>
-		$(document).ready(function () {
-			$('#appointment-date').on('change', function () {
-				var selectedDate = $(this).val();
-				var thId = '{{ therapist.th_id }}';
+		// Replace this with the actual data received from the Flask app
+		var availableWeekdays = {{ doctor.availability| safe }};
 
-				// Make an AJAX request to get available times
-				$.get('/get_available_times/' + thId, { appointment_date: selectedDate }, function (data) {
-					var availableTimes = data.available_times;
-					var appointmentTimeSelect = $('#appointment-time');
+		function checkAvailability() {
+			var selectedDate = document.getElementById('appointment-date').value;
+			var selectedDay = new Date(selectedDate).toLocaleDateString('en-US', { weekday: 'long' });
 
-					// Clear existing options
-					appointmentTimeSelect.empty();
+			if (availableWeekdays.includes(selectedDay)) {
+				document.getElementById('availability_message').innerText = 'Doctor is available on ' + selectedDay;
+			} else {
+				document.getElementById('availability_message').innerText = 'Doctor is not available on ' + selectedDay;
+			}
+		}
 
-					// Add a default option
-					appointmentTimeSelect.append($('<option>', { value: "", text: "Select a time" }));
+		var today = new Date();
+		var oneMonthFromNow = new Date(today);
+		oneMonthFromNow.setMonth(oneMonthFromNow.getMonth() + 1);
 
-					// Add available times as options
-					$.each(availableTimes, function (index, time) {
-						appointmentTimeSelect.append($('<option>', { value: time, text: time }));
-					});
-				});
-			});
+		flatpickr("#appointment-date", {
+			disable: [
+				function (date) {
+					// Get the day of the week for the current date
+					var dayOfWeek = new Date(date).toLocaleDateString('en-US', { weekday: 'long' });
+
+					// Check if the day of the week is not in the available weekdays array
+					return !availableWeekdays.includes(dayOfWeek);
+				}
+			],
+			dateFormat: "Y-m-d",
+			minDate: today,
+			maxDate: oneMonthFromNow
 		});
+
+		// flatpickr("input[name='dob']", {
+		// 	dateFormat: "Y-m-d",
+		// 	maxDate: today // optional, restrict selecting future dates for DOB
+		// });
 	</script>
 	<script>
 		// Function to get the date one month from today
@@ -184,19 +232,69 @@
 			return `${year}-${month}-${day}`;
 		}
 	</script>
-    <script>
-        const profilepic=document.getElementById("profile-pic");
-        const inputfile=document.getElementById("input-file");
+	<script>
+		const profilepic = document.getElementById("profile-pic");
+		const inputfile = document.getElementById("input-file");
 
 
-        // inputfile.addEventListener("change",()=>{
-        //     profilepic.src=URL.createObjectURL(inputfile.files[0]);
-        // })
+		// inputfile.addEventListener("change",()=>{
+		//     profilepic.src=URL.createObjectURL(inputfile.files[0]);
+		// })
 
-            inputfile.onchange=function(){
+		inputfile.onchange = function () {
 
-                profilepic.src=URL.createObjectURL(inputfile.files[0]);
-            }
+			profilepic.src = URL.createObjectURL(inputfile.files[0]);
+		}
+	</script>
+	 <script>
+        // Set the max attribute to five years ago from the current date
+        var currentDate = new Date();
+        var minDate = new Date(currentDate);
+        minDate.setFullYear(currentDate.getFullYear() - 5);
+
+        var dobInput = document.getElementById('dob');
+        dobInput.max = getFormattedDate(minDate);
+
+        // Function to format date as YYYY-MM-DD
+        function getFormattedDate(date) {
+            var year = date.getFullYear();
+
+            var month = date.getMonth() + 1;
+            month = month < 10 ? '0' + month : month;
+
+            var day = date.getDate();
+            day = day < 10 ? '0' + day : day;
+
+            return year + '-' + month + '-' + day;
+        }
     </script>
+<script>
+    // Function to validate the phone number
+    function validatePhone(event) {
+        var phoneInput = event.target;
+        var phoneError = phoneInput.nextElementSibling;
+
+        // Remove non-digit characters from the phone number
+        var phoneNumber = phoneInput.value.replace(/\D/g, '');
+
+        // Check if the phone number is exactly 10 digits long
+        if (phoneNumber.length !== 10) {
+            phoneError.textContent = 'Phone number must be 10 digits long';
+            phoneInput.setCustomValidity('Invalid phone number');
+        } else {
+            phoneError.textContent = '';
+            phoneInput.setCustomValidity('');
+        }
+    }
+
+    // Add event listeners to all elements with the 'phone' class
+    var phoneInputs = document.querySelectorAll('.phone');
+    phoneInputs.forEach(function (input) {
+        input.addEventListener('input', validatePhone);
+    });
+</script>
+
+
 </body>
+
 </html>

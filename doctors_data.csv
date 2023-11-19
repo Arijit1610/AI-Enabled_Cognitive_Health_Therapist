@@ -1,0 +1,501 @@
+id,docid,name,specialty,PhoneNumber,location,experience_years,patient_reviews,availability,languages_spoken
+1,doc1,Chirag Bali,Grief and Loss Counseling,9787480676,Chennai,5,3.5,"['Friday', 'Wednesday', 'Monday']","['Tamil', 'Marathi']"
+2,doc2,Divyansh Kapadia,Autism Spectrum Disorders,9574655047,Kolkata,9,4.5,['Tuesday'],['Telugu']
+3,doc3,Aaina Dewan,Grief and Loss Counseling,9900115435,Kanpur,24,4.3,"['Wednesday', 'Monday']","['English', 'Marathi', 'Hindi', 'Telugu']"
+4,doc4,Kimaya Goswami,Substance Abuse and Addiction,9182917162,Kolkata,39,4.6,"['Tuesday', 'Thursday', 'Monday']",['Bengali']
+5,doc5,Veer Varty,Couples Therapy,9299952392,Lucknow,9,4.7,"['Tuesday', 'Monday', 'Wednesday']","['Marathi', 'Bengali']"
+6,doc6,Kismat Sharma,Substance Abuse and Addiction,9942903218,Mumbai,20,4.9,"['Thursday', 'Wednesday']",['English']
+7,doc7,Anay Barad,Depression and Mood Disorders,9783841229,Chennai,6,4.7,"['Monday', 'Friday', 'Tuesday']","['English', 'Marathi', 'Bengali', 'Telugu']"
+8,doc8,Tushar Bhakta,Child and Adolescent Counseling,9138663885,Kolkata,6,3.9,['Thursday'],['Tamil']
+9,doc9,Urvi Agrawal,Substance Abuse and Addiction,9069737500,Kanpur,25,5.0,['Thursday'],"['English', 'Hindi', 'Bengali']"
+10,doc10,Miraya Dewan,Depression and Mood Disorders,9672988005,New Delhi,40,3.9,['Monday'],['Hindi']
+11,doc11,Purab Sami,Family and Relationship Counseling,9114801452,Mumbai,33,3.6,"['Friday', 'Wednesday', 'Thursday']","['English', 'Telugu', 'Bengali']"
+12,doc12,Mehul Hans,Grief and Loss Counseling,9485432372,New Delhi,18,3.8,"['Monday', 'Tuesday']","['Bengali', 'Telugu']"
+13,doc13,Zaina Chacko,Eating Disorders,9805746255,New Delhi,27,3.8,"['Monday', 'Tuesday']",['Bengali']
+14,doc14,Jivika Kurian,Autism Spectrum Disorders,9796071473,Chennai,16,4.0,"['Thursday', 'Wednesday']","['Tamil', 'Marathi']"
+15,doc15,Reyansh Varty,Couples Therapy,9487631548,Lucknow,9,5.0,"['Friday', 'Thursday']","['English', 'Tamil']"
+16,doc16,Mishti Rajan,Family and Relationship Counseling,9856827844,Lucknow,37,4.1,"['Tuesday', 'Friday']","['Marathi', 'Telugu']"
+17,doc17,Abram Ravel,Eating Disorders,9462915975,New Delhi,23,3.7,"['Monday', 'Thursday', 'Friday']",['Tamil']
+18,doc18,Dhruv Bajwa,Child and Adolescent Counseling,9051862260,Kolkata,21,3.9,"['Thursday', 'Tuesday', 'Wednesday']",['Tamil']
+19,doc19,Aaryahi Sarraf,Autism Spectrum Disorders,9545534679,Kolkata,6,4.6,"['Friday', 'Wednesday']",['Hindi']
+20,doc20,Nishith Sama,Child and Adolescent Counseling,9749340602,Mumbai,38,4.4,"['Thursday', 'Tuesday', 'Friday']",['Tamil']
+21,doc21,Shlok Tiwari,Family and Relationship Counseling,9997826727,Mumbai,16,3.5,['Tuesday'],"['Tamil', 'Bengali', 'Hindi', 'Marathi']"
+22,doc22,Tanya Dada,Anger Management,9507788110,Chennai,23,4.3,"['Thursday', 'Friday']","['Bengali', 'English', 'Tamil']"
+23,doc23,Jivika Rajan,Depression and Mood Disorders,9977941237,Kolkata,32,4.6,"['Thursday', 'Monday']","['Hindi', 'Bengali']"
+24,doc24,Krish Dar,Anger Management,9199654432,Kolkata,10,4.6,"['Thursday', 'Monday']","['Telugu', 'Hindi', 'Marathi']"
+25,doc25,Anaya Tata,Autism Spectrum Disorders,9199264988,Jaipur,40,4.8,"['Monday', 'Wednesday']",['Tamil']
+26,doc26,Gatik Sachdev,Child and Adolescent Counseling,9217951756,Kolkata,11,3.6,['Wednesday'],"['Marathi', 'Telugu']"
+27,doc27,Manikya Luthra,Marriage and Couples CounselingTrauma and PTSD,9730100194,Lucknow,27,4.8,"['Wednesday', 'Thursday']","['English', 'Marathi', 'Tamil']"
+28,doc28,Vardaniya Chadha,Depression and Mood Disorders,9220094259,Mumbai,21,4.4,"['Wednesday', 'Friday', 'Tuesday']","['Tamil', 'English']"
+29,doc29,Krish Salvi,Child and Adolescent Counseling,9056000138,Kanpur,5,4.9,"['Tuesday', 'Friday']","['Telugu', 'Tamil', 'Hindi']"
+30,doc30,Dishani Sankar,Eating Disorders,9816727024,Lucknow,20,3.7,"['Monday', 'Friday']","['Marathi', 'Telugu']"
+31,doc31,Tushar Raj,Substance Abuse and Addiction,9860202225,Kanpur,29,3.5,"['Friday', 'Wednesday', 'Thursday']","['Hindi', 'Bengali']"
+32,doc32,Fateh Keer,Marriage and Couples CounselingTrauma and PTSD,9338399595,Chennai,40,4.8,"['Wednesday', 'Thursday']","['Marathi', 'Tamil', 'Hindi', 'Bengali']"
+33,doc33,Dishani Mane,Eating Disorders,9156151397,Kolkata,26,4.7,"['Wednesday', 'Tuesday']",['Bengali']
+34,doc34,Kaira Krishnamurthy,Anxiety and Stress Management,9768567863,Kolkata,14,3.9,"['Wednesday', 'Thursday', 'Friday']",['Bengali']
+35,doc35,Saksham Ram,Eating Disorders,9890345629,New Delhi,7,4.3,"['Thursday', 'Monday']","['Hindi', 'English']"
+36,doc36,Aradhya Ganguly,Anger Management,9943324149,Jaipur,10,4.4,['Thursday'],"['English', 'Hindi']"
+37,doc37,Nayantara Divan,Couples Therapy,9369960144,New Delhi,15,4.5,"['Friday', 'Wednesday', 'Tuesday']","['Tamil', 'Hindi', 'English']"
+38,doc38,Ahana  Bhalla,Marriage and Couples CounselingTrauma and PTSD,9386355888,Lucknow,40,4.3,"['Tuesday', 'Monday']",['English']
+39,doc39,Yasmin Tailor,Child and Adolescent Counseling,9845473601,Chennai,23,3.8,['Thursday'],"['English', 'Telugu']"
+40,doc40,Ira Apte,Anxiety and Stress Management,9429991957,Lucknow,22,4.4,"['Wednesday', 'Tuesday', 'Monday']","['Tamil', 'Bengali', 'English', 'Hindi']"
+41,doc41,Aayush Mani,Grief and Loss Counseling,9022956185,New Delhi,39,4.7,"['Tuesday', 'Wednesday']","['Marathi', 'Bengali', 'Tamil', 'Hindi']"
+42,doc42,Aarush Chaudhary,Couples Therapy,9512101755,Kanpur,20,4.1,"['Wednesday', 'Tuesday']","['Tamil', 'Marathi', 'English']"
+43,doc43,Alia Borah,Grief and Loss Counseling,9558338596,Mumbai,29,3.8,"['Monday', 'Tuesday']","['English', 'Marathi', 'Bengali']"
+44,doc44,Vihaan Mangat,Anxiety and Stress Management,9198655582,Kanpur,28,4.5,"['Monday', 'Friday']","['Marathi', 'Bengali']"
+45,doc45,Ira Majumdar,Anxiety and Stress Management,9447078077,New Delhi,19,4.4,['Wednesday'],"['Marathi', 'Hindi', 'Tamil', 'Telugu']"
+46,doc46,Jiya Tandon,Autism Spectrum Disorders,9737852954,Chennai,5,4.0,['Monday'],['Hindi']
+47,doc47,Zara Ramesh,Autism Spectrum Disorders,9057908293,Mumbai,31,5.0,"['Thursday', 'Wednesday', 'Tuesday']","['Bengali', 'Telugu', 'Marathi']"
+48,doc48,Ryan Dhillon,Anxiety and Stress Management,9409674444,Mumbai,5,3.7,"['Friday', 'Monday', 'Wednesday']","['Tamil', 'English']"
+49,doc49,Suhana Dass,Eating Disorders,9020279927,Jaipur,16,4.3,"['Friday', 'Tuesday', 'Thursday']","['Telugu', 'Hindi', 'Tamil']"
+50,doc50,Shaan Shenoy,Anger Management,9339836715,Jaipur,16,3.7,['Wednesday'],['Tamil']
+51,doc51,Rania Chaudry,Grief and Loss Counseling,9522622800,Chennai,31,4.9,['Tuesday'],['English']
+52,doc52,Farhan Kunda,Family and Relationship Counseling,9434689790,Chennai,26,4.2,['Tuesday'],['Marathi']
+53,doc53,Anay Date,Grief and Loss Counseling,9738455479,Chennai,22,4.8,"['Thursday', 'Tuesday']","['Telugu', 'Tamil', 'Marathi', 'English']"
+54,doc54,Tiya Hari,Eating Disorders,9477785832,Mumbai,33,4.6,['Friday'],['English']
+55,doc55,Tarini Golla,Family and Relationship Counseling,9266606190,Chennai,31,4.2,"['Tuesday', 'Monday', 'Thursday']",['English']
+56,doc56,Stuvan Babu,Substance Abuse and Addiction,9176579377,Kanpur,9,4.6,"['Wednesday', 'Tuesday']","['English', 'Telugu']"
+57,doc57,Neysa Contractor,Couples Therapy,9872828423,Lucknow,26,4.0,['Friday'],"['English', 'Hindi']"
+58,doc58,Himmat Vyas,Anxiety and Stress Management,9979538138,Mumbai,17,3.6,"['Tuesday', 'Monday', 'Wednesday', 'Thursday']","['Bengali', 'Marathi', 'English']"
+59,doc59,Devansh Guha,Substance Abuse and Addiction,9458549275,Chennai,31,3.8,"['Friday', 'Monday']",['Hindi']
+60,doc60,Rohan Vasa,Eating Disorders,9006451978,Chennai,17,4.6,['Friday'],"['Hindi', 'Tamil', 'Marathi', 'Telugu']"
+61,doc61,Vaibhav Sehgal,Anxiety and Stress Management,9155010398,Kanpur,12,3.6,"['Wednesday', 'Thursday', 'Monday']","['Bengali', 'English', 'Marathi']"
+62,doc62,Indranil Ram,Couples Therapy,9815017866,Jaipur,36,4.6,"['Thursday', 'Wednesday', 'Monday']","['Tamil', 'Hindi', 'Telugu']"
+63,doc63,Rati Bakshi,Family and Relationship Counseling,9508501352,Kolkata,9,3.7,['Monday'],"['Tamil', 'Marathi', 'Telugu']"
+64,doc64,Kaira Mann,Eating Disorders,9158076105,Jaipur,40,4.7,"['Friday', 'Tuesday', 'Thursday']","['English', 'Hindi', 'Telugu']"
+65,doc65,Lavanya Randhawa,Autism Spectrum Disorders,9078396233,Jaipur,6,4.9,"['Friday', 'Thursday', 'Monday']","['Marathi', 'Tamil', 'Bengali']"
+66,doc66,Ranbir Edwin,Family and Relationship Counseling,9032789298,Chennai,7,4.5,"['Thursday', 'Wednesday']","['Marathi', 'English']"
+67,doc67,Romil Khalsa,Family and Relationship Counseling,9357628548,Mumbai,20,4.1,"['Wednesday', 'Tuesday']","['Tamil', 'Marathi']"
+68,doc68,Nitara Ranganathan,Grief and Loss Counseling,9883126925,New Delhi,13,4.1,"['Thursday', 'Monday', 'Friday']","['Bengali', 'Telugu']"
+69,doc69,Prisha Goda,Anger Management,9519248740,Kanpur,32,3.6,"['Friday', 'Wednesday', 'Tuesday']","['Bengali', 'English', 'Tamil', 'Marathi']"
+70,doc70,Dhanuk Kapadia,Marriage and Couples CounselingTrauma and PTSD,9320097570,Mumbai,27,4.0,"['Thursday', 'Wednesday']","['Tamil', 'Marathi']"
+71,doc71,Hazel Srinivasan,Anxiety and Stress Management,9898551587,New Delhi,40,4.2,"['Tuesday', 'Thursday']","['Bengali', 'Tamil', 'Telugu']"
+72,doc72,Prisha Batta,Child and Adolescent Counseling,9212867619,Chennai,17,4.4,"['Monday', 'Tuesday']","['Telugu', 'Tamil']"
+73,doc73,Uthkarsh Bansal,Depression and Mood Disorders,9233217110,Kanpur,7,4.9,['Wednesday'],"['Marathi', 'Telugu']"
+74,doc74,Miraan Tank,Marriage and Couples CounselingTrauma and PTSD,9244990247,Kanpur,29,4.3,"['Friday', 'Thursday', 'Tuesday']","['Hindi', 'English', 'Telugu']"
+75,doc75,Lakshay Dave,Grief and Loss Counseling,9090311028,Jaipur,6,4.6,"['Tuesday', 'Wednesday', 'Monday', 'Thursday']",['English']
+76,doc76,Yakshit Wali,Anger Management,9979855859,New Delhi,37,4.6,['Wednesday'],"['English', 'Telugu', 'Tamil']"
+77,doc77,Nehmat Khosla,Grief and Loss Counseling,9709543554,Kolkata,27,4.8,['Thursday'],"['English', 'Bengali']"
+78,doc78,Samar Sehgal,Autism Spectrum Disorders,9261990671,Lucknow,39,4.1,"['Tuesday', 'Friday']",['Telugu']
+79,doc79,Taimur Sastry,Anxiety and Stress Management,9142033875,Chennai,34,4.2,"['Wednesday', 'Thursday']","['English', 'Bengali', 'Telugu']"
+80,doc80,Jivika Dani,Family and Relationship Counseling,9884332488,Chennai,21,3.8,"['Monday', 'Thursday']","['Telugu', 'English', 'Bengali']"
+81,doc81,Amani Kala,Couples Therapy,9531211737,New Delhi,20,4.7,"['Tuesday', 'Wednesday']",['Hindi']
+82,doc82,Biju Buch,Grief and Loss Counseling,9441268800,Jaipur,31,3.6,"['Tuesday', 'Monday', 'Wednesday']","['Bengali', 'Telugu', 'Hindi', 'Marathi']"
+83,doc83,Zaina Chaudhry,Grief and Loss Counseling,9825988239,Mumbai,14,5.0,"['Tuesday', 'Thursday']","['Telugu', 'Tamil']"
+84,doc84,Taimur Sura,Anger Management,9683424654,Jaipur,19,4.9,"['Tuesday', 'Wednesday']","['Marathi', 'Hindi', 'Bengali']"
+85,doc85,Shayak Bhattacharyya,Family and Relationship Counseling,9281464586,Chennai,26,3.6,"['Tuesday', 'Thursday']","['Hindi', 'Telugu']"
+86,doc86,Jhanvi Chatterjee,Anger Management,9626743208,Chennai,40,4.7,['Thursday'],['Bengali']
+87,doc87,Stuvan Kumer,Child and Adolescent Counseling,9586485842,Jaipur,26,3.8,"['Friday', 'Thursday']","['Tamil', 'Telugu', 'Bengali']"
+88,doc88,Siya Dugal,Marriage and Couples CounselingTrauma and PTSD,9222098485,Mumbai,36,3.8,['Friday'],"['Bengali', 'Telugu']"
+89,doc89,Tanya Arora,Marriage and Couples CounselingTrauma and PTSD,9887457800,Kanpur,5,3.8,['Thursday'],['Hindi']
+90,doc90,Indrajit Kamdar,Eating Disorders,9934024933,Jaipur,36,4.3,"['Thursday', 'Friday']","['Bengali', 'English', 'Marathi', 'Telugu']"
+91,doc91,Amani Lanka,Child and Adolescent Counseling,9463141727,Kolkata,29,4.9,"['Monday', 'Tuesday']","['Hindi', 'Marathi']"
+92,doc92,Bhavin Desai,Family and Relationship Counseling,9605693724,New Delhi,24,4.1,['Monday'],"['Marathi', 'Tamil', 'Bengali']"
+93,doc93,Damini Tiwari,Child and Adolescent Counseling,9119318852,Mumbai,5,3.8,"['Wednesday', 'Monday']","['English', 'Telugu', 'Tamil']"
+94,doc94,Oorja Shukla,Couples Therapy,9714168192,Chennai,24,3.9,"['Thursday', 'Tuesday']","['Tamil', 'Telugu']"
+95,doc95,Khushi Krishnan,Child and Adolescent Counseling,9393513674,Jaipur,20,4.3,"['Friday', 'Wednesday', 'Monday']","['English', 'Tamil']"
+96,doc96,Veer Srinivasan,Grief and Loss Counseling,9692292962,New Delhi,14,4.6,"['Tuesday', 'Thursday', 'Friday', 'Wednesday']",['Tamil']
+97,doc97,Rati Ravel,Child and Adolescent Counseling,9460578880,New Delhi,31,4.1,['Tuesday'],['Bengali']
+98,doc98,Aarav Venkataraman,Child and Adolescent Counseling,9948358390,Jaipur,20,4.1,"['Monday', 'Friday']","['Hindi', 'Tamil']"
+99,doc99,Renee Goyal,Eating Disorders,9348927877,New Delhi,12,4.2,"['Tuesday', 'Thursday']","['Tamil', 'Telugu', 'English']"
+100,doc100,Gokul Contractor,Child and Adolescent Counseling,9106190822,Kanpur,27,4.7,"['Tuesday', 'Wednesday']","['Telugu', 'English']"
+101,doc101,Aaina Batta,Family and Relationship Counseling,9786152214,Lucknow,8,4.1,"['Tuesday', 'Wednesday']","['Telugu', 'Marathi']"
+102,doc102,Amira Sura,Anxiety and Stress Management,9236541209,New Delhi,15,4.8,['Wednesday'],"['English', 'Hindi']"
+103,doc103,Tara Chaudhry,Autism Spectrum Disorders,9255100130,Kolkata,36,4.7,['Tuesday'],"['Marathi', 'English']"
+104,doc104,Emir Bora,Family and Relationship Counseling,9295022815,Mumbai,14,4.9,"['Monday', 'Tuesday', 'Friday']","['English', 'Hindi']"
+105,doc105,Taran Bhagat,Marriage and Couples CounselingTrauma and PTSD,9920746374,Kanpur,25,4.4,"['Thursday', 'Friday']","['Hindi', 'Marathi']"
+106,doc106,Ira Reddy,Couples Therapy,9734839085,Lucknow,29,3.6,"['Friday', 'Monday', 'Tuesday']","['Tamil', 'Bengali', 'Marathi']"
+107,doc107,Mishti Lata,Anger Management,9515139458,Mumbai,18,5.0,['Tuesday'],"['Bengali', 'Marathi']"
+108,doc108,Neelofar Varughese,Marriage and Couples CounselingTrauma and PTSD,9839669386,Kolkata,13,3.6,"['Friday', 'Wednesday']",['Hindi']
+109,doc109,Jiya Ghose,Substance Abuse and Addiction,9104233514,Mumbai,39,3.6,['Thursday'],"['Bengali', 'Marathi', 'English']"
+110,doc110,Rasha Badal,Family and Relationship Counseling,9413062742,Kolkata,34,3.6,"['Tuesday', 'Friday', 'Wednesday']",['Bengali']
+111,doc111,Lagan Aggarwal,Anger Management,9963643792,New Delhi,28,4.5,['Wednesday'],"['Telugu', 'Bengali', 'Tamil']"
+112,doc112,Anaya Gera,Child and Adolescent Counseling,9083876758,Lucknow,32,4.4,"['Tuesday', 'Monday']","['Bengali', 'Marathi']"
+113,doc113,Amani Sarin,Grief and Loss Counseling,9774990648,Kolkata,8,5.0,"['Thursday', 'Tuesday']","['Marathi', 'Hindi', 'Tamil', 'Bengali']"
+114,doc114,Alisha Biswas,Child and Adolescent Counseling,9012741777,Lucknow,38,3.5,"['Thursday', 'Monday']",['Marathi']
+115,doc115,Lavanya Kaul,Anger Management,9062804995,Kolkata,33,3.9,"['Wednesday', 'Thursday']","['Tamil', 'Bengali', 'Telugu']"
+116,doc116,Miraya Sahota,Child and Adolescent Counseling,9367101652,Jaipur,36,4.6,"['Wednesday', 'Friday']",['Tamil']
+117,doc117,Rohan Khalsa,Depression and Mood Disorders,9525721102,Kanpur,28,4.2,"['Tuesday', 'Friday']","['Tamil', 'English']"
+118,doc118,Shayak Dey,Anger Management,9279533074,Kolkata,21,4.2,['Tuesday'],['Telugu']
+119,doc119,Riya Shan,Family and Relationship Counseling,9013910952,Mumbai,11,5.0,"['Thursday', 'Monday']","['English', 'Marathi', 'Tamil']"
+120,doc120,Nishith Garde,Child and Adolescent Counseling,9606919705,New Delhi,18,4.8,['Monday'],['Telugu']
+121,doc121,Advik Dani,Child and Adolescent Counseling,9687758281,Kanpur,9,4.6,"['Thursday', 'Wednesday', 'Monday']",['English']
+122,doc122,Jayant Kalla,Autism Spectrum Disorders,9812682943,Lucknow,36,4.2,"['Wednesday', 'Friday']","['Marathi', 'Tamil', 'Bengali']"
+123,doc123,Damini Mahajan,Autism Spectrum Disorders,9495681219,Kolkata,9,4.0,['Tuesday'],"['Tamil', 'Marathi']"
+124,doc124,Zeeshan Rau,Anger Management,9325682089,Kolkata,32,4.1,"['Tuesday', 'Wednesday']","['Telugu', 'Bengali']"
+125,doc125,Neelofar Hayre,Substance Abuse and Addiction,9932664178,Chennai,23,3.7,"['Wednesday', 'Thursday']","['Telugu', 'Bengali']"
+126,doc126,Farhan Rajagopalan,Marriage and Couples CounselingTrauma and PTSD,9895702765,Jaipur,19,4.8,"['Friday', 'Wednesday']","['Telugu', 'Hindi']"
+127,doc127,Kavya Gaba,Marriage and Couples CounselingTrauma and PTSD,9162058271,Mumbai,20,3.6,"['Wednesday', 'Tuesday']",['English']
+128,doc128,Tara Iyengar,Anger Management,9308755294,New Delhi,25,4.2,"['Tuesday', 'Wednesday', 'Thursday']",['English']
+129,doc129,Pranay Rama,Couples Therapy,9914304237,Kanpur,23,4.0,"['Thursday', 'Friday']",['Bengali']
+130,doc130,Shaan Issac,Grief and Loss Counseling,9964691041,New Delhi,11,4.2,['Monday'],"['English', 'Tamil']"
+131,doc131,Veer Barman,Marriage and Couples CounselingTrauma and PTSD,9693538914,Chennai,23,4.8,"['Friday', 'Monday']","['Bengali', 'Telugu']"
+132,doc132,Myra Dhar,Marriage and Couples CounselingTrauma and PTSD,9843057827,Kanpur,25,4.1,"['Wednesday', 'Monday', 'Tuesday']",['Bengali']
+133,doc133,Lagan Koshy,Autism Spectrum Disorders,9385909063,New Delhi,6,4.0,['Friday'],['Tamil']
+134,doc134,Vihaan Raval,Grief and Loss Counseling,9512683992,Kolkata,18,4.9,"['Friday', 'Tuesday']","['Telugu', 'Tamil', 'Bengali']"
+135,doc135,Farhan Rastogi,Substance Abuse and Addiction,9571986214,Kolkata,34,3.9,"['Wednesday', 'Tuesday']","['English', 'Bengali', 'Tamil']"
+136,doc136,Parinaaz Mand,Grief and Loss Counseling,9742819406,Kolkata,21,4.1,"['Tuesday', 'Thursday', 'Wednesday', 'Monday']",['Hindi']
+137,doc137,Kiaan Bora,Eating Disorders,9244464032,Chennai,15,4.3,['Friday'],['Hindi']
+138,doc138,Ojas Kala,Anger Management,9261256412,Jaipur,38,5.0,['Thursday'],"['Marathi', 'English', 'Telugu']"
+139,doc139,Chirag Sur,Family and Relationship Counseling,9563987489,Chennai,39,3.7,"['Wednesday', 'Thursday']","['English', 'Tamil']"
+140,doc140,Kiara Ranganathan,Anger Management,9748893353,Kanpur,15,4.4,"['Monday', 'Wednesday']","['English', 'Tamil', 'Telugu']"
+141,doc141,Ranbir Gour,Child and Adolescent Counseling,9391433535,Jaipur,12,3.6,"['Wednesday', 'Tuesday']","['Telugu', 'Bengali']"
+142,doc142,Ojas Sachdev,Eating Disorders,9443761767,Lucknow,30,4.3,['Monday'],"['Hindi', 'English']"
+143,doc143,Yashvi Bhardwaj,Eating Disorders,9415723659,New Delhi,33,4.7,"['Wednesday', 'Friday']",['Marathi']
+144,doc144,Farhan Karan,Substance Abuse and Addiction,9526009503,Lucknow,20,4.1,"['Friday', 'Wednesday', 'Tuesday']","['Telugu', 'Marathi', 'Tamil']"
+145,doc145,Nirvaan Wagle,Marriage and Couples CounselingTrauma and PTSD,9057965038,Chennai,9,3.8,['Monday'],"['English', 'Bengali']"
+146,doc146,Siya Cheema,Eating Disorders,9998423873,Kolkata,16,5.0,"['Monday', 'Wednesday', 'Friday']","['Bengali', 'Telugu']"
+147,doc147,Kanav Randhawa,Anger Management,9227327227,Mumbai,26,3.9,"['Monday', 'Friday', 'Thursday', 'Tuesday']","['Telugu', 'Tamil', 'Bengali']"
+148,doc148,Adira Shanker,Couples Therapy,9257245541,Jaipur,26,3.8,['Friday'],['Tamil']
+149,doc149,Pranay Tella,Eating Disorders,9201894540,Kanpur,32,4.5,"['Wednesday', 'Thursday', 'Tuesday']",['Bengali']
+150,doc150,Amira Shenoy,Grief and Loss Counseling,9740228768,Kolkata,30,4.6,"['Thursday', 'Friday']","['Bengali', 'Telugu']"
+151,doc151,Kaira Suri,Anger Management,9341843199,Kolkata,18,3.6,"['Monday', 'Friday', 'Wednesday']",['Bengali']
+152,doc152,Jivika Srivastava,Anxiety and Stress Management,9273087056,Kolkata,19,4.3,"['Tuesday', 'Friday']","['English', 'Tamil', 'Telugu']"
+153,doc153,Eva Sampath,Grief and Loss Counseling,9779724244,Kanpur,31,3.5,"['Monday', 'Thursday', 'Wednesday']",['Bengali']
+154,doc154,Purab Toor,Anxiety and Stress Management,9247917792,New Delhi,39,4.9,"['Tuesday', 'Thursday', 'Wednesday']",['Bengali']
+155,doc155,Parinaaz Aurora,Autism Spectrum Disorders,9744220195,Jaipur,30,3.8,['Wednesday'],['English']
+156,doc156,Nirvaan Dani,Anxiety and Stress Management,9073475497,Lucknow,18,4.6,['Wednesday'],"['Telugu', 'Marathi']"
+157,doc157,Ishita Kala,Grief and Loss Counseling,9800427526,Kanpur,26,4.4,['Tuesday'],['Hindi']
+158,doc158,Vedika Sani,Eating Disorders,9689262642,Kolkata,33,4.1,"['Wednesday', 'Monday']","['English', 'Tamil']"
+159,doc159,Mohanlal Sathe,Marriage and Couples CounselingTrauma and PTSD,9811768586,Mumbai,19,3.5,"['Wednesday', 'Friday', 'Monday']","['Bengali', 'Telugu', 'Tamil', 'Marathi']"
+160,doc160,Jayant Soman,Child and Adolescent Counseling,9596444771,Kanpur,23,4.6,['Wednesday'],"['Tamil', 'Telugu', 'Hindi']"
+161,doc161,Gatik Sibal,Autism Spectrum Disorders,9674288824,Chennai,5,3.9,"['Monday', 'Wednesday']","['Telugu', 'Hindi', 'Marathi', 'Bengali']"
+162,doc162,Bhamini Ghosh,Family and Relationship Counseling,9346181212,Kanpur,35,4.2,"['Thursday', 'Friday']","['Tamil', 'Telugu', 'Bengali']"
+163,doc163,Rania Bassi,Child and Adolescent Counseling,9485144331,Kolkata,20,4.5,"['Wednesday', 'Tuesday']","['Tamil', 'Telugu', 'Hindi']"
+164,doc164,Ahana  Solanki,Child and Adolescent Counseling,9696907743,New Delhi,38,3.5,['Tuesday'],"['Bengali', 'Tamil', 'Hindi', 'Telugu']"
+165,doc165,Kismat Chakrabarti,Depression and Mood Disorders,9886476398,Jaipur,15,4.9,"['Wednesday', 'Monday', 'Friday']","['Marathi', 'Telugu']"
+166,doc166,Tiya Sekhon,Marriage and Couples CounselingTrauma and PTSD,9824317765,Kanpur,17,3.5,"['Tuesday', 'Friday', 'Wednesday']","['Hindi', 'Tamil']"
+167,doc167,Elakshi Raval,Substance Abuse and Addiction,9825687928,Jaipur,24,4.8,['Friday'],"['English', 'Bengali']"
+168,doc168,Prisha Choudhry,Grief and Loss Counseling,9907613098,Lucknow,35,3.7,"['Monday', 'Friday']","['Telugu', 'Bengali', 'Marathi']"
+169,doc169,Khushi Kamdar,Anger Management,9714317961,Kolkata,17,3.9,['Wednesday'],"['Telugu', 'Marathi', 'Bengali', 'English']"
+170,doc170,Tara Randhawa,Child and Adolescent Counseling,9682981221,Chennai,20,4.1,"['Tuesday', 'Thursday', 'Monday']","['Tamil', 'Marathi', 'Bengali']"
+171,doc171,Azad Ahluwalia,Couples Therapy,9999816002,Chennai,33,4.4,"['Wednesday', 'Thursday', 'Monday']","['English', 'Hindi']"
+172,doc172,Pari Dube,Anger Management,9917517368,New Delhi,37,4.7,"['Thursday', 'Wednesday']","['Marathi', 'English', 'Bengali']"
+173,doc173,Pihu Chad,Anxiety and Stress Management,9548944028,Kolkata,30,3.9,"['Friday', 'Monday']","['Marathi', 'Hindi', 'Bengali']"
+174,doc174,Vanya Vasa,Couples Therapy,9008828747,Jaipur,28,4.3,"['Wednesday', 'Friday', 'Thursday']","['Bengali', 'Marathi', 'Telugu', 'Tamil']"
+175,doc175,Alia Vig,Child and Adolescent Counseling,9204662019,New Delhi,21,4.8,['Wednesday'],"['Bengali', 'Telugu', 'Marathi']"
+176,doc176,Nirvaan Banik,Depression and Mood Disorders,9768784731,Chennai,19,4.3,"['Friday', 'Wednesday']","['Telugu', 'Tamil', 'Hindi']"
+177,doc177,Jhanvi Basu,Couples Therapy,9977690358,Lucknow,7,4.3,"['Tuesday', 'Thursday']",['Marathi']
+178,doc178,Jivin Brahmbhatt,Autism Spectrum Disorders,9898551189,Lucknow,38,4.5,['Monday'],"['Hindi', 'Marathi', 'Tamil']"
+179,doc179,Parinaaz Dugal,Marriage and Couples CounselingTrauma and PTSD,9701781265,Lucknow,5,3.5,['Monday'],"['Tamil', 'Telugu']"
+180,doc180,Nirvi Mahajan,Couples Therapy,9810547876,Mumbai,31,4.8,['Monday'],"['Bengali', 'Tamil', 'English']"
+181,doc181,Aaina Chadha,Eating Disorders,9483840232,Lucknow,29,4.9,['Friday'],"['Hindi', 'Marathi']"
+182,doc182,Inaaya  Virk,Family and Relationship Counseling,9995447468,Lucknow,22,4.5,"['Monday', 'Friday']","['Marathi', 'English', 'Tamil', 'Hindi']"
+183,doc183,Badal Chaudhari,Depression and Mood Disorders,9841582989,Lucknow,22,4.4,"['Tuesday', 'Wednesday']","['Telugu', 'Hindi']"
+184,doc184,Krish Salvi,Child and Adolescent Counseling,9407832233,Kolkata,16,4.3,"['Thursday', 'Friday']",['English']
+185,doc185,Aaina Kaul,Anger Management,9937423590,Kanpur,7,3.8,['Thursday'],['Telugu']
+186,doc186,Umang Rout,Marriage and Couples CounselingTrauma and PTSD,9435445326,Jaipur,17,4.6,"['Wednesday', 'Tuesday', 'Monday']",['Telugu']
+187,doc187,Aniruddh Gole,Couples Therapy,9495887668,Mumbai,25,4.1,['Monday'],"['Tamil', 'Marathi', 'English', 'Telugu']"
+188,doc188,Ritvik Shroff,Grief and Loss Counseling,9173275014,Lucknow,31,4.8,"['Wednesday', 'Friday', 'Tuesday']","['Bengali', 'Marathi']"
+189,doc189,Urvi Gopal,Anxiety and Stress Management,9982980732,New Delhi,23,3.6,"['Friday', 'Monday']","['Hindi', 'Tamil', 'Marathi']"
+190,doc190,Samar Sane,Eating Disorders,9411125182,Kanpur,25,4.0,"['Wednesday', 'Monday']",['Bengali']
+191,doc191,Eva Gokhale,Family and Relationship Counseling,9886746425,New Delhi,32,3.6,"['Thursday', 'Wednesday', 'Tuesday']",['English']
+192,doc192,Dishani Sachdev,Couples Therapy,9119174007,Kolkata,29,3.7,"['Tuesday', 'Wednesday']","['Telugu', 'Bengali']"
+193,doc193,Elakshi Saraf,Family and Relationship Counseling,9450206827,Mumbai,21,4.7,"['Tuesday', 'Friday', 'Wednesday']","['English', 'Hindi', 'Bengali', 'Tamil']"
+194,doc194,Urvi Wadhwa,Anxiety and Stress Management,9893548802,Mumbai,40,4.9,"['Thursday', 'Friday']","['Hindi', 'English']"
+195,doc195,Tara Kashyap,Autism Spectrum Disorders,9357784306,Kolkata,27,4.8,['Monday'],"['English', 'Marathi']"
+196,doc196,Ivana Wagle,Anxiety and Stress Management,9362735581,Kanpur,17,4.2,['Thursday'],"['Hindi', 'Tamil']"
+197,doc197,Hrishita Singhal,Anger Management,9458931832,Lucknow,29,4.9,"['Friday', 'Tuesday']","['Telugu', 'Hindi', 'English']"
+198,doc198,Mamooty Garg,Family and Relationship Counseling,9270538463,Kanpur,21,4.9,"['Monday', 'Friday', 'Thursday']",['Marathi']
+199,doc199,Lakshit Kamdar,Marriage and Couples CounselingTrauma and PTSD,9707288921,Jaipur,40,3.8,"['Wednesday', 'Monday', 'Thursday']","['Tamil', 'English', 'Bengali']"
+200,doc200,Emir Brar,Couples Therapy,9953931245,New Delhi,30,4.9,"['Friday', 'Thursday']","['English', 'Telugu']"
+201,doc201,Jayesh Gill,Couples Therapy,9198580440,New Delhi,5,4.8,"['Tuesday', 'Wednesday', 'Monday']","['Bengali', 'Telugu']"
+202,doc202,Prisha Barman,Couples Therapy,9412543471,Mumbai,5,3.8,"['Thursday', 'Friday', 'Tuesday']","['English', 'Marathi', 'Bengali']"
+203,doc203,Anahi Sur,Depression and Mood Disorders,9491571065,Lucknow,17,3.7,"['Thursday', 'Friday', 'Monday']",['Hindi']
+204,doc204,Zara Buch,Couples Therapy,9503390157,Jaipur,28,4.0,['Thursday'],"['Hindi', 'Bengali']"
+205,doc205,Onkar Tripathi,Couples Therapy,9275805641,Lucknow,32,4.4,"['Tuesday', 'Thursday']","['English', 'Tamil']"
+206,doc206,Ahana  Balakrishnan,Eating Disorders,9530898015,Chennai,8,4.7,"['Wednesday', 'Friday', 'Tuesday']","['Telugu', 'Tamil', 'English']"
+207,doc207,Ira Lad,Child and Adolescent Counseling,9426680112,Kolkata,7,4.3,['Friday'],['Bengali']
+208,doc208,Alisha Dugal,Grief and Loss Counseling,9560089064,Chennai,17,4.5,['Friday'],"['Hindi', 'Telugu']"
+209,doc209,Amira Badami,Marriage and Couples CounselingTrauma and PTSD,9746576684,Chennai,38,4.4,['Thursday'],"['English', 'Bengali']"
+210,doc210,Shray Sibal,Autism Spectrum Disorders,9632569999,Lucknow,7,5.0,"['Wednesday', 'Tuesday']",['Tamil']
+211,doc211,Pranay Karpe,Autism Spectrum Disorders,9630845052,Chennai,20,4.7,"['Monday', 'Wednesday', 'Tuesday']","['Tamil', 'Telugu', 'Bengali']"
+212,doc212,Amani Bava,Depression and Mood Disorders,9885824103,Mumbai,37,4.9,"['Thursday', 'Friday']","['English', 'Tamil']"
+213,doc213,Faiyaz Choudhary,Couples Therapy,9026278388,Chennai,8,3.8,"['Wednesday', 'Monday']",['Tamil']
+214,doc214,Arhaan Gara,Autism Spectrum Disorders,9984967123,Kolkata,33,4.1,"['Thursday', 'Tuesday']","['Hindi', 'English']"
+215,doc215,Ayesha Batta,Family and Relationship Counseling,9484826329,Lucknow,40,3.6,['Wednesday'],"['Marathi', 'Hindi', 'Telugu', 'English']"
+216,doc216,Shamik Deol,Marriage and Couples CounselingTrauma and PTSD,9291785709,Chennai,38,3.7,"['Thursday', 'Tuesday']",['Telugu']
+217,doc217,Akarsh Subramanian,Eating Disorders,9597811340,Jaipur,7,3.9,"['Tuesday', 'Thursday']",['Tamil']
+218,doc218,Hridaan Lalla,Child and Adolescent Counseling,9191860864,Kanpur,13,4.1,"['Monday', 'Wednesday', 'Friday']","['Telugu', 'Marathi', 'Tamil']"
+219,doc219,Madhup Kashyap,Eating Disorders,9942994842,Mumbai,7,4.1,"['Wednesday', 'Thursday', 'Monday']",['Hindi']
+220,doc220,Sumer Koshy,Marriage and Couples CounselingTrauma and PTSD,9175577069,Mumbai,31,4.8,"['Monday', 'Wednesday', 'Thursday']",['Marathi']
+221,doc221,Kartik Rout,Eating Disorders,9498423568,Chennai,29,4.0,"['Friday', 'Thursday']","['Hindi', 'Telugu', 'Marathi']"
+222,doc222,Dharmajan Suri,Anxiety and Stress Management,9746808720,Jaipur,16,3.8,"['Monday', 'Thursday']",['Telugu']
+223,doc223,Elakshi Chacko,Substance Abuse and Addiction,9391932006,Kolkata,15,3.7,"['Thursday', 'Tuesday']","['Marathi', 'Hindi']"
+224,doc224,Riaan Rattan,Anxiety and Stress Management,9326381236,Kanpur,16,4.7,['Tuesday'],"['Telugu', 'Tamil']"
+225,doc225,Raghav Reddy,Anger Management,9598286843,Kanpur,5,4.5,"['Tuesday', 'Wednesday']","['English', 'Bengali']"
+226,doc226,Pranay Sanghvi,Substance Abuse and Addiction,9653007681,New Delhi,7,3.5,"['Tuesday', 'Wednesday']",['Tamil']
+227,doc227,Aaryahi Samra,Depression and Mood Disorders,9505744307,Mumbai,16,4.7,"['Tuesday', 'Thursday']","['English', 'Telugu', 'Marathi']"
+228,doc228,Indranil Bail,Eating Disorders,9695126154,New Delhi,8,3.5,"['Tuesday', 'Thursday', 'Wednesday']","['Tamil', 'Telugu']"
+229,doc229,Mishti Sastry,Depression and Mood Disorders,9172195227,Mumbai,18,4.5,"['Thursday', 'Tuesday']",['Telugu']
+230,doc230,Nishith Bose,Anxiety and Stress Management,9413016497,Jaipur,13,4.0,"['Wednesday', 'Monday']","['English', 'Tamil', 'Telugu']"
+231,doc231,Jivika Hora,Anger Management,9609282983,New Delhi,27,4.0,"['Tuesday', 'Friday', 'Wednesday']","['English', 'Marathi', 'Telugu', 'Hindi']"
+232,doc232,Kabir Datta,Grief and Loss Counseling,9824545630,Jaipur,21,4.0,"['Tuesday', 'Monday', 'Wednesday']",['Marathi']
+233,doc233,Zeeshan Ratti,Marriage and Couples CounselingTrauma and PTSD,9207608032,Kolkata,32,3.7,"['Friday', 'Thursday', 'Monday']","['Tamil', 'Telugu', 'Hindi']"
+234,doc234,Emir Gour,Substance Abuse and Addiction,9504951402,Mumbai,19,3.6,"['Monday', 'Friday']",['Bengali']
+235,doc235,Kaira Malhotra,Couples Therapy,9989368721,Kolkata,32,4.8,"['Wednesday', 'Monday', 'Tuesday']","['Hindi', 'Bengali']"
+236,doc236,Bhavin Jain,Substance Abuse and Addiction,9819805133,Chennai,26,4.5,"['Thursday', 'Monday', 'Friday', 'Wednesday']","['English', 'Bengali', 'Telugu']"
+237,doc237,Samaira Mander,Eating Disorders,9617361187,Jaipur,35,4.4,"['Wednesday', 'Tuesday']","['Telugu', 'English', 'Marathi']"
+238,doc238,Armaan Kata,Grief and Loss Counseling,9642887545,New Delhi,18,4.7,['Friday'],"['Telugu', 'Bengali']"
+239,doc239,Zain Saha,Marriage and Couples CounselingTrauma and PTSD,9287173968,Mumbai,31,4.6,"['Tuesday', 'Friday']",['Tamil']
+240,doc240,Shlok Kibe,Eating Disorders,9260958608,Chennai,22,3.7,"['Monday', 'Wednesday']","['Bengali', 'Telugu', 'English']"
+241,doc241,Anvi Talwar,Substance Abuse and Addiction,9675545940,Chennai,32,3.5,['Tuesday'],"['Bengali', 'Telugu', 'Hindi']"
+242,doc242,Ira Bains,Eating Disorders,9741116841,Kanpur,8,4.6,"['Friday', 'Monday']","['Bengali', 'Telugu']"
+243,doc243,Ishita Banik,Anxiety and Stress Management,9023565707,Jaipur,26,4.2,"['Wednesday', 'Thursday']","['Marathi', 'Tamil', 'Hindi', 'English']"
+244,doc244,Anahita Mannan,Autism Spectrum Disorders,9914993212,Lucknow,6,4.5,"['Friday', 'Tuesday', 'Thursday']","['Marathi', 'Tamil', 'Telugu']"
+245,doc245,Stuvan Iyer,Anxiety and Stress Management,9286564961,Mumbai,31,4.2,"['Thursday', 'Tuesday']","['Telugu', 'Bengali']"
+246,doc246,Renee Hegde,Autism Spectrum Disorders,9446713936,Mumbai,6,4.3,"['Monday', 'Tuesday']","['Bengali', 'Tamil']"
+247,doc247,Jayan Tailor,Marriage and Couples CounselingTrauma and PTSD,9775904627,Chennai,39,4.4,"['Thursday', 'Wednesday']","['Telugu', 'Bengali']"
+248,doc248,Raunak Khosla,Family and Relationship Counseling,9875485054,Kolkata,28,4.9,"['Wednesday', 'Thursday']",['Tamil']
+249,doc249,Saksham Majumdar,Family and Relationship Counseling,9709122662,Lucknow,20,3.5,"['Thursday', 'Tuesday']","['English', 'Tamil']"
+250,doc250,Anay Soni,Marriage and Couples CounselingTrauma and PTSD,9291783463,Chennai,6,4.6,"['Wednesday', 'Friday', 'Monday', 'Thursday']","['English', 'Marathi', 'Bengali']"
+251,doc251,Advik Soman,Depression and Mood Disorders,9735043982,Mumbai,10,3.6,"['Monday', 'Friday']","['Hindi', 'Telugu', 'Marathi']"
+252,doc252,Inaaya  Mahal,Anger Management,9384305460,New Delhi,11,4.5,"['Wednesday', 'Thursday', 'Monday']","['Telugu', 'Marathi', 'Tamil']"
+253,doc253,Rania Date,Depression and Mood Disorders,9382042914,New Delhi,17,4.8,['Tuesday'],['Telugu']
+254,doc254,Indrans Bir,Anger Management,9894562331,Kanpur,23,4.9,"['Friday', 'Monday', 'Thursday']","['Tamil', 'English']"
+255,doc255,Vritika Kala,Anger Management,9358003410,Kolkata,17,5.0,"['Tuesday', 'Thursday', 'Friday']",['English']
+256,doc256,Mannat Tata,Depression and Mood Disorders,9705872435,Kolkata,11,3.8,['Monday'],"['English', 'Marathi', 'Hindi']"
+257,doc257,Parinaaz Luthra,Anxiety and Stress Management,9591218479,Kanpur,13,4.4,"['Tuesday', 'Friday', 'Wednesday']",['Hindi']
+258,doc258,Saira Sunder,Couples Therapy,9115658264,Chennai,26,4.4,['Friday'],"['Telugu', 'English', 'Hindi']"
+259,doc259,Manikya Mand,Marriage and Couples CounselingTrauma and PTSD,9503909150,New Delhi,14,4.7,"['Thursday', 'Monday', 'Tuesday', 'Friday']",['Telugu']
+260,doc260,Ranbir Dasgupta,Eating Disorders,9573091948,Mumbai,39,3.7,"['Monday', 'Thursday']","['Hindi', 'Tamil']"
+261,doc261,Manikya Gour,Eating Disorders,9175101255,Lucknow,16,3.6,['Monday'],['Tamil']
+262,doc262,Diya Batta,Couples Therapy,9929173021,Mumbai,33,5.0,"['Wednesday', 'Friday', 'Monday', 'Tuesday']","['Bengali', 'Tamil']"
+263,doc263,Priyansh Biswas,Eating Disorders,9620187483,Mumbai,36,4.1,"['Wednesday', 'Tuesday', 'Monday']","['Bengali', 'Tamil', 'Marathi']"
+264,doc264,Shamik Shenoy,Anger Management,9037976880,Mumbai,26,4.4,"['Monday', 'Friday', 'Tuesday', 'Wednesday']","['Marathi', 'English']"
+265,doc265,Seher Khosla,Depression and Mood Disorders,9718469133,Kolkata,31,4.1,"['Monday', 'Friday', 'Tuesday']",['Bengali']
+266,doc266,Yuvaan Luthra,Grief and Loss Counseling,9883910099,Lucknow,8,4.4,"['Friday', 'Monday']",['Marathi']
+267,doc267,Aarush Srivastava,Child and Adolescent Counseling,9277949333,Kolkata,16,4.1,"['Monday', 'Tuesday', 'Friday']","['English', 'Tamil']"
+268,doc268,Vardaniya Shetty,Grief and Loss Counseling,9946663945,Lucknow,7,3.8,"['Wednesday', 'Monday', 'Tuesday']","['Hindi', 'Bengali']"
+269,doc269,Lavanya Singhal,Depression and Mood Disorders,9760452344,Mumbai,26,4.1,['Tuesday'],"['Bengali', 'Hindi']"
+270,doc270,Nitya Bhatt,Anxiety and Stress Management,9707252247,Lucknow,31,4.7,['Friday'],"['Tamil', 'Bengali', 'Telugu']"
+271,doc271,Keya Wali,Depression and Mood Disorders,9070160622,Jaipur,29,4.4,['Monday'],"['Telugu', 'Marathi']"
+272,doc272,Yakshit Gola,Family and Relationship Counseling,9483766915,Kolkata,34,4.1,['Monday'],['English']
+273,doc273,Miraan Sood,Substance Abuse and Addiction,9754553636,Kolkata,14,4.6,"['Tuesday', 'Wednesday', 'Monday']",['Marathi']
+274,doc274,Ayesha Gade,Anxiety and Stress Management,9330542850,Kanpur,8,3.8,"['Tuesday', 'Thursday']","['Marathi', 'Telugu', 'English']"
+275,doc275,Farhan Dugar,Family and Relationship Counseling,9738964386,Jaipur,33,4.3,['Thursday'],['English']
+276,doc276,Eshani Chad,Couples Therapy,9289324088,Kanpur,25,3.9,"['Tuesday', 'Friday']","['Marathi', 'Hindi', 'Tamil']"
+277,doc277,Vihaan Khalsa,Child and Adolescent Counseling,9032319232,New Delhi,36,3.9,"['Tuesday', 'Wednesday']","['Tamil', 'Marathi']"
+278,doc278,Gokul Choudhury,Anger Management,9335947595,Mumbai,33,4.2,"['Monday', 'Thursday']","['Bengali', 'Telugu']"
+279,doc279,Jayan Dhar,Eating Disorders,9637209613,New Delhi,17,4.4,['Thursday'],"['English', 'Marathi']"
+280,doc280,Samiha Khatri,Marriage and Couples CounselingTrauma and PTSD,9978974664,Jaipur,40,4.4,"['Friday', 'Thursday']","['English', 'Bengali', 'Tamil']"
+281,doc281,Seher Varma,Anger Management,9404030311,Jaipur,25,4.2,"['Thursday', 'Friday', 'Wednesday', 'Monday']","['Hindi', 'Bengali']"
+282,doc282,Tejas Chokshi,Child and Adolescent Counseling,9777708451,Lucknow,37,4.1,"['Thursday', 'Friday']",['Bengali']
+283,doc283,Shanaya Mani,Anxiety and Stress Management,9816624729,Mumbai,10,3.5,['Tuesday'],"['Bengali', 'Tamil', 'Marathi', 'English']"
+284,doc284,Indranil Zachariah,Eating Disorders,9207065492,Kanpur,12,4.1,"['Friday', 'Thursday']",['Marathi']
+285,doc285,Priyansh Gaba,Substance Abuse and Addiction,9959101611,Kolkata,39,3.6,"['Monday', 'Tuesday']",['Tamil']
+286,doc286,Jiya Sheth,Anxiety and Stress Management,9841008816,New Delhi,28,4.2,"['Tuesday', 'Monday']","['Bengali', 'English']"
+287,doc287,Neelofar Doshi,Couples Therapy,9765321300,Lucknow,16,3.8,"['Tuesday', 'Monday', 'Friday']","['Bengali', 'Tamil']"
+288,doc288,Yuvraj  Shere,Marriage and Couples CounselingTrauma and PTSD,9275881875,Kanpur,24,4.9,['Tuesday'],['Marathi']
+289,doc289,Samarth Subramanian,Anxiety and Stress Management,9523646178,Lucknow,37,4.6,['Tuesday'],"['Bengali', 'Marathi', 'Hindi']"
+290,doc290,Vaibhav Bhagat,Child and Adolescent Counseling,9268984731,Kolkata,30,4.8,"['Monday', 'Tuesday']",['Marathi']
+291,doc291,Shlok Kala,Substance Abuse and Addiction,9511715682,Chennai,18,4.4,['Thursday'],['Telugu']
+292,doc292,Chirag Tiwari,Substance Abuse and Addiction,9422968627,Lucknow,36,4.4,"['Friday', 'Tuesday']","['Telugu', 'English']"
+293,doc293,Charvi Brahmbhatt,Family and Relationship Counseling,9077233413,Mumbai,5,4.8,['Thursday'],['Marathi']
+294,doc294,Nitara Sekhon,Couples Therapy,9330535304,Lucknow,8,4.5,"['Thursday', 'Monday']","['Tamil', 'Hindi']"
+295,doc295,Hunar Sarraf,Grief and Loss Counseling,9252153566,Mumbai,40,4.5,"['Thursday', 'Wednesday', 'Monday']",['Hindi']
+296,doc296,Navya Shankar,Family and Relationship Counseling,9545928888,Jaipur,10,4.4,"['Friday', 'Thursday']","['Telugu', 'English']"
+297,doc297,Rhea Ramaswamy,Substance Abuse and Addiction,9201920477,Jaipur,35,4.2,['Thursday'],['Hindi']
+298,doc298,Arhaan Aggarwal,Grief and Loss Counseling,9185324192,Jaipur,38,4.0,"['Friday', 'Monday']",['Marathi']
+299,doc299,Tarini Mane,Substance Abuse and Addiction,9944695963,Chennai,5,4.6,['Tuesday'],"['Marathi', 'Telugu', 'Tamil', 'Hindi']"
+300,doc300,Indrans Tak,Family and Relationship Counseling,9778293996,Kanpur,25,3.9,['Thursday'],['Telugu']
+301,doc301,Farhan Ramaswamy,Autism Spectrum Disorders,9953911055,Chennai,36,3.6,"['Tuesday', 'Wednesday']","['Telugu', 'Tamil']"
+302,doc302,Inaaya  Mann,Eating Disorders,9541747091,Kolkata,34,5.0,"['Thursday', 'Wednesday']","['English', 'Hindi']"
+303,doc303,Saksham Walia,Grief and Loss Counseling,9556376148,Kanpur,26,4.8,['Thursday'],"['English', 'Hindi']"
+304,doc304,Vidur Venkataraman,Anger Management,9851292289,New Delhi,40,4.8,['Monday'],"['Telugu', 'Bengali', 'English']"
+305,doc305,Myra Char,Autism Spectrum Disorders,9331160059,Lucknow,5,4.5,"['Thursday', 'Tuesday']","['Telugu', 'Marathi', 'Hindi']"
+306,doc306,Ivan Doctor,Child and Adolescent Counseling,9006741195,New Delhi,31,4.3,"['Friday', 'Wednesday']","['English', 'Tamil']"
+307,doc307,Ryan Bajaj,Substance Abuse and Addiction,9461849443,Jaipur,9,5.0,"['Monday', 'Tuesday', 'Thursday']","['Telugu', 'Marathi', 'Bengali']"
+308,doc308,Shayak Ghosh,Child and Adolescent Counseling,9318107244,Kanpur,18,4.7,"['Monday', 'Friday', 'Wednesday']","['Hindi', 'Marathi', 'Bengali']"
+309,doc309,Shalv Loke,Couples Therapy,9314697159,Kolkata,15,4.1,"['Friday', 'Wednesday']","['English', 'Telugu', 'Marathi']"
+310,doc310,Dhruv Mann,Autism Spectrum Disorders,9382522172,Lucknow,39,3.5,['Friday'],"['Telugu', 'Hindi']"
+311,doc311,Anika Jain,Couples Therapy,9742729199,Kanpur,23,4.4,"['Wednesday', 'Friday']",['English']
+312,doc312,Nayantara Mann,Child and Adolescent Counseling,9115936315,Chennai,12,4.3,"['Tuesday', 'Monday', 'Wednesday']",['English']
+313,doc313,Damini Manne,Marriage and Couples CounselingTrauma and PTSD,9991164212,Mumbai,20,5.0,"['Monday', 'Tuesday', 'Friday']","['Bengali', 'Telugu']"
+314,doc314,Lagan Gara,Depression and Mood Disorders,9570780221,Chennai,21,4.2,"['Monday', 'Tuesday', 'Thursday']","['Telugu', 'Bengali', 'English', 'Tamil']"
+315,doc315,Aarav Dani,Couples Therapy,9571754793,New Delhi,10,4.3,"['Thursday', 'Monday']","['Tamil', 'Telugu']"
+316,doc316,Priyansh Atwal,Child and Adolescent Counseling,9478608079,Chennai,28,3.9,['Thursday'],"['Hindi', 'Telugu']"
+317,doc317,Shlok Datta,Anger Management,9519587560,Jaipur,31,3.7,"['Thursday', 'Tuesday']","['English', 'Telugu', 'Marathi', 'Tamil']"
+318,doc318,Yashvi Ramesh,Couples Therapy,9731543121,New Delhi,40,4.9,"['Monday', 'Thursday']","['Telugu', 'Tamil']"
+319,doc319,Rohan Karan,Couples Therapy,9132602131,Kanpur,13,4.1,"['Thursday', 'Wednesday', 'Tuesday']","['Telugu', 'Bengali', 'Tamil']"
+320,doc320,Anika Dalal,Grief and Loss Counseling,9249630463,Chennai,37,3.9,"['Friday', 'Thursday', 'Wednesday']",['Telugu']
+321,doc321,Siya Sidhu,Couples Therapy,9892143875,Kolkata,31,3.6,['Wednesday'],"['English', 'Hindi', 'Bengali', 'Tamil']"
+322,doc322,Jayan Goel,Anxiety and Stress Management,9444579631,Kanpur,31,3.9,"['Tuesday', 'Friday', 'Monday']",['Marathi']
+323,doc323,Parinaaz Rastogi,Family and Relationship Counseling,9355289461,Kanpur,32,4.1,"['Wednesday', 'Thursday', 'Friday']",['English']
+324,doc324,Hridaan Babu,Family and Relationship Counseling,9563789165,Lucknow,24,3.9,"['Tuesday', 'Thursday', 'Monday']","['Tamil', 'Telugu', 'Bengali']"
+325,doc325,Inaaya  Bora,Child and Adolescent Counseling,9642329925,Mumbai,40,4.7,"['Wednesday', 'Tuesday']","['Telugu', 'Marathi', 'Hindi']"
+326,doc326,Lakshit Butala,Family and Relationship Counseling,9020188506,New Delhi,6,5.0,"['Tuesday', 'Thursday', 'Friday']","['English', 'Hindi']"
+327,doc327,Mohanlal Seshadri,Marriage and Couples CounselingTrauma and PTSD,9791542744,Kanpur,34,4.0,"['Friday', 'Monday', 'Tuesday', 'Wednesday']","['Marathi', 'Bengali']"
+328,doc328,Jayan Garg,Anger Management,9077668298,Lucknow,10,3.9,"['Tuesday', 'Monday']",['Telugu']
+329,doc329,Drishya Sood,Depression and Mood Disorders,9560603044,Mumbai,38,4.7,['Monday'],"['Telugu', 'Bengali']"
+330,doc330,Ivan Karan,Marriage and Couples CounselingTrauma and PTSD,9098655465,Kolkata,7,4.2,"['Friday', 'Tuesday']",['Hindi']
+331,doc331,Arnav Kant,Substance Abuse and Addiction,9002937964,Chennai,35,4.6,"['Tuesday', 'Friday']","['Marathi', 'Tamil', 'Telugu', 'Hindi']"
+332,doc332,Saanvi Bahl,Eating Disorders,9651750392,Jaipur,26,4.3,"['Tuesday', 'Thursday']","['Hindi', 'Tamil', 'Bengali']"
+333,doc333,Nirvi Johal,Anger Management,9627577906,Jaipur,37,3.6,['Tuesday'],"['Telugu', 'Marathi']"
+334,doc334,Sana Ratta,Substance Abuse and Addiction,9673621274,Kolkata,25,3.5,"['Wednesday', 'Tuesday', 'Thursday']","['Tamil', 'Hindi', 'Marathi']"
+335,doc335,Adah Hegde,Couples Therapy,9444770495,Jaipur,8,4.2,"['Monday', 'Friday']","['Tamil', 'English', 'Telugu', 'Hindi']"
+336,doc336,Miraan Amble,Marriage and Couples CounselingTrauma and PTSD,9122017633,Chennai,16,4.6,['Friday'],"['Tamil', 'English']"
+337,doc337,Uthkarsh Manda,Grief and Loss Counseling,9160455274,Mumbai,24,3.8,"['Tuesday', 'Wednesday', 'Friday']","['English', 'Marathi', 'Tamil']"
+338,doc338,Badal Bhattacharyya,Child and Adolescent Counseling,9976826841,New Delhi,15,4.3,"['Monday', 'Wednesday']","['Marathi', 'English', 'Tamil']"
+339,doc339,Saira Mane,Couples Therapy,9253091479,Kanpur,6,4.7,"['Thursday', 'Wednesday', 'Tuesday']","['Telugu', 'Tamil', 'Marathi']"
+340,doc340,Prerak Bera,Marriage and Couples CounselingTrauma and PTSD,9755844721,Kolkata,26,4.4,"['Friday', 'Tuesday', 'Monday']","['Hindi', 'Tamil', 'Telugu', 'Bengali']"
+341,doc341,Advik Zacharia,Marriage and Couples CounselingTrauma and PTSD,9152970443,Jaipur,34,4.8,"['Friday', 'Wednesday']","['Telugu', 'Tamil']"
+342,doc342,Renee Bhardwaj,Substance Abuse and Addiction,9966367520,Kolkata,18,4.5,['Wednesday'],"['Telugu', 'Tamil']"
+343,doc343,Prerak Magar,Couples Therapy,9733922173,New Delhi,38,4.1,['Monday'],"['Marathi', 'Telugu', 'Bengali']"
+344,doc344,Kaira Solanki,Substance Abuse and Addiction,9935571717,Kanpur,9,4.0,"['Wednesday', 'Monday']","['Hindi', 'Tamil', 'Marathi', 'English']"
+345,doc345,Divit Sabharwal,Grief and Loss Counseling,9360674155,New Delhi,20,4.6,['Wednesday'],['Marathi']
+346,doc346,Elakshi Bobal,Eating Disorders,9939610911,Kanpur,22,3.7,"['Tuesday', 'Thursday']",['Marathi']
+347,doc347,Anika Bandi,Eating Disorders,9672003224,Mumbai,25,3.7,"['Thursday', 'Wednesday']","['Marathi', 'Tamil', 'Telugu']"
+348,doc348,Tara Deol,Autism Spectrum Disorders,9991901988,Lucknow,17,4.4,"['Monday', 'Tuesday', 'Wednesday']","['Hindi', 'Marathi']"
+349,doc349,Saksham Gole,Child and Adolescent Counseling,9736852793,Lucknow,21,5.0,['Thursday'],"['Marathi', 'Bengali', 'English']"
+350,doc350,Amani Tiwari,Child and Adolescent Counseling,9191851815,Kolkata,33,4.0,['Monday'],"['Telugu', 'Bengali']"
+351,doc351,Zoya Ravel,Anger Management,9340734331,Mumbai,15,4.2,"['Friday', 'Wednesday', 'Thursday']","['Hindi', 'Telugu', 'Tamil']"
+352,doc352,Miraan Walla,Anger Management,9168875220,Chennai,11,4.2,"['Thursday', 'Friday']","['Hindi', 'Telugu', 'English']"
+353,doc353,Adah Saran,Family and Relationship Counseling,9034643727,Kolkata,5,4.9,"['Monday', 'Friday', 'Wednesday']","['Bengali', 'English', 'Tamil']"
+354,doc354,Uthkarsh Khare,Depression and Mood Disorders,9299870432,Lucknow,18,3.6,['Thursday'],"['Marathi', 'English']"
+355,doc355,Seher Bhagat,Marriage and Couples CounselingTrauma and PTSD,9661786880,Lucknow,15,4.0,['Friday'],['Marathi']
+356,doc356,Zara Kurian,Depression and Mood Disorders,9516055499,New Delhi,7,3.5,['Wednesday'],"['Hindi', 'Tamil', 'Bengali']"
+357,doc357,Siya Edwin,Family and Relationship Counseling,9861256911,Lucknow,25,4.3,['Wednesday'],"['Bengali', 'English', 'Tamil', 'Telugu']"
+358,doc358,Oorja Hegde,Grief and Loss Counseling,9483782622,Jaipur,26,4.9,"['Wednesday', 'Tuesday', 'Friday']",['Hindi']
+359,doc359,Himmat Magar,Depression and Mood Disorders,9163114444,Mumbai,22,3.9,"['Thursday', 'Friday', 'Wednesday']",['Telugu']
+360,doc360,Jayant Dixit,Substance Abuse and Addiction,9188098251,Lucknow,21,3.8,"['Tuesday', 'Friday', 'Wednesday']","['Bengali', 'English']"
+361,doc361,Emir Srinivasan,Family and Relationship Counseling,9953450487,Kanpur,12,4.2,"['Monday', 'Wednesday', 'Tuesday']","['Marathi', 'English']"
+362,doc362,Vivaan Master,Eating Disorders,9426168317,New Delhi,9,3.7,['Wednesday'],"['Telugu', 'Tamil', 'Bengali']"
+363,doc363,Neelofar Ratta,Anger Management,9116289613,Jaipur,29,4.7,"['Wednesday', 'Friday', 'Thursday']",['Marathi']
+364,doc364,Farhan Bhasin,Couples Therapy,9730859157,Jaipur,28,3.6,"['Thursday', 'Tuesday', 'Friday']","['English', 'Telugu', 'Tamil', 'Bengali']"
+365,doc365,Kiaan Sandal,Marriage and Couples CounselingTrauma and PTSD,9260802639,Mumbai,40,3.9,"['Friday', 'Tuesday', 'Wednesday']","['Marathi', 'Bengali', 'Telugu']"
+366,doc366,Bhavin Bhalla,Substance Abuse and Addiction,9949359178,Jaipur,34,3.7,"['Thursday', 'Wednesday']","['Telugu', 'Tamil', 'English']"
+367,doc367,Aradhya Vig,Substance Abuse and Addiction,9339025744,Kanpur,40,4.2,['Thursday'],['Hindi']
+368,doc368,Indrajit Acharya,Anxiety and Stress Management,9831780196,Jaipur,22,3.9,"['Friday', 'Monday', 'Thursday']","['Hindi', 'Bengali', 'Tamil']"
+369,doc369,Ivan Mander,Eating Disorders,9828074028,New Delhi,29,3.5,['Monday'],"['Hindi', 'Tamil', 'English']"
+370,doc370,Nishith Saxena,Substance Abuse and Addiction,9780162565,Chennai,8,3.5,"['Tuesday', 'Thursday']",['Tamil']
+371,doc371,Badal Sharma,Anger Management,9813286443,Lucknow,13,3.7,['Monday'],"['English', 'Telugu']"
+372,doc372,Abram Sastry,Grief and Loss Counseling,9820404557,Chennai,35,4.8,"['Wednesday', 'Thursday', 'Tuesday']","['Hindi', 'Tamil', 'Telugu']"
+373,doc373,Sumer Bir,Eating Disorders,9088714345,Jaipur,15,4.0,"['Wednesday', 'Thursday', 'Friday']","['Tamil', 'Bengali', 'Marathi']"
+374,doc374,Azad Sachar,Grief and Loss Counseling,9112190306,Lucknow,22,4.5,"['Friday', 'Tuesday']","['Bengali', 'Telugu', 'Tamil']"
+375,doc375,Vritika Sha,Family and Relationship Counseling,9429433611,Kanpur,34,3.9,['Monday'],"['Telugu', 'Tamil']"
+376,doc376,Khushi Sinha,Marriage and Couples CounselingTrauma and PTSD,9687844661,Kanpur,10,4.9,"['Wednesday', 'Monday']","['Telugu', 'Hindi', 'Bengali']"
+377,doc377,Purab Madan,Substance Abuse and Addiction,9893369298,Kolkata,23,4.1,"['Friday', 'Monday']","['Telugu', 'Marathi']"
+378,doc378,Zaina Dar,Family and Relationship Counseling,9941844932,Chennai,12,4.2,['Thursday'],"['Marathi', 'Tamil', 'Telugu']"
+379,doc379,Bhavin Tak,Anxiety and Stress Management,9927791080,Mumbai,14,3.7,"['Monday', 'Friday', 'Thursday']",['English']
+380,doc380,Diya Boase,Couples Therapy,9307176170,New Delhi,31,4.4,"['Tuesday', 'Monday', 'Thursday']","['Hindi', 'Tamil']"
+381,doc381,Vedika Issac,Depression and Mood Disorders,9833581702,Chennai,6,3.8,"['Tuesday', 'Monday']","['Marathi', 'Hindi', 'Tamil']"
+382,doc382,Kabir Sant,Anger Management,9205662048,Kolkata,9,4.3,['Tuesday'],"['Tamil', 'Hindi', 'Telugu']"
+383,doc383,Divij Handa,Depression and Mood Disorders,9728937674,New Delhi,21,4.9,"['Monday', 'Tuesday', 'Wednesday']","['Bengali', 'Tamil']"
+384,doc384,Adah Bakshi,Anger Management,9410945192,Chennai,21,4.5,"['Monday', 'Friday']","['Marathi', 'Telugu']"
+385,doc385,Jayesh Bir,Autism Spectrum Disorders,9662752710,Chennai,39,4.8,['Friday'],"['Telugu', 'Hindi']"
+386,doc386,Rati Ravel,Autism Spectrum Disorders,9149467497,New Delhi,22,3.8,['Wednesday'],"['English', 'Bengali']"
+387,doc387,Adira Rana,Anger Management,9671574124,Kolkata,12,3.5,"['Friday', 'Thursday']","['Tamil', 'Hindi', 'Telugu']"
+388,doc388,Mohanlal Sinha,Eating Disorders,9160865199,Chennai,9,3.9,"['Thursday', 'Friday', 'Tuesday']","['Marathi', 'Telugu', 'Tamil']"
+389,doc389,Navya Bawa,Grief and Loss Counseling,9131505274,Lucknow,32,3.7,['Friday'],"['English', 'Tamil']"
+390,doc390,Indrajit Apte,Grief and Loss Counseling,9775720729,Lucknow,35,4.9,['Friday'],"['Marathi', 'Hindi']"
+391,doc391,Kashvi Basu,Couples Therapy,9121685131,New Delhi,39,4.1,"['Thursday', 'Wednesday']","['Tamil', 'English']"
+392,doc392,Sahil Bajaj,Grief and Loss Counseling,9818557462,New Delhi,39,4.9,"['Monday', 'Wednesday', 'Thursday']",['English']
+393,doc393,Dhanuk Thakkar,Depression and Mood Disorders,9825354060,Mumbai,15,4.5,"['Wednesday', 'Friday']","['Tamil', 'English', 'Telugu', 'Marathi']"
+394,doc394,Ivana Dara,Marriage and Couples CounselingTrauma and PTSD,9945838333,Jaipur,36,3.8,['Thursday'],['Hindi']
+395,doc395,Charvi Bumb,Grief and Loss Counseling,9273292567,Chennai,13,3.7,"['Thursday', 'Wednesday']","['Tamil', 'Telugu', 'Marathi']"
+396,doc396,Raghav Dave,Autism Spectrum Disorders,9680313224,Jaipur,5,4.8,['Friday'],['Telugu']
+397,doc397,Tara Dyal,Anger Management,9582731469,Kanpur,20,4.5,"['Monday', 'Friday', 'Wednesday']",['Marathi']
+398,doc398,Arhaan Chhabra,Eating Disorders,9050420928,Lucknow,23,3.5,"['Wednesday', 'Tuesday', 'Friday']",['Telugu']
+399,doc399,Vardaniya Sarkar,Grief and Loss Counseling,9810133843,Lucknow,13,4.2,"['Monday', 'Friday', 'Tuesday']","['Bengali', 'English', 'Hindi']"
+400,doc400,Mamooty Bhatnagar,Marriage and Couples CounselingTrauma and PTSD,9718085166,Mumbai,11,3.6,"['Tuesday', 'Monday']",['Marathi']
+401,doc401,Ishaan Wason,Child and Adolescent Counseling,9481511581,Lucknow,32,3.6,['Wednesday'],"['Marathi', 'Telugu', 'English']"
+402,doc402,Jayant Ramachandran,Couples Therapy,9798226313,Mumbai,13,4.2,"['Friday', 'Wednesday', 'Thursday']",['Hindi']
+403,doc403,Nakul Vasa,Substance Abuse and Addiction,9563828990,Kolkata,35,3.8,"['Wednesday', 'Monday', 'Tuesday']",['Bengali']
+404,doc404,Purab Cherian,Anger Management,9738462227,New Delhi,12,4.9,"['Friday', 'Wednesday']","['English', 'Tamil']"
+405,doc405,Madhup Krish,Couples Therapy,9394088481,Kanpur,30,4.7,['Tuesday'],"['Hindi', 'Telugu']"
+406,doc406,Divyansh Manda,Anger Management,9323073549,Mumbai,37,4.0,"['Monday', 'Thursday', 'Tuesday']",['Bengali']
+407,doc407,Drishya Goswami,Family and Relationship Counseling,9551759055,Mumbai,11,3.7,"['Wednesday', 'Tuesday']",['Hindi']
+408,doc408,Hrishita Kant,Anger Management,9113916942,New Delhi,29,4.1,"['Thursday', 'Monday']",['Tamil']
+409,doc409,Ranbir Sachar,Marriage and Couples CounselingTrauma and PTSD,9054415758,Kolkata,22,4.4,['Wednesday'],['Marathi']
+410,doc410,Gatik Dara,Autism Spectrum Disorders,9183242666,Kolkata,11,4.6,['Friday'],['Bengali']
+411,doc411,Samar Jani,Family and Relationship Counseling,9426417006,Kolkata,40,4.5,"['Thursday', 'Tuesday']","['Hindi', 'Tamil']"
+412,doc412,Oorja Sekhon,Eating Disorders,9499360601,Lucknow,9,3.5,['Friday'],['Hindi']
+413,doc413,Parinaaz Badal,Anger Management,9673241079,Kolkata,27,4.8,"['Wednesday', 'Monday']","['Tamil', 'Bengali', 'Marathi']"
+414,doc414,Priyansh Vasa,Substance Abuse and Addiction,9994833770,Lucknow,14,3.9,['Wednesday'],"['Marathi', 'Bengali', 'Hindi']"
+415,doc415,Khushi Dara,Substance Abuse and Addiction,9023888087,Kolkata,7,3.7,"['Thursday', 'Monday', 'Friday']","['Hindi', 'Tamil']"
+416,doc416,Divyansh Bassi,Substance Abuse and Addiction,9638498928,Chennai,14,3.7,['Monday'],"['Telugu', 'English']"
+417,doc417,Zaina Suresh,Child and Adolescent Counseling,9407787720,New Delhi,39,3.9,"['Friday', 'Thursday']","['Telugu', 'English']"
+418,doc418,Navya Chandran,Family and Relationship Counseling,9352409071,Chennai,9,4.4,"['Thursday', 'Friday', 'Wednesday']","['Bengali', 'Marathi', 'Hindi']"
+419,doc419,Vivaan Roy,Depression and Mood Disorders,9726132330,Mumbai,39,3.9,"['Wednesday', 'Thursday', 'Monday']",['Bengali']
+420,doc420,Alia Raju,Anger Management,9269672532,Kolkata,33,4.9,"['Tuesday', 'Friday']","['English', 'Tamil']"
+421,doc421,Vedika Chander,Marriage and Couples CounselingTrauma and PTSD,9673114761,Kolkata,32,4.0,"['Thursday', 'Tuesday', 'Friday']",['English']
+422,doc422,Nehmat Buch,Marriage and Couples CounselingTrauma and PTSD,9784045698,New Delhi,21,3.9,"['Thursday', 'Monday', 'Friday']","['Hindi', 'Tamil', 'Marathi', 'Bengali']"
+423,doc423,Kiaan Shenoy,Marriage and Couples CounselingTrauma and PTSD,9465814588,Kolkata,40,3.9,"['Tuesday', 'Thursday']","['English', 'Bengali', 'Tamil']"
+424,doc424,Shaan Hayre,Depression and Mood Disorders,9891432554,New Delhi,6,3.6,"['Thursday', 'Tuesday']","['Bengali', 'Marathi']"
+425,doc425,Himmat Mani,Substance Abuse and Addiction,9593195585,Jaipur,12,3.7,"['Thursday', 'Tuesday', 'Monday']","['Bengali', 'Marathi']"
+426,doc426,Anvi Seshadri,Eating Disorders,9959663951,Kolkata,34,4.0,['Monday'],"['Telugu', 'English']"
+427,doc427,Ishita Dubey,Family and Relationship Counseling,9405088724,Mumbai,40,4.1,"['Wednesday', 'Tuesday']","['Telugu', 'English', 'Tamil']"
+428,doc428,Seher Barman,Marriage and Couples CounselingTrauma and PTSD,9282661465,Lucknow,25,4.8,"['Monday', 'Friday', 'Wednesday']","['Tamil', 'Hindi', 'English']"
+429,doc429,Sana Srinivasan,Couples Therapy,9516579456,Mumbai,23,4.0,"['Monday', 'Tuesday']","['Bengali', 'Hindi', 'Tamil', 'English']"
+430,doc430,Madhav Contractor,Anxiety and Stress Management,9537873451,New Delhi,36,3.7,['Monday'],"['Hindi', 'Telugu', 'Tamil']"
+431,doc431,Akarsh Deo,Marriage and Couples CounselingTrauma and PTSD,9323396854,Mumbai,21,4.3,['Friday'],['Tamil']
+432,doc432,Darshit Tara,Eating Disorders,9556561263,New Delhi,39,3.9,['Wednesday'],['Bengali']
+433,doc433,Jayesh Jha,Substance Abuse and Addiction,9091881830,Kanpur,19,4.0,"['Friday', 'Monday', 'Thursday']","['Tamil', 'English']"
+434,doc434,Zoya Kadakia,Autism Spectrum Disorders,9303062285,Lucknow,36,4.3,"['Wednesday', 'Thursday']","['Marathi', 'Tamil']"
+435,doc435,Mahika Desai,Substance Abuse and Addiction,9449799518,Kolkata,23,5.0,"['Monday', 'Friday']","['Hindi', 'Tamil']"
+436,doc436,Vedika Samra,Child and Adolescent Counseling,9767013683,Chennai,30,4.3,['Monday'],['Tamil']
+437,doc437,Eva Sachdeva,Couples Therapy,9002551749,Lucknow,13,3.6,"['Thursday', 'Wednesday', 'Monday']","['Marathi', 'Telugu']"
+438,doc438,Taran Swamy,Anger Management,9890175749,Mumbai,9,4.7,['Tuesday'],"['Hindi', 'Tamil', 'Bengali']"
+439,doc439,Riaan Kala,Anxiety and Stress Management,9413873727,New Delhi,24,3.6,['Wednesday'],"['Tamil', 'English']"
+440,doc440,Inaaya  Dugal,Child and Adolescent Counseling,9483350398,Jaipur,24,4.4,"['Tuesday', 'Wednesday']","['English', 'Hindi']"
+441,doc441,Ishita Borra,Marriage and Couples CounselingTrauma and PTSD,9465024070,New Delhi,13,4.4,"['Tuesday', 'Friday', 'Wednesday']","['Tamil', 'Marathi', 'Telugu']"
+442,doc442,Yuvraj  Dugal,Couples Therapy,9927528049,New Delhi,17,4.3,"['Wednesday', 'Thursday', 'Friday']",['Hindi']
+443,doc443,Vardaniya Ganesh,Autism Spectrum Disorders,9031169955,Lucknow,30,3.6,['Monday'],"['English', 'Marathi']"
+444,doc444,Kanav Bhardwaj,Anger Management,9031152661,New Delhi,38,3.9,"['Wednesday', 'Tuesday', 'Thursday']","['English', 'Telugu', 'Hindi']"
+445,doc445,Ela Agate,Autism Spectrum Disorders,9268300085,Mumbai,28,4.2,['Wednesday'],"['Hindi', 'English']"
+446,doc446,Taran Majumdar,Eating Disorders,9548529798,Jaipur,6,4.8,"['Tuesday', 'Monday']","['Bengali', 'Telugu', 'Hindi']"
+447,doc447,Baiju Mann,Family and Relationship Counseling,9956216236,Lucknow,15,3.6,['Wednesday'],['Tamil']
+448,doc448,Farhan Agate,Marriage and Couples CounselingTrauma and PTSD,9378284929,Kanpur,30,4.1,"['Thursday', 'Tuesday', 'Friday']","['Tamil', 'English']"
+449,doc449,Anay Kannan,Child and Adolescent Counseling,9791863646,Jaipur,15,4.8,"['Tuesday', 'Wednesday', 'Thursday']","['Hindi', 'Telugu']"
+450,doc450,Vardaniya Agate,Child and Adolescent Counseling,9477528906,Chennai,10,4.6,"['Thursday', 'Tuesday']","['Hindi', 'English', 'Marathi']"
+451,doc451,Miraya Warrior,Anxiety and Stress Management,9241946024,New Delhi,33,4.2,['Thursday'],"['Tamil', 'Hindi', 'Bengali']"
+452,doc452,Miraan Dave,Family and Relationship Counseling,9150694799,Chennai,8,4.8,['Friday'],"['Marathi', 'Hindi', 'Bengali']"
+453,doc453,Aayush Soni,Anger Management,9332119829,Kolkata,9,4.6,"['Wednesday', 'Thursday']","['Bengali', 'English']"
+454,doc454,Dharmajan Hegde,Couples Therapy,9746188124,New Delhi,9,4.3,"['Friday', 'Monday']",['English']
+455,doc455,Seher Ramesh,Autism Spectrum Disorders,9317630579,Lucknow,7,4.4,"['Monday', 'Tuesday', 'Wednesday']","['Bengali', 'Hindi', 'Marathi']"
+456,doc456,Eva Halder,Marriage and Couples CounselingTrauma and PTSD,9626147978,Lucknow,21,3.6,['Monday'],"['Telugu', 'Tamil']"
+457,doc457,Hiran Balay,Anger Management,9737378737,New Delhi,30,4.9,"['Thursday', 'Tuesday']",['Telugu']
+458,doc458,Vanya Ahluwalia,Child and Adolescent Counseling,9603349481,Chennai,40,4.7,"['Friday', 'Monday']","['Bengali', 'Tamil']"
+459,doc459,Parinaaz Kar,Autism Spectrum Disorders,9287828340,Kanpur,30,4.5,"['Thursday', 'Friday', 'Monday']","['Telugu', 'Marathi']"
+460,doc460,Kartik Guha,Anxiety and Stress Management,9142978699,Kanpur,35,3.9,"['Wednesday', 'Friday', 'Tuesday', 'Monday']",['Bengali']
+461,doc461,Nirvaan Reddy,Autism Spectrum Disorders,9694032043,Lucknow,33,4.8,"['Friday', 'Thursday', 'Tuesday']","['Marathi', 'English', 'Hindi']"
+462,doc462,Yakshit Cherian,Anger Management,9578552380,New Delhi,28,4.3,"['Friday', 'Thursday', 'Wednesday']",['Tamil']
+463,doc463,Jivika Doshi,Family and Relationship Counseling,9220274202,Lucknow,25,3.7,"['Tuesday', 'Friday']",['Marathi']
+464,doc464,Kiara Baria,Grief and Loss Counseling,9028908028,Chennai,11,3.8,"['Monday', 'Thursday']","['Bengali', 'English', 'Telugu', 'Tamil']"
+465,doc465,Aayush Bhalla,Eating Disorders,9890554638,Mumbai,31,3.8,['Monday'],['Tamil']
+466,doc466,Eva Rajagopal,Couples Therapy,9371009545,Jaipur,26,4.4,"['Tuesday', 'Wednesday']","['Telugu', 'Bengali']"
+467,doc467,Divyansh Kulkarni,Substance Abuse and Addiction,9262184038,Mumbai,20,3.9,"['Wednesday', 'Tuesday']",['Tamil']
+468,doc468,Aaryahi Sur,Eating Disorders,9237290415,Jaipur,12,3.5,['Wednesday'],"['English', 'Marathi']"
+469,doc469,Prisha Ghosh,Eating Disorders,9284047593,New Delhi,37,4.5,"['Thursday', 'Friday', 'Monday']",['Tamil']
+470,doc470,Pari Deep,Couples Therapy,9096047715,Chennai,38,4.2,"['Tuesday', 'Wednesday', 'Friday']","['Bengali', 'Marathi']"
+471,doc471,Yasmin Bava,Anxiety and Stress Management,9340084830,Lucknow,16,4.9,"['Thursday', 'Wednesday', 'Monday', 'Friday']","['Bengali', 'Telugu']"
+472,doc472,Navya Mane,Anxiety and Stress Management,9113382588,Kanpur,8,4.5,['Wednesday'],['Marathi']
+473,doc473,Kabir Comar,Family and Relationship Counseling,9637926885,Jaipur,6,4.7,"['Friday', 'Thursday', 'Wednesday', 'Tuesday']","['Tamil', 'Telugu']"
+474,doc474,Hansh Goel,Couples Therapy,9861687700,Mumbai,16,4.4,"['Tuesday', 'Friday']","['English', 'Hindi']"
+475,doc475,Vivaan Johal,Family and Relationship Counseling,9817730591,Mumbai,31,4.7,"['Thursday', 'Wednesday', 'Friday']","['Bengali', 'Marathi', 'Tamil']"
+476,doc476,Priyansh Vasa,Marriage and Couples CounselingTrauma and PTSD,9273910841,Kanpur,33,4.8,['Wednesday'],"['Bengali', 'Marathi']"
+477,doc477,Ivana Shroff,Anxiety and Stress Management,9940849906,Jaipur,19,4.8,"['Monday', 'Tuesday']","['Hindi', 'Telugu']"
+478,doc478,Saanvi Sidhu,Marriage and Couples CounselingTrauma and PTSD,9030511180,Kanpur,10,4.2,"['Tuesday', 'Wednesday']","['Bengali', 'Hindi', 'Tamil']"
+479,doc479,Tara Kade,Anger Management,9947303752,Lucknow,31,3.9,['Tuesday'],"['Telugu', 'Bengali']"
+480,doc480,Ojas Mann,Child and Adolescent Counseling,9866377824,Jaipur,25,4.8,"['Wednesday', 'Tuesday']","['English', 'Marathi', 'Bengali']"
+481,doc481,Prerak Behl,Family and Relationship Counseling,9504125284,Kolkata,26,4.6,['Friday'],"['Telugu', 'Bengali']"
+482,doc482,Kavya Mahal,Substance Abuse and Addiction,9101652791,Lucknow,35,4.1,"['Monday', 'Tuesday', 'Wednesday']","['Marathi', 'Tamil', 'English']"
+483,doc483,Gokul Badami,Anger Management,9679127224,Kanpur,18,4.8,"['Friday', 'Monday', 'Wednesday']","['Tamil', 'Telugu']"
+484,doc484,Mannat Ramakrishnan,Eating Disorders,9423217843,Chennai,34,4.6,"['Monday', 'Wednesday']","['English', 'Hindi']"
+485,doc485,Elakshi Buch,Autism Spectrum Disorders,9980410613,Lucknow,36,3.7,"['Thursday', 'Monday', 'Friday']","['English', 'Telugu', 'Marathi', 'Tamil']"
+486,doc486,Shlok Mani,Autism Spectrum Disorders,9531383364,New Delhi,40,4.0,"['Thursday', 'Friday', 'Monday']",['Bengali']
+487,doc487,Manikya Borra,Grief and Loss Counseling,9547498750,Mumbai,6,4.1,['Friday'],"['Hindi', 'Marathi']"
+488,doc488,Indrans Bhatti,Family and Relationship Counseling,9212626794,Mumbai,31,3.6,['Tuesday'],"['Tamil', 'Hindi', 'Telugu']"
+489,doc489,Lagan Ratti,Family and Relationship Counseling,9872650496,Kanpur,20,4.0,['Tuesday'],"['Tamil', 'Hindi', 'Telugu']"
+490,doc490,Elakshi Rege,Depression and Mood Disorders,9806320803,Mumbai,37,4.3,['Thursday'],['Telugu']
+491,doc491,Dhruv Majumdar,Grief and Loss Counseling,9498096988,Kolkata,34,4.7,"['Wednesday', 'Tuesday', 'Monday']",['Marathi']
+492,doc492,Urvi Krishnamurthy,Eating Disorders,9050581823,New Delhi,8,4.0,"['Friday', 'Monday']",['Tamil']
+493,doc493,Anay Ranganathan,Anxiety and Stress Management,9803915748,Lucknow,36,4.1,['Wednesday'],"['Hindi', 'Telugu', 'Tamil']"
+494,doc494,Parinaaz Raj,Anger Management,9246994076,Lucknow,24,4.2,['Tuesday'],"['Marathi', 'Hindi', 'Bengali']"
+495,doc495,Sahil Bhat,Eating Disorders,9608071603,Lucknow,23,4.1,"['Thursday', 'Tuesday', 'Wednesday']","['Telugu', 'Bengali']"
+496,doc496,Divyansh Chadha,Family and Relationship Counseling,9176203761,Kolkata,28,3.9,['Wednesday'],"['Bengali', 'English', 'Tamil']"
+497,doc497,Mehul Balay,Autism Spectrum Disorders,9801546785,Jaipur,34,4.5,['Tuesday'],"['Telugu', 'Marathi', 'Bengali']"
+498,doc498,Dhanush Sibal,Autism Spectrum Disorders,9322684545,New Delhi,20,4.2,['Tuesday'],"['Tamil', 'English']"
+499,doc499,Keya Kala,Grief and Loss Counseling,9817062872,Jaipur,15,4.1,['Friday'],['English']
+500,doc500,Kiaan Shanker,Autism Spectrum Disorders,9151124561,Kanpur,23,3.9,"['Friday', 'Monday']","['Marathi', 'Telugu']"

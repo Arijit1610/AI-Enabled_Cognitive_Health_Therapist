@@ -80,12 +80,12 @@ order_medicine
 	<li><a href="{{url_for('route.about',email = session['registered_user'])}}">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact',email = session['registered_user'])}}">CONTACT US</a></li>
 	<li><a href="{{url_for('route.order_medicine',email = session['registered_user'])}}" class="active-nav">ORDER
-			MEDICHINE</a></li>
+		MEDICINE</a></li>
 	{% else %}
 	<li><a href="{{url_for('route.home')}}">HOME</a></li>
 	<li><a href="{{url_for('route.about')}}">ABOUT US</a></li>
 	<li><a href="{{url_for('route.contact')}}">CONTACT US</a></li>
-	<li><a href="{{url_for('route.order_medicine')}}" class="active-nav">ORDER MEDICHINE</a></li>
+	<li><a href="{{url_for('route.order_medicine')}}" class="active-nav">ORDER MEDICINE</a></li>
 	{% endif %}
 </ul>
 {% endblock %}
