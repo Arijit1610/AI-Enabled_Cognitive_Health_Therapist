@@ -44,7 +44,7 @@ def login(type):
 				new_user = UserAccount(username=username, email=email, phonenumber=phone, password=password)
 				db_session.add(new_user)  # Corrected from db_session.add(user)
 				
-				flash("Registration successful!",category='info')
+				
 				email_list=email
 				return redirect(url_for('auth.otp_verification'))  # Corrected redirection
 	elif type == 'signin':
@@ -56,7 +56,7 @@ def login(type):
 				if user.password == password:
 					flash('Logged in successfully!',category='message')
 					session['registered_user'] = user.email
-					return redirect(url_for('route.user_profile', email=session['registered_user']))
+					return redirect(url_for('route.home', email=session['registered_user']))
 				else:
 					flash("Incorrect Password, try again.",category='error')
 			else:
@@ -100,7 +100,7 @@ def otp_verification():
 			db_session.commit()
 			user = db_session.query(UserAccount).filter_by(email=email_recipient).first()
 			session['registered_user'] = user.email
-
+			flash("Registration successful!",category='info')
 			return redirect(url_for('route.user_profile', email=session['registered_user']))
 		else:
 			print("Incorrect")

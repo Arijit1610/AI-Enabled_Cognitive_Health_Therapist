@@ -45,8 +45,7 @@
 					<h2 class="title">Sign in</h2>
 					<div class="input-field ">
 						<i class="fas fa-envelope"></i>
-						<input type="email"  placeholder="Type your email" name="email"
-							id="email" required/>
+						<input type="email" placeholder="Type your email" name="email" id="email" required />
 					</div>
 					<div class="input-field pwd">
 						<i class="fas fa-lock"></i>
@@ -59,7 +58,8 @@
 					</div>
 					<input type="submit" value="Login" class="btn solid" />
 				</form>
-				<form action="/user-panel/signup" method="POST" class="sign-up-form">
+				<form action="/user-panel/signup" method="POST" class="sign-up-form"
+					onsubmit="return validatePasswords()">
 					<h2 class="title">Sign up</h2>
 					<div class="input-field">
 						<i class="fas fa-user"></i>
@@ -71,8 +71,8 @@
 					</div>
 					<div class="input-field">
 						<i class="fas fa-phone"></i>
-						<input type="tel" class="phone required-field"
-							placeholder="Type Your Phone Number" name="phone_number" required>
+						<input type="tel" class="phone required-field" placeholder="Type Your Phone Number"
+							name="phone_number" required>
 					</div>
 					<div class="para">
 						<p class="phoneError" style="color: red;"></p>
@@ -80,7 +80,7 @@
 					<div class="input-field pwd">
 						<i class="fas fa-lock"></i>
 						<input type="password" class="password required-field" placeholder="Password" name="password"
-							required />
+							id="password" required />
 						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" class="pass-icon" />
 					</div>
 					<div class="para">
@@ -90,7 +90,7 @@
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
 						<input type="password" class="password required-field" placeholder="Confirm Password"
-							name="confirm_password" required />
+							id="confirm_password" name="confirm_password" required />
 						<img src="{{ url_for('static',filename='img/hidden.png') }}" alt="image" class="pass-icon" />
 					</div>
 
@@ -123,33 +123,14 @@
 				<img src="{{ url_for('static', filename = 'img/5209447-removebg-preview.png')}}" class="image" alt="" />
 			</div>
 		</div>
-		<section id="otp-conainer">
-			<div id="otp-cover">
-				<div class="otp">
-					<div class="txt">OTP Verification</div>
-					<img src="{{ url_for('static', filename = 'img/5209447-removebg-preview.png')}}" alt=""
-						class="logo-img" />
 
-					<p id="p">We have sent a verification to your email</p>
-					<form id="inputs">
-						<input class="inp" id="input1" type="text" maxlength="1" />
-						<input class="inp" id="input2" type="text" maxlength="1" />
-						<input class="inp" id="input3" type="text" maxlength="1" />
-						<input class="inp" id="input4" type="text" maxlength="1" />
-						<input class="inp" id="input5" type="text" maxlength="1" />
-						<input class="inp" id="input6" type="text" maxlength="1" />
-					</form>
-					<button id="oneb">Submit</button>
-				</div>
-			</div>
-		</section>
 	</div>
 	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
 	<script>
 		const sign_in_btn = document.querySelector("#sign-in-btn");
 		const sign_up_btn = document.querySelector("#sign-up-btn");
 		const container = document.querySelector(".container");
-		const otp_container = document.querySelector("#otp-conainer");
+		// const otp_container = document.querySelector("#otp-conainer");
 		// const signup=document.querySelector("#sign-up");
 
 		sign_up_btn.addEventListener("click", () => {
@@ -177,7 +158,8 @@
 
 			// If all required fields are filled and email is valid, activate the signup logic
 			if (allFieldsFilled && isEmailValid) {
-				otp_container.classList.add("verify");
+				// otp_container.classList.add("verify");
+				console.log("Hello ")
 			} else {
 				// If any required field is empty or email is invalid, show an error message or take appropriate action
 				if (!isEmailValid) {
@@ -268,32 +250,6 @@
 
 		});
 
-		//otp
-		const inputs = ["input1", "input2", "input3", "input4", "input5", "input6"];
-
-		inputs.map((id) => {
-			const input = document.getElementById(id);
-			addListener(input);
-		});
-
-		function addListener(input) {
-			input.addEventListener("keyup", () => {
-				const code = parseInt(input.value);
-				if (code >= 0 && code <= 9) {
-					const n = input.nextElementSibling;
-					if (n) n.focus();
-				} else {
-					input.value = "";
-				}
-
-				const key = event.key;
-				if (key === "Backspace" || key === "Delete") {
-					const prev = input.previousElementSibling;
-					if (prev) prev.focus();
-				}
-			});
-		}
-
 	</script>
 
 	<script>
@@ -321,6 +277,29 @@
 		phoneInputs.forEach(function (input) {
 			input.addEventListener('input', validatePhone);
 		});
+	</script>
+	<script>
+		function validatePasswords() {
+			var password = document.getElementById('password').value;
+			var confirmPassword = document.getElementById('confirm_password').value;
+
+			var passwordField = document.getElementById('password');
+			var confirmPasswordField = document.getElementById('confirm_password');
+
+			// Check if the passwords match
+			if (password !== confirmPassword) {
+				// Passwords do not match, show an error message
+				alert("Passwords do not match. Please check and try again.");
+				passwordField.style.border = '2px solid red';
+				confirmPasswordField.style.border = '2px solid red';
+				return false; // This prevents the form from being submitted
+			} else {
+				// Passwords match, reset the border styles
+				passwordField.style.border = '';
+				confirmPasswordField.style.border = '';
+				return true; // Form submission will proceed
+			}
+		}
 	</script>
 
 </body>
