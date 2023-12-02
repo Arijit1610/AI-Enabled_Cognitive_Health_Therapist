@@ -61,13 +61,12 @@ ABOUT US
 
 
 	</section>
-
 	<section>
 		<div class="parallax">
 
 			<div class="middle">
 				<div class="caption" data-aos="fade">
-					<p>
+					<p >
 						KNOW ABOUT US
 					</p>
 				</div>
@@ -75,16 +74,16 @@ ABOUT US
 
 				<div class="card" data-aos="fade-right">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/DSC_0618.JPG') }}" alt="image" />
+						<img src="/static/img/DSC_0618.JPG" alt="image" />
 					</div>
 					<div class="hd">
-						<p><b>ABRANIL KUNDU</b><br>Developer of Frontend </p>
+						<p><b>ABHRANIL KUNDU</b><br>Developer of Frontend </p>
 					</div>
 				</div>
 
 				<div class="card" data-aos="fade-left">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/dipyan.jpeg') }}" alt="image" />
+						<img src="/static/img/dipyan.jpeg" alt="image" />
 					</div>
 					<div class="hd">
 						<p><b>DISHANI SARKAR</b><br>AI Chatbot Developer</p>
@@ -93,7 +92,7 @@ ABOUT US
 
 				<div class="card" data-aos="fade-right">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/20231019_121354.jpg') }}" alt="image" />
+						<img src="/static/img/20231019_121354.jpg" alt="image" />
 					</div>
 					<div class="hd">
 						<p><b>ARIJIT NANDY</b><br>AI Chatbot and Backend Developer</p>
@@ -102,16 +101,16 @@ ABOUT US
 
 				<div class="card" data-aos="fade-left">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/akhiljpeg.jpeg') }}" alt="image" />
+						<img src="/static/img/akhiljpeg.jpeg" alt="image" />
 					</div>
 					<div class="hd">
 						<p><b>AKHIL KUMAR GOPE</b><br>Developer of Frontend</p>
 					</div>
 				</div>
 
-				<div class="card2" data-aos="fade-up">
+				<div class="card" data-aos="fade-up">
 					<div class="profile">
-						<img src="{{ url_for('static',filename='img/dipyankumar.jpeg') }}" alt="image" />
+						<img src="/static/img/dipyankumar.jpeg" alt="image" />
 					</div>
 					<div class="hd">
 						<p><b>DIPAYAN KUMAR SARKAR</b><br>Developer of Frontend</p>
@@ -121,7 +120,6 @@ ABOUT US
 			</div>
 		</div>
 	</section>
-
 	<section>
 		<div class="first-content back-content">
 
@@ -146,32 +144,32 @@ ABOUT US
 	</section>
 </main>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    //   const list = document.getElementById("drop_list");
+<script>
+	//   const list = document.getElementById("drop_list");
 
-    //   const dropdown = () => {
-    //     list.classList.toggle("visible");
-    //   };
-    //   document.getElementById("click_btn").addEventListener("click", dropdown);
+	//   const dropdown = () => {
+	//     list.classList.toggle("visible");
+	//   };
+	//   document.getElementById("click_btn").addEventListener("click", dropdown);
 
-      //Animation
-      const content = document.getElementsByClassName("content_head")[0];
-      const text = "About US";
-      const textTypingEffect = (element, text, i = 0) => {
-        if (i === 0) {
-          element.textContent = "";
-        }
-        element.textContent += text[i];
+	//Animation
+	const content = document.getElementsByClassName("content_head")[0];
+	const text = "About US";
+	const textTypingEffect = (element, text, i = 0) => {
+		if (i === 0) {
+			element.textContent = "";
+		}
+		element.textContent += text[i];
 
-        if (i === text.length - 1) {
-          return;
-        }
-        setTimeout(() => textTypingEffect(element, text, i + 1), 200);
-      };
-      textTypingEffect(content, text);
+		if (i === text.length - 1) {
+			return;
+		}
+		setTimeout(() => textTypingEffect(element, text, i + 1), 200);
+	};
+	textTypingEffect(content, text);
 
-      AOS.init({
-        duration: 800,
-      });
-    </script>
+	AOS.init({
+		duration: 800,
+	});
+</script>
 {% endblock %}

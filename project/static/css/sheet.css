@@ -57,7 +57,15 @@ select {
 	padding-bottom: 10px;
 	background: transparent;
 }
-
+.input-row1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.input-row1 .input-group1{
+    flex-basis: 30%;
+}
 label {
 	margin-bottom: 6px;
 	display: block;

@@ -392,8 +392,6 @@ def admin_patient_details():
 @route.route('/edit/<string:email>', methods=['GET', 'POST'])
 def user_profile(email):
 	if "registered_user" in session and session['registered_user'] == email:
-		flash("You have successfully created your account now please complete your profile!!!",category='info')	
-		flash("Available in these locations::  New Delhi, Kolkata, Chennai, Mumbai, Jaipur, Lucknow, Kanpur", category='info')
 		user = db_session.query(UserAccount).filter_by(email=email).first()
 		preferences = db_session.query(Preferences).filter_by(email = email).first()
 		if request.method == 'POST':

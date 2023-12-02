@@ -57,6 +57,16 @@ HOME
 		box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 	}
 </style>
+<style>
+	.textp {
+		color: white;
+		margin-bottom: 0px;
+		font-family:  sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 1;
+	}
+</style>
 {% endblock %}
 
 {% block navbar %}
@@ -96,19 +106,19 @@ HOME
 {% for category, message in messages %}
 {% if category == 'info' %}
 <div class="popup" style="background-color: rgb(0, 0, 0);">
-	<p>{{ message }}</p>
+	<p class="textp">{{ message }}</p>
 	<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 </div>
 {% endif %}
 {% if category == 'error' %}
 <div class="popup" style="background-color: rgb(90, 2, 2);">
-	<p>{{ message }}</p>
+	<p class="textp" style="margin-top: 0%; margin-bottom:0%">{{ message }}</p>
 	<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 </div>
 {% endif %}
 {% if category == 'message' %}
 <div class="popup" style="background-color: rgb(100, 141, 229);">
-	<p>{{ message }}</p>
+	<p class="textp">{{ message }}</p>
 	<a href="#"><i class="fa-regular fa-circle-xmark icon" id="icon"></i></a>
 </div>
 {% endif %}
@@ -160,7 +170,7 @@ HOME
 							<a href="{{ url_for('route.submit_appointment', docid=doctor.docid, email=session['registered_user']) }}
 							">Book Appointment</a>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -171,11 +181,11 @@ HOME
 		<div class="swiper-button-prev"></div>
 	</div>
 </section>
-{% if docids  %}
+{% if docids %}
 <!-- <h2> hello</h2>
 {{docids}} -->
 <div class="container">
-	<h2 data-aos="slide-left" class="booking-text">Top recommended Doctors At Your Location</h2>
+	<h2 data-aos="slide-left" class="booking-text">Top Recommended Doctors at Your Location</h2>
 </div>
 <section class="doc-slider" id="recommended-doc">
 	<div class="swiper-container">
@@ -216,7 +226,7 @@ HOME
 								href="{{ url_for('route.submit_appointment', docid=doctor.docid, email=session['registered_user']) }}">Book
 								Appointment</a>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
@@ -414,7 +424,7 @@ HOME
 				<div class="justifys-content-center">
 					<div class="decor-svg"><img
 							src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/64161dfea3139e0372df4c6f_Decor01.svg"
-							  alt="" /></div>
+							alt="" /></div>
 					<div class="text-align-center">
 						<h2 class="display-text-medium text-color-steel-blue" data-aos="slide-left">Fall in love with
 							your doctor’s office
@@ -429,7 +439,7 @@ HOME
 							<div id="w-node-c0d092a1-47ca-48dd-e0ad-a186bdcd6d1f-347b4665"
 								class="icon-wrapper solid-bg-peach-puff">
 								<img src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/64161e6d830881695c63d4ac_Icon01.svg"
-									  alt="" />
+									alt="" />
 							</div>
 							<div>
 								<div class="text-color-steel-blue">Family Medicine</div>
@@ -440,7 +450,7 @@ HOME
 							<div id="w-node-_9a930d44-6d91-ce87-2b16-0aabf14146ac-347b4665"
 								class="icon-wrapper solid-bg-peach-puff"><img
 									src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/64161e6dbabae42b3bdc9381_Icon02.svg"
-									  alt="" /></div>
+									alt="" /></div>
 							<div>
 								<div class="text-color-steel-blue">Counseling</div>
 							</div>
@@ -450,7 +460,7 @@ HOME
 							<div id="w-node-_860ac678-236e-8d43-7bff-8379ec369a88-347b4665"
 								class="icon-wrapper solid-bg-peach-puff"><img
 									src="{{ url_for('static',filename='img/head-icon-for-mental-health-and-emotion-symbol-png.jpg') }}"
-									  alt="" /></div>
+									alt="" /></div>
 							<div>
 								<div class="text-color-steel-blue">Mental Health</div>
 							</div>
@@ -496,7 +506,7 @@ HOME
 					</div>
 					<div id="w-node-_9e4a2032-9a81-2630-212b-2563c34fa5fe-347b4665" class="image-wrapper"><img
 							src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/6416279162883919a61e52aa_mindful4.jpg"
-							  alt="" sizes="(max-width: 991px) 90vw, (max-width: 2976px) 43vw, 1280px"
+							alt="" sizes="(max-width: 991px) 90vw, (max-width: 2976px) 43vw, 1280px"
 							srcset="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/6416279162883919a61e52aa_mindful4-p-500.jpg 500w, https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/6416279162883919a61e52aa_mindful4-p-800.jpg 800w, https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/6416279162883919a61e52aa_mindful4-p-1080.jpg 1080w, https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/6416279162883919a61e52aa_mindful4.jpg 1280w"
 							class="image" /></div>
 				</div>
@@ -508,7 +518,7 @@ HOME
 					<div id="w-node-_197b0b42-b588-d508-4e26-2462ec79568b-347b4665"
 						class="image-wrapper mobile-display-none">
 						<img src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641633e121beab03b9c7156a_mindful7.jpg"
-							  alt="" sizes="(max-width: 991px) 100vw, (max-width: 2976px) 43vw, 1280px"
+							alt="" sizes="(max-width: 991px) 100vw, (max-width: 2976px) 43vw, 1280px"
 							srcset="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641633e121beab03b9c7156a_mindful7-p-500.jpg 500w, https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641633e121beab03b9c7156a_mindful7-p-800.jpg 800w, https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641633e121beab03b9c7156a_mindful7-p-1080.jpg 1080w, https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641633e121beab03b9c7156a_mindful7.jpg 1280w" />
 					</div>
 					<div id="w-node-_197b0b42-b588-d508-4e26-2462ec79566e-347b4665" class="flex" data-aos="slide-left">
@@ -536,7 +546,7 @@ HOME
 				</div>
 			</div>
 		</div>
-		<div class="section-image bg-image"><img   width="100vw" height="100vh"
+		<div class="section-image bg-image"><img width="100vw" height="100vh"
 				src="{{ url_for('static', filename='img/Mental-health-in-sales.gif') }}" alt="" class="img-parallax" />
 		</div>
 		<!--div class="section">
@@ -657,7 +667,7 @@ HOME
 			<div id="w-node-e7d60cc4-b71b-8521-ddc4-35fd1328f0d6-347b4665" class="flex-metric-wrapper">
 				<div class="display-none-dashed-divider"><img
 						src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641661e7fbe89fb7bcabe0d9_Vertical%20Dashed%20Line%20Divider.svg"
-						  alt="" /></div>
+						alt="" /></div>
 				<div id="w-node-_0a4879ad-55d3-6fe3-0990-d97d99bcd479-347b4665" class="text-align-center"
 					data-aos="slide-up">
 					<div class="large-text text-color-charcoal">97%</div>
@@ -665,7 +675,7 @@ HOME
 				</div>
 				<div class="display-none-dashed-divider"><img
 						src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/641661e7fbe89fb7bcabe0d9_Vertical%20Dashed%20Line%20Divider.svg"
-						  alt="" /></div>
+						alt="" /></div>
 			</div>
 			<div id="w-node-_0a4879ad-55d3-6fe3-0990-d97d99bcd47e-347b4665" class="text-align-center"
 				data-aos="slide-left">
@@ -682,7 +692,7 @@ HOME
 			<div class="justifys-content-center" data-aos="fade">
 				<div class="decor-svg"><img
 						src="https://assets.website-files.com/6414ef5c83cbc64a3b7b4662/64161dfea3139e0372df4c6f_Decor01.svg"
-						  alt="" /></div>
+						alt="" /></div>
 				<div class="text-align-center">
 					<h2 class="display-text-medium text-color-steel-blue" data-aos="slide-left">Our Experts</h2>
 					<div class="text-color-steel-blue top-margin-15px" data-aos="slide-right">The state of your mind is
@@ -695,7 +705,7 @@ HOME
 						<div role="listitem" class="w-dyn-item"><a
 								class="justifys-content-center text-align-center w-inline-block">
 								<div id="w-node-e6099545-afd2-e0ec-d6e3-68c85bc982af-347b4665" class="portrait-wrapper">
-									<img   alt=""
+									<img alt=""
 										src="https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3627e0e6a237c99044f2_mindful3.jpg"
 										sizes="(max-width: 479px) 90vw, (max-width: 767px) 42vw, (max-width: 991px) 285px, 26vw"
 										srcset="https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3627e0e6a237c99044f2_mindful3-p-500.jpg 500w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3627e0e6a237c99044f2_mindful3-p-800.jpg 800w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3627e0e6a237c99044f2_mindful3-p-1080.jpg 1080w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3627e0e6a237c99044f2_mindful3.jpg 1280w"
@@ -710,7 +720,7 @@ HOME
 						<div role="listitem" class="w-dyn-item"><a
 								class="justifys-content-center text-align-center w-inline-block">
 								<div id="w-node-e6099545-afd2-e0ec-d6e3-68c85bc982af-347b4665" class="portrait-wrapper">
-									<img   alt=""
+									<img alt=""
 										src="https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a363979a4d3b272817a39_mindful12.jpg"
 										sizes="(max-width: 479px) 90vw, (max-width: 767px) 42vw, (max-width: 991px) 285px, 26vw"
 										srcset="https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a363979a4d3b272817a39_mindful12-p-500.jpg 500w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a363979a4d3b272817a39_mindful12-p-800.jpg 800w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a363979a4d3b272817a39_mindful12-p-1080.jpg 1080w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a363979a4d3b272817a39_mindful12.jpg 1280w"
@@ -725,7 +735,7 @@ HOME
 						<div role="listitem" class="w-dyn-item"><a
 								class="justifys-content-center text-align-center w-inline-block">
 								<div id="w-node-e6099545-afd2-e0ec-d6e3-68c85bc982af-347b4665" class="portrait-wrapper">
-									<img   alt=""
+									<img alt=""
 										src="https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3647c04bba106c893224_mindful10.jpg"
 										sizes="(max-width: 479px) 90vw, (max-width: 767px) 42vw, (max-width: 991px) 285px, 26vw"
 										srcset="https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3647c04bba106c893224_mindful10-p-500.jpg 500w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3647c04bba106c893224_mindful10-p-800.jpg 800w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3647c04bba106c893224_mindful10-p-1080.jpg 1080w, https://assets.website-files.com/6414ef5c83cbc603d47b4681/641a3647c04bba106c893224_mindful10.jpg 1280w"
@@ -754,8 +764,8 @@ HOME
 						<div role="listitem" class="collection-item w-dyn-item"><a
 								data-w-id="67a471a4-7ec4-343d-4d08-e206a1f70f6c"
 								class="blog-card-img-container w-inline-block bookvisit"><img
-									src="{{ url_for('static',filename='img/1722-2022-06-02.png') }}"  
-									alt="" sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 29vw"
+									src="{{ url_for('static',filename='img/1722-2022-06-02.png') }}" alt=""
+									sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 29vw"
 									class="blog-listing-thumbnail wide-small" /></a>
 							<div class="text-align-center">
 								<a class="text-align-center w-inline-block">
@@ -767,7 +777,7 @@ HOME
 						<div role="listitem" class="collection-item w-dyn-item"><a
 								data-w-id="67a471a4-7ec4-343d-4d08-e206a1f70f6c"
 								class="blog-card-img-container w-inline-block"><img
-									src="{{ url_for('static',filename='img/support-small.png') }}"   alt=""
+									src="{{ url_for('static',filename='img/support-small.png') }}" alt=""
 									sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 29vw"
 									class="blog-listing-thumbnail wide-small" /></a>
 							<div class="text-align-center">
@@ -782,7 +792,7 @@ HOME
 								data-w-id="67a471a4-7ec4-343d-4d08-e206a1f70f6c"
 								class="blog-card-img-container w-inline-block"><img
 									src="{{ url_for('static',filename='img/istockphoto-843530334-612x612.jpg') }}"
-									  alt="" sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 29vw"
+									alt="" sizes="(max-width: 767px) 90vw, (max-width: 991px) 43vw, 29vw"
 									class="blog-listing-thumbnail wide-small" /></a>
 							<div class="text-align-center">
 								<a class="text-align-center w-inline-block">

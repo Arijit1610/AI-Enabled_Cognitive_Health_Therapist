@@ -114,10 +114,9 @@
 .back_info {
 	margin-right: 30px;
 }
-
 /* background-attachment: fixed; */
 .parallax {
-	height: 75vw;
+	height: 65vw;
 	width: 100%;
 	overflow: hidden;
 	background: url("pxfuel.jpg");
@@ -143,35 +142,46 @@
 	height: 20vw;
 	/* border: 1px solid black; */
 	display: inline-block;
-	margin-top: 80px;
+	margin: 60px 25px;
+    text-align: center;
+    box-shadow: 8px 8px rgba(0, 0, 0, 0.784);
 	/* margin-left: 200px; */
-	border: 2px solid red;
+	/* border: 2px solid red; */
 	background-color: rgba(32, 118, 149, 0.678);
 }
 
-.card2 {
+/* .card2 {
 	width: 28vw;
 	height: 20vw;
 	border: 2px solid black;
-	/* display: inline-block; */
+	display: inline-block;
 	margin-top: 80px;
-	/* margin-left: 500px; */
+	margin-left: 500px;
+} */
+
+.profile
+{
+    width:70%;
+    height:70%;
+    margin: auto;
+    border-radius: 50%;
+    text-align: center;
 }
 
-
 .profile img {
-	border-radius: 50%;
-	width: 10vw;
-	height: 10vw;
+	width: 80%;
+	height: 80%; 
 	/* margin-left: 140px; */
 	margin-top: 20px;
+	border-radius: 50%;
 }
 
 .hd {
-	padding-top: 30px;
+	/* padding-top: 30px; */
 	text-align: center;
-	font-size: 20px;
-	/*font-weight: bold;*/
+    height: 30%;
+	font-size: 1vw;
+	font-weight: bold;
 	color: white;
 }
 

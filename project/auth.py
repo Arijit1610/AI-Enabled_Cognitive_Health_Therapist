@@ -101,6 +101,7 @@ def otp_verification():
 			user = db_session.query(UserAccount).filter_by(email=email_recipient).first()
 			session['registered_user'] = user.email
 			flash("Registration successful!",category='info')
+			flash("You have successfully created your account now please complete your profile!!!",category='info')	
 			return redirect(url_for('route.user_profile', email=session['registered_user']))
 		else:
 			print("Incorrect")

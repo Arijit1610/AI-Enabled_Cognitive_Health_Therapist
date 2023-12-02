@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Edit Profile</title>
 	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/sheet.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -35,10 +35,13 @@
 	{% endif %}
 	{% endfor %}
 	{% endif %}
-	{% endwith %} 
-	<h3 style="background-color: powderblue; border: 2px  solid burlywood;">
-		Specialist available here for...Anxiety and Stress Management,Family and Relationship Counseling, Depression and Mood Disorders,Marriage and Couples Counseling,Trauma and PTSD,Child and Adolescent Counseling,Grief and Loss Counseling,Substance Abuse and Addiction, Couples Therapy,Eating Disorders ,Anger Management ,Autism Spectrum Disorders 
-	</h3>
+	{% endwith %}
+	<!-- <h3 style="background-color: powderblue; border: 2px  solid burlywood;">
+		Specialist available here for...Anxiety and Stress Management,Family and Relationship Counseling, Depression and
+		Mood Disorders,Marriage and Couples Counseling,Trauma and PTSD,Child and Adolescent Counseling,Grief and Loss
+		Counseling,Substance Abuse and Addiction, Couples Therapy,Eating Disorders ,Anger Management ,Autism Spectrum
+		Disorders
+	</h3> -->
 	<div class="main">
 		<form action="/edit/{{ session['registered_user'] }}" method="POST" enctype="multipart/form-data">
 			<section class="query-cover">
@@ -53,7 +56,7 @@
 							</div>
 
 							<label for="input-file" id="update">Update Image</label>
-							<input type="file" name="inputfile" id="input-file" required>
+							<input type="file" name="inputfile" id="input-file">
 
 						</div>
 						<div class="contact-right">
@@ -69,8 +72,8 @@
 
 								<div class="input-group">
 									<label>Date Of Birth</label>
-									<input name="date_of_birth" type="date" id="dob" placeholder="" value="{{user.dob}}" max=""
-										required />
+									<input name="date_of_birth" type="date" id="dob" placeholder="" value="{{user.dob}}"
+										max="" required />
 								</div>
 
 							</div>
@@ -111,8 +114,6 @@
 										</option>
 										<option value="AB+" {% if user.blood_group=="AB+" %}selected{% endif %}>AB+
 										</option>
-										<option value="None" {% if user.blood_group=="None" %}selected{% endif %}>None
-										</option>
 										{% else %}
 										<option value="None">--select your blood group--
 										</option>
@@ -137,25 +138,64 @@
 								<div class="input-group">
 									<label>Phone</label>
 									<input type="tel" name="phonenumber" class="phone"
-										placeholder="Type Your Phone Number" value="{% if user.phonenumber %}{{ user.phonenumber }}{% endif %}" required >
+										placeholder="Type Your Phone Number"
+										value="{% if user.phonenumber %}{{ user.phonenumber }}{% endif %}" required>
 									<span class="phoneError" style="color: red;"></span>
 								</div>
 							</div>
-							<div class="input-row">
-								<div class="input-group">
+
+							<div class="input-row1">
+								<div class="input-group1">
 									<label>Prefered language</label>
-									<input type="text" name="languages_spoken" value="{% if preferences.user_languages_spoken %} {{preferences.user_languages_spoken}} {% endif %}" placeholder="Type Your prefered language"
-										required>
+									
+									<select name="languages_spoken" id="" required>
+										<option value="Bengali" {% if preferences.user_languages_spoken=="Bengali" %}Selected{% endif %}>Bengali</option>
+										<option value="English" {% if preferences.user_languages_spoken=="English" %}Selected{% endif %}>English</option>
+										<option value="Tamil" {% if preferences.user_languages_spoken=="Tamil" %}Selected{% endif %}>Tamil</option>
+										<option value="Hindi" {% if preferences.user_languages_spoken=="Hindi" %}Selected{% endif %}>Hindi</option>
+										<option value="Telugu" {% if preferences.user_languages_spoken=="Telugu" %}Selected{% endif %}>Telugu</option>
+										<option value="Marathi" {% if preferences.user_languages_spoken=="Marathi" %}Selected{% endif %}>Marathi</option>
+									</select>
+									<!-- <input type="text" name=""
+										value="{% if preferences.user_languages_spoken %}{{preferences.user_languages_spoken}}{% endif %}"
+										placeholder="Type Your prefered language" required> -->
 								</div>
-								<div class="input-group">
+								
+								<div class="input-group1">
 									<label>Prefered City</label>
-									<input type="text" name="location"  value="{% if preferences.user_location %} {{preferences.user_location}} {% endif %}" placeholder="Type Your prefered city" required>
+									<select name="location" id="" required>
+										<option value="Chennai" {% if preferences.user_location=="Chennai" %}selected{% endif %} >Chennai</option>
+										<option value="New Delhi" {% if preferences.user_location=="New Delhi" %}selected{% endif %}>New Delhi</option>
+										<option value="Kanpur" {% if preferences.user_location=="Kanpur" %}selected{% endif %}>Kanpur</option>
+										<option value="Lucknow" {% if preferences.user_location=="Lucknow" %}selected{% endif %}>Lucknow</option>
+										<option value="Kolkata" {% if preferences.user_location=="Kolkata" %}selected{% endif %}>Kolkata</option>
+										<option value="Mumbai" {% if preferences.user_location=="Mumbai" %}selected{% endif %}>Mumbai</option>
+										<option value="Jaipur" {% if preferences.user_location=="Jaipur" %}selected{% endif %}>Jaipur</option>
+									</select>
+
 								</div>
 
-								<div class="input-group">
+								<div class="input-group1">
 									<label>Prefered Specialist</label>
-									<input type="text" name="specialist"  value="" placeholder="Type Your prefered specialst"
-										required>
+									<select name="specialist" id="" required>
+										<option value="Grief and Loss Counseling">Grief and Loss Counseling</option>
+										<option value="Depression and Mood Disorders">Depression and Mood Disorders
+										</option>
+										<option value="Child and Adolescent Counseling">Child and Adolescent Counseling
+										</option>
+										<option value="Family and Relationship Counseling">Family and Relationship
+											Counseling</option>
+										<option value="Anxiety and Stress Management">Anxiety and Stress Management
+										</option>
+										<option value="Autism Spectrum Disorders">Autism Spectrum Disorders</option>
+										<option value="Marriage and Couples CounselingTrauma and PTSD">Marriage and
+											Couples CounselingTrauma and PTSD</option>
+										<option value="Couples Therapy">Couples Therapy</option>
+										<option value="Anger Management">Anger Management</option>
+										<option value="Substance Abuse and Addiction">Substance Abuse and Addiction
+										</option>
+										<option value="Eating Disorders">Eating Disorders</option>
+									</select>
 								</div>
 
 							</div>
@@ -210,27 +250,27 @@
 	</script>
 	<script src="{{ url_for('static',filename='js/flashmessage.js') }}"></script>
 	<script>
-        // Set the max attribute to five years ago from the current date
-        var currentDate = new Date();
-        var minDate = new Date(currentDate);
-        minDate.setFullYear(currentDate.getFullYear() - 5);
+		// Set the max attribute to five years ago from the current date
+		var currentDate = new Date();
+		var minDate = new Date(currentDate);
+		minDate.setFullYear(currentDate.getFullYear() - 5);
 
-        var dobInput = document.getElementById('dob');
-        dobInput.max = getFormattedDate(minDate);
+		var dobInput = document.getElementById('dob');
+		dobInput.max = getFormattedDate(minDate);
 
-        // Function to format date as YYYY-MM-DD
-        function getFormattedDate(date) {
-            var year = date.getFullYear();
+		// Function to format date as YYYY-MM-DD
+		function getFormattedDate(date) {
+			var year = date.getFullYear();
 
-            var month = date.getMonth() + 1;
-            month = month < 10 ? '0' + month : month;
+			var month = date.getMonth() + 1;
+			month = month < 10 ? '0' + month : month;
 
-            var day = date.getDate();
-            day = day < 10 ? '0' + day : day;
+			var day = date.getDate();
+			day = day < 10 ? '0' + day : day;
 
-            return year + '-' + month + '-' + day;
-        }
-    </script>
+			return year + '-' + month + '-' + day;
+		}
+	</script>
 </body>
 
 </html>
