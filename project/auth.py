@@ -83,7 +83,7 @@ def otp_verification():
 		msg = Message(
 			subject="OTP VERIFICATION",
 			recipients=[email_recipient],  # Use a list of recipients
-			body=f"Dear Customer,\nYour One Time Password (OTP) for login: {otp}.\nDo not share this OTP with anyone.\nPlease note that the OTP is valid for only one session.\nIf you try to refresh the page or leave the Page, you will be required to regenerate a new OTP"
+			body=f"Welcome! To ensure the security of your account, we have sent you a One Time Password {otp} for login. Please do not share this OTP with anyone. It is valid for one session only. If you refresh the page or leave it, you will need to generate a new OTP. Thank you for helping us keep your account safe."
 		)
 		mail.send(msg)
 	if request.method == "POST":

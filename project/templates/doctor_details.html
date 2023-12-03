@@ -27,7 +27,7 @@
 
 			<div class="header_down">
 				<div class="website-name">
-					<h1>Health</h1>
+					<h1>AIECHT</h1>
 				</div>
 
 				<div class="navbar">
@@ -63,22 +63,22 @@
 									<tr class="table-primary">
 										<th>Id</th>
 										<th>Name</th>
-										<th>Email</th>
-										<th>Address</th>
+										<th>Phone</th>
+										<th>Locaton</th>
 										<th>Specialty</th>
-										<th>Degree</th>
-										<th>Operation</th>
+										<th>Patient_reviews</th>
+										<th></th>
 									</tr>
 								</thread>
 								<tbody>
-									{% for therapist in therapists %}
+									{% for doctor in doctors %}
 									<tr>
-										<td>{{ therapist.th_id}}</td>
-										<td>{{ therapist.th_name }}</td>
-										<td>{{ therapist.email }}</td>
-										<td>{{therapist.address}}</td>
-										<td>{{therapist.specialty}}</td>
-										<td>{{therapist.degree}}</td>
+										<td>{{ doctor.docid}}</td>
+										<td>{{ doctor.name }}</td>
+										<td>{{ doctor.phonenumber }}</td>
+										<td>{{doctor.location}}</td>
+										<td>{{doctor.specialty}}</td>
+										<td>{{doctor.patient_reviews}}</td>
 										<td>
 											<button class="btn btn-outline-danger">
 												<a href="">Delete</a>

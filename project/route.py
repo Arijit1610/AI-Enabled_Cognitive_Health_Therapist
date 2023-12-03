@@ -154,7 +154,7 @@ def contact(email='guestuser'):
 			email_msg = Message(
 				subject="Regards",
 				recipients=[email],
-				body=f"Thank you {name},\nWe sincerely appreciate your interest in our services. Your inquiry is important to us, and we want to assure you that our dedicated team is actively working on addressing your query. Rest assured, we are committed to providing you with the information and assistance you need promptly. Please stay tuned, as one of our team members will be reaching out to you very soon. Your satisfaction is our top priority, and we look forward to assisting you with any questions or concerns you may have. If you need immediate assistance, please don't hesitate to contact our customer support team. Thank you again for choosing us, and we value the opportunity to serve you.",
+				body=f"We appreciate your interest in our services and want to assure you that our dedicated team is actively working to address your query. Your satisfaction is our top priority, and we are committed to providing you with the information and assistance you need promptly. One of our team members will be reaching out to you very soon. If you require immediate assistance, please don't hesitate to contact our customer support team. Thank you for choosing us, and we look forward to the opportunity to serve you.",
 			)
 			mail.send(email_msg)	
 
@@ -288,7 +288,7 @@ def submit_appointment():
 			email_msg = Message(
 				subject="Appointment Booked",
 				recipients=[email],
-				body=f"Thank you {name},\n  You have successfull booked your appointments\n Doctor Name: {doctor.name}\nSpeciality:{doctor.specialty}\nAppointment Date:{appointment_date} \n",
+				body=f"Thank you {name}. You have successfully booked your appointments with Dr. {doctor.name}, specializing in {doctor.specialty}. The appointment date is set for {appointment_date}.",
 			)
 			mail.send(email_msg)
 			print("mail send")
@@ -367,8 +367,8 @@ def admin_doc_details():
 @route.route('/admin-patient-details')
 def admin_patient_details():
 	if 'admin_username' in session:
-		doctors = db_session.query(Doctor).all()
-		return render_template('patient_details.html')
+		users = db_session.query(UserAccount).all()
+		return render_template('patient_details.html',users=users)
 	else:
 		return redirect(url_for('auth.admin_login'))
 
@@ -524,7 +524,7 @@ def cancelappo(id):
 		email_msg = Message(
 				subject="Cancel Appointment",
 				recipients=[user.email],
-				body=f"Your appoinment On {appointment.appointment_date} with {doctor.name}  has been canceled\n We will be pleased to served you again\n",
+				body=f"Your appointment with {doctor.name} on {appointment.appointment_date} has been canceled. We apologize for any inconvenience this may have caused and hope to have the opportunity to serve you again in the future.",
 			)
 		mail.send(email_msg)
 		db_session.delete(appointment)

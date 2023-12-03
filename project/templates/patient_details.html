@@ -56,30 +56,32 @@
 				<div class="row">
 					<div class="col-12 col-md-12 col-sm-12">
 						<h2 style="color:rgb(20, 126, 201); font-family: 'Poppins', sans-serif" ;
-							class="bg-info text-center text-white">Patient Details</h2>
+							class="bg-info text-center text-white">User Details</h2>
 						<div class="table-responsive">
 							<table class="table table-bordered table-light table-hover table-striped">
 								<thread>
 									<tr class="table-primary">
-										<th>Id</th>
-										<th>Name</th>
+										<th>Username</th>
+										<th>Full Name</th>
 										<th>Phone</th>
 										<th>Email</th>
-										<th>Address</th>
-										<th>Password</th>
-										<th>Operation</th>
+										<th>Date of Birth</th>
+										<th>Gender</th>
+										<th>Blood Group</th>
+										<th>Operations</th>
 									</tr>
 
 								</thread>
 								<tbody>
-									
+									{% for user in users %}
 									<tr>
-										<td>Id</td>
-										<td>Name</td>
-										<td>Phone</td>
-										<td>Email</td>
-										<td>Address</td>
-										<td>Password</td>
+										<td>{{user.username}}</td>
+										<td>{{user.full_name}}</td>
+										<td>{{user.phonenumber}}</td>
+										<td>{{user.email}}</td>
+										<td>{{user.dob}}</td>
+										<td>{{user.gender}}</td>
+										<td>{{user.blood_group}}</td>
 										<td>
 											<button class="btn btn-outline-danger">
 												<a href="">Delete</a>
@@ -90,13 +92,14 @@
 											</button>
 										</td>
 									</tr>
+									{% endfor %}
 
 								</tbody>
 							</table>
 
-							<button class="btn btn-primary">
+							<!-- <button class="btn btn-primary">
 								<a href="patient.php" style="color: white; padding: 10px 15px;">Add Record</a>
-							</button>
+							</button> -->
 
 						</div>
 
